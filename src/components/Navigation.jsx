@@ -9,7 +9,7 @@ function Navigation() {
     }}>
         <div className="container">
           <NavLink className="navbar-brand" to="/">
-            Beau Hobba
+            Roost
           </NavLink>
           <div>
             <ul className="navbar-nav ml-auto">
