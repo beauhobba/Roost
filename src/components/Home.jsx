@@ -5,19 +5,19 @@ import weed_farm from "../images/weed_farm.png";
 import cooking_robot from "../images/cooking_robot.png";
 import roost_back from "../images/roost-74.png";
 
-import roost_chook from "../images/roost-02.png";
+import roost_chook from "../images/-1.png";
 import roost_vulture from "../images/-1_2.png";
-import roost_penguin from "../images/roost-04.png";
-import roost_galah from "../images/roost-28.png";
-import roost_pigeon from "../images/roost-38.png";
-import roost_woodpecker from "../images/roost-50.png";
-import roost_bluejay from "../images/roost-52.png";
+import roost_penguin from "../images/0.png";
+import roost_galah from "../images/3.png";
+import roost_pigeon from "../images/4.png";
+import roost_woodpecker from "../images/5.png";
+import roost_bluejay from "../images/6.png";
 import roost_kingfisher from "../images/7.png";
-import roost_eagle from "../images/roost-74.png";
-import roost_peacock from "../images/roost-76.png";
-import roost_goose from "../images/roost-86.png";
-import roost_cassowary from "../images/roost-98.png";
-import roost_bustard from "../images/roost-110.png";
+import roost_eagle from "../images/8.png";
+import roost_peacock from "../images/9.png";
+import roost_goose from "../images/10.png";
+import roost_cassowary from "../images/10.png_3.png";
+import roost_bustard from "../images/10_2.png";
 import roost_turkey from "../images/10_3.png";
 
 
