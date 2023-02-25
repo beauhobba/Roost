@@ -5,6 +5,8 @@ import roost_back from "../images/roost-111.png";
 import roost_chook from "../images/-1.png";
 import roost_vulture from "../images/-1_2.png";
 import roost_penguin from "../images/0.png";
+import roost_duck from "../images/2.png";
+import roost_crow from "../images/1.png"
 import roost_galah from "../images/3.png";
 import roost_pigeon from "../images/4.png";
 import roost_woodpecker from "../images/5.png";
@@ -27,6 +29,7 @@ import Heineken from "./modals/Heineken";
 import Card from "./modals/Card";
 import HerbicideMapping from "./modals/HerbicideMapping";
 import Robotatouille from "./modals/Robotatouille";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -56,7 +59,9 @@ function Home() {
                 <li>Replayability 5 out of 5</li>
                 <li><i>Expansions coming in the future </i></li>
               </ul>
+              <Link to="/about">
               <button style={{ color: "white", backgroundColor: "#EC2383", fontSize: 20, height: 40, width: 450, border: "none"}}>Buy Now</button>
+              </Link>
             </p>
           </div>
         </div>
@@ -71,8 +76,8 @@ function Home() {
             <Card front={roost_chook} />
             <Card front={roost_vulture} />
             <Card front={roost_penguin} />
-            <Card front={roost_galah} />
-            <Card front={roost_pigeon} />
+            <Card front={roost_crow} />
+
           </div>
         </div>
 
@@ -84,11 +89,28 @@ function Home() {
           }}
         >
           <div class="row">
+          <Card front={roost_duck} />
+          <Card front={roost_galah} />
+          <Card front={roost_pigeon} />
             <Card front={roost_woodpecker} />
-            <Card front={roost_bluejay} />
-            <Card front={roost_kingfisher} />
+            
+
+          </div>
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            paddingTop: "20px",
+          }}
+        >
+          <div class="row">
+          <Card front={roost_bluejay} />
+          <Card front={roost_kingfisher} />
             <Card front={roost_eagle} />
             <Card front={roost_peacock} />
+
           </div>
         </div>
 
@@ -100,16 +122,12 @@ function Home() {
           }}
         >
           <div class="row">
-            
           <Card front={roost_turkey} />
             <Card front={roost_goose} />
             <Card front={roost_cassowary} />
             <Card front={roost_bustard} />
-            <Card front={roost_back} />
           </div>
         </div>
-
-
       </div>
     </div>
   );

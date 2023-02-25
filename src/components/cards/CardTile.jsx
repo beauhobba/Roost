@@ -9,7 +9,13 @@ import {
 
 const CardTile = (props) => {
   const [show, setShow] = React.useState(false);
+  const [opacity, setOpacity] = React.useState(0.15);
 
+  React.useEffect(() => {
+    if (props.text != null) {
+      setOpacity(0.9);
+    }
+  }, [opacity]);
 
   return (
     <Card onClick={props.event}
@@ -27,15 +33,24 @@ const CardTile = (props) => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            backgroundColor: "rgba(90, 90, 90, 0.15)",
+            backgroundColor: "rgba(90, 90, 90, "+opacity+")",
           }}
         >
-          {/* <CardTitle  style={{ color: 'white', fontWeight:"light" }} >
+          {props.font_type ? 
+          <CardTitle  style={{ color: 'white', fontWeight:"heavy" }} >
+          <p  class="font-weight-heavy">
+
+            {props.text}
+            </p>
+          </CardTitle>
+          :
+          <CardTitle  style={{ color: 'white', fontWeight:"light" }} >
           <p  class="font-weight-light">
 
             {props.text}
             </p>
-          </CardTitle> */}
+          </CardTitle>
+}  
         </CardImgOverlay>
       </CardBlock>
     </Card>
