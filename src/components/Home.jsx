@@ -48,13 +48,13 @@ function Home() {
           <div class="col-lg-5">
             <h1 class="font-weight-light"><b>Roost</b></h1>
             <p>
-              a card game about strategy, memorisiation, alliances, winning, losing and most importantly birds. xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+              a card game about strategy, memorisiation, alliances and most importantly birds. Avoid being bottom of the pecking order, stay aligned with the flock and fly away to overall victory.
               <ul>
                 <li>2-5 players</li>
                 <li>10-30 minutes playtime</li>
                 <li>Ages 14+</li>
-                <li>Max replayability</li>
-                <li>Ages 14+</li>
+                <li>Replayability 5 out of 5</li>
+                <li><i>Expansions coming in the future </i></li>
               </ul>
               <button style={{ color: "white", backgroundColor: "#EC2383", fontSize: 20, height: 40, width: 450, border: "none"}}>Buy Now</button>
             </p>
