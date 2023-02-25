@@ -1,9 +1,6 @@
 import React, { Text } from "react";
 import coverphoto from "../images/coverphoto.png";
-import heinkein_arm from "../images/robot_arms_heinkein.png";
-import weed_farm from "../images/weed_farm.png";
-import cooking_robot from "../images/cooking_robot.png";
-import roost_back from "../images/roost-74.png";
+import roost_back from "../images/roost-111.png";
 
 import roost_chook from "../images/-1.png";
 import roost_vulture from "../images/-1_2.png";
@@ -49,9 +46,17 @@ function Home() {
             />
           </div>
           <div class="col-lg-5">
-            <h1 class="font-weight-light">This is Roost</h1>
+            <h1 class="font-weight-light"><b>Roost</b></h1>
             <p>
-              a 2-5 player game about strategy, memory, alliances and birds...
+              a card game about strategy, memorisiation, alliances, winning, losing and most importantly birds. xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+              <ul>
+                <li>2-5 players</li>
+                <li>10-30 minutes playtime</li>
+                <li>Ages 14+</li>
+                <li>Max replayability</li>
+                <li>Ages 14+</li>
+              </ul>
+              <button style={{ color: "white", backgroundColor: "#EC2383", fontSize: 20, height: 40, width: 450, border: "none"}}>Buy Now</button>
             </p>
           </div>
         </div>
@@ -96,11 +101,11 @@ function Home() {
         >
           <div class="row">
             
-          <Card front={roost_goose} />
+          <Card front={roost_turkey} />
             <Card front={roost_goose} />
             <Card front={roost_cassowary} />
             <Card front={roost_bustard} />
-            <Card front={roost_turkey} />
+            <Card front={roost_back} />
           </div>
         </div>
 

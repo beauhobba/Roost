@@ -1,15 +1,24 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import coverphoto from "../images/roost_banner.png";
+
 
 function Navigation() {
   return (
     <div className="navigation" >
-      <nav className="navbar navbar-expand navbar-light"  style={{
-      backgroundColor: '#EDEDED',
+      <nav className="navbar navbar-expand navbar-dark"  style={{
+      backgroundColor: '#EC2383',
     }}>
         <div className="container">
           <NavLink className="navbar-brand" to="/">
-            Roost
+            <div>
+            <img
+              class="img-fluid rounded mb-4 mb-lg-0"
+              src={coverphoto}
+              alt=""
+              width={150}
+            />
+            </div>
           </NavLink>
           <div>
             <ul className="navbar-nav ml-auto">
