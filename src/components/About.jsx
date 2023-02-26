@@ -186,10 +186,12 @@ function About() {
                 </div>
               </div>
               <br></br>
-              If it is John's turn again, he picks up from the <i>unknown pile</i> and replaces his <i>Bustard card</i>.
-              The card he picks up is a <i>Penguin Card</i>
+              If it is John's turn again, he picks up from the{" "}
+              <i>unknown pile</i> and replaces his <i>Bustard card</i>. The card
+              he picks up is a <i>Penguin Card</i>
               <br></br>
-              The <i>Bustard</i> ability lets him look at one of his cards. It is a <i>duck</i>
+              The <i>Bustard</i> ability lets him look at one of his cards. It
+              is a <i>duck</i>
               <div
                 style={{
                   display: "flex",
@@ -207,16 +209,36 @@ function About() {
                     text={"Memory"}
                     font_heavy={false}
                   />
-                  <Card
-                    front={roost_duck}
-                    text={"Memory"}
-                    font_heavy={false}
-                  />
+                  <Card front={roost_duck} />
                 </div>
               </div>
               <br></br>
-
-
+              There are two other cards with abilities which do not apply when
+              discarded.{" "}
+              <i>*The vulture changes the amount of cards a player picks up</i>
+              <br></br>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
+                <div class="row">
+                  <Card front={roost_chook} back={roost_vulture} />
+                </div>
+              </div>
+              <br></br>
+              When a player calls <b>Roost</b>, all other players get 1 more turn. A <b>Roost</b> is only finalised when a player has flipped all of their cards face-up. If the next clockwise player is able to pick up a new card before they have revealed all their cards you get an additional turn. If a player has called <b>Roost</b>, no other player can <b>Roost</b>. The player's cards are now locked and immune to any abilities (<i>except an additional <b>-1</b> with <b>Vulture</b></i>)
+              <br></br>
+              <br></br>
+              The player with the lowest score for the round wins. If the player who called <b>Roost</b> wins, their final score is reduced by 1. If the player who called <b>Roost</b> loses or ties, their final score is doubled.
+              <br></br>
+              A player automatically <b>Roost</b>s if they have 0 cards (and are the first player to have 0 cards)
+              <br></br>
+              If the deck runs out and no player has <b>Roost</b> the round ends (with no player eligible for the 1 point reduction)
+              <br></br>
+              <br></br>
+              The game continues, shuffling the deck with each new round. When a player reaches 100 points the game ends<i>**</i>. The player with the lowest score ends. 
             </p>
           </div>
         </div>
