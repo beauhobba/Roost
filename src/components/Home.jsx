@@ -6,7 +6,7 @@ import roost_chook from "../images/-1.png";
 import roost_vulture from "../images/-1_2.png";
 import roost_penguin from "../images/0.png";
 import roost_duck from "../images/2.png";
-import roost_crow from "../images/1.png"
+import roost_crow from "../images/1.png";
 import roost_galah from "../images/3.png";
 import roost_pigeon from "../images/4.png";
 import roost_woodpecker from "../images/5.png";
@@ -18,7 +18,6 @@ import roost_goose from "../images/10.png";
 import roost_cassowary from "../images/10.png_3.png";
 import roost_bustard from "../images/10_2.png";
 import roost_turkey from "../images/10_3.png";
-
 
 import CardTile from "./cards/CardTile";
 import "react-image-gallery/styles/css/image-gallery.css";
@@ -49,18 +48,35 @@ function Home() {
             />
           </div>
           <div class="col-lg-5">
-            <h1 class="font-weight-light"><b>Roost</b></h1>
+            <h1 class="font-weight-light">
+              <b>Roost</b>
+            </h1>
             <p>
-              a card game about strategy, memorisiation, alliances and most importantly birds. Avoid being bottom of the pecking order, stay aligned with the flock and fly away to overall victory.
+              a card game about strategy, memorisiation, alliances and most
+              importantly birds. Avoid being bottom of the pecking order, stay
+              aligned with the flock and fly away to overall victory.
               <ul>
                 <li>2-5 players</li>
                 <li>10-30 minutes playtime</li>
                 <li>Ages 14+</li>
                 <li>Replayability 5 out of 5</li>
-                <li><i>Expansions coming in the future </i></li>
+                <li>
+                  <i>Expansions coming in the future </i>
+                </li>
               </ul>
-              <Link to="/about">
-              <button style={{ color: "white", backgroundColor: "#EC2383", fontSize: 20, height: 40, width: 450, border: "none"}}>Buy Now</button>
+              <Link to="/skills">
+                <button
+                  style={{
+                    color: "white",
+                    backgroundColor: "#EC2383",
+                    fontSize: 20,
+                    height: 40,
+                    width: 450,
+                    border: "none",
+                  }}
+                >
+                  Buy Now
+                </button>
               </Link>
             </p>
           </div>
@@ -77,7 +93,6 @@ function Home() {
             <Card front={roost_vulture} />
             <Card front={roost_penguin} />
             <Card front={roost_crow} />
-
           </div>
         </div>
 
@@ -89,12 +104,10 @@ function Home() {
           }}
         >
           <div class="row">
-          <Card front={roost_duck} />
-          <Card front={roost_galah} />
-          <Card front={roost_pigeon} />
+            <Card front={roost_duck} />
+            <Card front={roost_galah} />
+            <Card front={roost_pigeon} />
             <Card front={roost_woodpecker} />
-            
-
           </div>
         </div>
 
@@ -106,11 +119,10 @@ function Home() {
           }}
         >
           <div class="row">
-          <Card front={roost_bluejay} />
-          <Card front={roost_kingfisher} />
+            <Card front={roost_bluejay} />
+            <Card front={roost_kingfisher} />
             <Card front={roost_eagle} />
             <Card front={roost_peacock} />
-
           </div>
         </div>
 
@@ -122,7 +134,7 @@ function Home() {
           }}
         >
           <div class="row">
-          <Card front={roost_turkey} />
+            <Card front={roost_turkey} />
             <Card front={roost_goose} />
             <Card front={roost_cassowary} />
             <Card front={roost_bustard} />
