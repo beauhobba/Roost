@@ -64,14 +64,14 @@ function Home() {
                   <i>Expansions coming in the future </i>
                 </li>
               </ul>
-              <Link to="/skills">
+              <Link to="/purchase">
                 <button
                   style={{
                     color: "white",
                     backgroundColor: "#EC2383",
                     fontSize: 20,
                     height: 40,
-                    width: 450,
+                    width: "100%",
                     border: "none",
                   }}
                 >

@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import coverphoto from "../images/roost_banner.png";
-
+import {BrowserView, MobileView} from 'react-device-detect';
 
 function Navigation() {
   return (
@@ -9,7 +9,9 @@ function Navigation() {
       <nav className="navbar navbar-expand navbar-dark"  style={{
       backgroundColor: '#EC2383',
     }}>
+      
         <div className="container">
+        <BrowserView>
           <NavLink className="navbar-brand" to="/">
             <div>
             <img
@@ -20,6 +22,7 @@ function Navigation() {
             />
             </div>
           </NavLink>
+          </BrowserView>
           <div>
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
@@ -34,14 +37,14 @@ function Navigation() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/skills">
+                <NavLink className="nav-link" to="/purchase">
                   Purchase
                 </NavLink>
               </li>
 
               <li className="nav-item">
                 <NavLink className="nav-link" to="/contact">
-                  About Us
+                  Contact
                 </NavLink>
               </li>
             </ul>
