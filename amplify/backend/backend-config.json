@@ -1,0 +1,43 @@
+{
+  "api": {
+    "mailchimp": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "mailchimp"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "mailchimp": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_mailchimp_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "mailchimp"
+        }
+      ]
+    },
+    "AMPLIFY_function_mailchimp_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "mailchimp"
+        }
+      ]
+    }
+  }
+}

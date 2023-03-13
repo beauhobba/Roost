@@ -1,0 +1,26 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplify5fa17488a0d94-staging-120822-authRole",
+      "UnauthRoleArn": "arn:aws:iam::554206055535:role/amplify-amplify5fa17488a0d94-staging-120822-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::554206055535:role/amplify-amplify5fa17488a0d94-staging-120822-authRole",
+      "Region": "ap-southeast-2",
+      "DeploymentBucketName": "amplify-amplify5fa17488a0d94-staging-120822-deployment",
+      "UnauthRoleName": "amplify-amplify5fa17488a0d94-staging-120822-unauthRole",
+      "StackName": "amplify-amplify5fa17488a0d94-staging-120822",
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:554206055535:stack/amplify-amplify5fa17488a0d94-staging-120822/c076b160-c197-11ed-95dc-06a24f9317b8",
+      "AmplifyAppId": "d8ycorau8as59"
+    },
+    "categories": {
+      "function": {
+        "mailchimp": {
+          "deploymentBucketName": "amplify-amplify5fa17488a0d94-staging-120822-deployment",
+          "s3Key": "amplify-builds/mailchimp-62496d5857574b547948-build.zip"
+        }
+      },
+      "api": {
+        "mailchimp": {}
+      }
+    }
+  }
+}

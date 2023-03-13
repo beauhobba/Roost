@@ -14,6 +14,9 @@ import {
   Post,
 } from "./components";
 import Skills from "./components/Skills";
+import Amplify from "aws-amplify";
+import awsExports from "./aws-exports";
+Amplify.configure(awsExports);
 
 ReactDOM.render(
   <Router>
