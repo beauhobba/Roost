@@ -31,7 +31,7 @@ function Contact() {
             <h1 class="font-weight-light">Contact</h1>
             <p>
               <i>
-                Contact Roost using the following email. Follow our medias and
+                Contact Roost using the following email. Follow our social media and
                 support the kickstarter
               </i>
               <br></br>
@@ -48,7 +48,7 @@ function Contact() {
               <a href="https://www.youtube.com/@Roostgame">TikTok</a>
               <br></br>
               <AiFillTwitterCircle />{" "}
-              <a href="https://github.com/beauhobba">Twitter</a>
+              <a href="https://twitter.com/RoostCardGame">Twitter</a>
               <br></br>
               <AiFillShopping />{" "}
               <a href="https://www.instagram.com/roostgame/">Kickstarter (coming soon)</a>
