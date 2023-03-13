@@ -13,8 +13,10 @@ function Skills() {
 
   //Function to fetch from our backend and update customers array
   function addEmail(e) {
-    let customerId = e.input
-    API.get(myAPI, "/mailchimp/" + customerId)
+    let data = {firstName: firstName,
+    lastName: lastName,
+    email: email}
+    API.get(myAPI, "/mailchimp/" + data)
        .then(response => {
          console.log(response)
 
