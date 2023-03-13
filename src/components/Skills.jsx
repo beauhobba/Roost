@@ -16,7 +16,7 @@ function Skills() {
     let data = {firstName: firstName,
     lastName: lastName,
     email: email}
-    API.get(myAPI, "/mailchimp/" + data)
+    API.post(myAPI, "/mailchimp", {body: data})
        .then(response => {
          console.log(response)
 

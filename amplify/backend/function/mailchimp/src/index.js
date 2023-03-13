@@ -29,12 +29,14 @@ mailchimp.setConfig({
 
 
 exports.handler = async (event) => {
+  const { firstName, lastName, email } = JSON.parse(event.body);
+
     const response = await mailchimp.lists.addListMember(listId, {
-        email_address: event.email,
+        email_address: email,
         status: "subscribed",
         merge_fields: {
-          FNAME: event.firstName,
-          LNAME: event.lastName
+          FNAME: firstName,
+          LNAME: lastName
         }
       });
     
