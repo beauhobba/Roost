@@ -9,7 +9,11 @@ import {
   AiFillShopping,
   AiFillTwitterCircle,
 } from "react-icons/ai";
+import {
+  FaTiktok
+} from "react-icons/fa";
 import coverphoto from "../images/coverphoto.png";
+import { AiFillContainer } from "react-icons/ai";
 
 function Contact() {
   return (
@@ -26,22 +30,28 @@ function Contact() {
           <div class="col-lg-5">
             <h1 class="font-weight-light">Contact</h1>
             <p>
-              <i>Contact Roost using the following email. Follow our medias and support the kickstarter</i>
+              <i>
+                Contact Roost using the following email. Follow our medias and
+                support the kickstarter
+              </i>
               <br></br>
               <br></br>
               <AiTwotoneMail /> roostgame@gmail.com
               <br></br>
               <AiFillInstagram />{" "}
-              <a href="https://www.linkedin.com/in/beau-hobba/">Instagram</a>
+              <a href="https://www.instagram.com/roostgame/">Instagram</a>
               <br></br>
               <AiFillYoutube />{" "}
-              <a href="https://github.com/beauhobba">Youtube</a>
+              <a href="https://www.youtube.com/@Roostgame">Youtube</a>
+              <br></br>
+              <FaTiktok />{" "}
+              <a href="https://www.youtube.com/@Roostgame">TikTok</a>
               <br></br>
               <AiFillTwitterCircle />{" "}
               <a href="https://github.com/beauhobba">Twitter</a>
               <br></br>
               <AiFillShopping />{" "}
-              <a href="https://github.com/beauhobba">Kickstarter</a>
+              <a href="https://www.instagram.com/roostgame/">Kickstarter (coming soon)</a>
             </p>
           </div>
         </div>
