@@ -19,9 +19,9 @@ mailchimp.setConfig({
 
 exports.handler = async (event) => {
   const { firstName, lastName, email } = JSON.parse(event.body);
-  console.log(firstName)
-  console.log(lastName)
-  console.log(mailchimp_key)
+  console.log("firstname: "+ firstName)
+  console.log("lastname: "+lastName)
+  console.log("key: "+mailchimp_key)
 
     const response = await mailchimp.lists.addListMember(listId, {
         email_address: email,

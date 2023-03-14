@@ -6,9 +6,9 @@ const myAPI = "mailchimp"
 
 
 function Skills() {
-  const [firstName, setFirstName] = React.useState("");
-  const [lastName, setLastName] = React.useState("");
-  const [email, setEmail] = React.useState("");
+  const [firstName, setFirstName] = React.useState("Bozo");
+  const [lastName, setLastName] = React.useState("Carrot");
+  const [email, setEmail] = React.useState("BozoCarrot@gmail.com");
 
 
   //Function to fetch from our backend and update customers array
