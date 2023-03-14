@@ -1,6 +1,6 @@
 import React from "react";
 import about_photo from "../images/coverphoto.png";
-import Amplify, { API } from 'aws-amplify'
+import {Amplify, API } from 'aws-amplify'
 
 const myAPI = "mailchimp"
 
