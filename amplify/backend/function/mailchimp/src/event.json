@@ -1,5 +1,3 @@
 {
-  "key1": "value1",
-  "key2": "value2",
-  "key3": "value3"
+  "body": "{\"firstName\":\"John\",\"lastName\":\"Doe\",\"email\":\"john.doe@gmail.com\"}"
 }

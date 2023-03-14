@@ -5,7 +5,7 @@
  * 
  * const key = "af5fd7622e09b69a3f30fd64f3778930-us14"
  */
-const mailchimp_key = "af5fd7622e09b69a3f30fd64f3778930-us14"
+const mailchimp_key =  process.env.MAILCHIMP_KEY
 const server_prefix = "us14"
 const mailchimp = require("@mailchimp/mailchimp_marketing");
 const listId = "fc4e154587";
@@ -15,21 +15,12 @@ mailchimp.setConfig({
     server: server_prefix,
   });
 
-//   const subscribingUser = {
-//     firstName: "Prudence",
-//     lastName: "McVankab",
-//     email: "prudence.mcvankab@gmail.com"
-//   };
-//   async function run() {
-//     const response = await mailchimp.ping.get();
-//     console.log(response);
-//   }
-  
-//   run();
 
 
 exports.handler = async (event) => {
   const { firstName, lastName, email } = JSON.parse(event.body);
+  console.log(firstName)
+  console.log(mailchimp_key)
 
     const response = await mailchimp.lists.addListMember(listId, {
         email_address: email,
