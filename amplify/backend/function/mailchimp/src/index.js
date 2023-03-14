@@ -20,6 +20,7 @@ mailchimp.setConfig({
 exports.handler = async (event) => {
   const { firstName, lastName, email } = JSON.parse(event.body);
   console.log(firstName)
+  console.log(lastName)
   console.log(mailchimp_key)
 
     const response = await mailchimp.lists.addListMember(listId, {
