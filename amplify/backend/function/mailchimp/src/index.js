@@ -8,7 +8,7 @@
 // const AWS = require('aws-sdk');const secretsManager = new AWS.SecretsManager();
 const process = require('process');
 
-const mailchimp_key =  process.env.MAILCHIMP_KEY
+const mailchimp_key =  "ce036a20d2207b82646ebf1ee1d7e82e-us14"
 const server_prefix = "us14"
 const mailchimp = require("@mailchimp/mailchimp_marketing");
 const listId = "fc4e154587";
@@ -25,10 +25,7 @@ exports.handler = async (event) => {
   console.log("firstname: "+ firstName)
   console.log("lastname: "+lastName)
   console.log("lastname: "+email)
-  console.log(mailchimp_key)
-  console.log(process.env.MAILCHIMP_KEY)
-  console.log(process.env.secrets)
-  // console.log(process.env.staging)
+  console.log("API: "+process.env.MAILCHIMP_KEY)
 
     const response = await mailchimp.lists.addListMember(listId, {
         email_address: email,
@@ -52,6 +49,6 @@ exports.handler = async (event) => {
          "Access-Control-Allow-Origin": "*",
          "Access-Control-Allow-Headers": "*"
      }, 
-        body: JSON.stringify('Hello from Lambda!'),
+        body: JSON.stringify('Sent Request'),
     };
 };

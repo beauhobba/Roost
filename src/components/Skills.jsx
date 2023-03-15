@@ -6,26 +6,42 @@ const myAPI = "mailchimp"
 
 
 function Skills() {
-  const [firstName, setFirstName] = React.useState("Bozo");
-  const [lastName, setLastName] = React.useState("Carrot");
-  const [email, setEmail] = React.useState("BozoCarrot@gmail.com");
-
+  const [firstName, setFirstName] = React.useState("");
+  const [lastName, setLastName] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [error, setError] = React.useState("");
 
   //Function to fetch from our backend and update customers array
   function addEmail(e) {
+    if(email == ""){
+      setError("Please enter an email address")
+      return
+    }
     let data = {firstName: firstName,
     lastName: lastName,
     email: email}
     API.post(myAPI, "/mailchimp", {body: data})
        .then(response => {
          console.log(response)
+         setError("Thankyou for joining the waitlist!")
 
        })
        .catch(error => {
-         console.log(error)
+        setError("There was an error with joining the waitlist")
        })
   }
 
+  function handleChangeEmail(event) {
+    setEmail(event.target.value);
+  }
+
+  function handleChangeFirstName(event) {
+    setFirstName(event.target.value);
+  }
+
+  function handleChangeLastName(event) {
+    setLastName(event.target.value);
+  }
 
   return (
     <div
@@ -51,6 +67,32 @@ function Skills() {
               To get notified to the lauch of the kickstarter, subscribe below:
 
             </p>
+
+            <label>
+            First Name:
+            <br></br>
+            <input type="text" value={firstName} onChange={handleChangeFirstName}/>
+            </label>
+            <br></br>
+            <label>
+            Last Name:
+            <br></br>
+            <input type="text" value={lastName} onChange={handleChangeLastName}/>
+            </label>
+            <br></br>
+            <label>
+            Email<b>*</b>:
+            <br></br>
+            <input type="text" value={email} onChange={handleChangeEmail}                   style={{
+                    width: "100%",
+                  }}/>
+            </label>
+
+            <br>
+            </br>
+            <p>
+              <i>{error}</i>
+            </p>
             <button
             onClick={addEmail}
                   style={{
@@ -58,11 +100,11 @@ function Skills() {
                     backgroundColor: "#EC2383",
                     fontSize: 20,
                     height: 40,
-                    width: 200,
+                    width: "100%",
                     border: "none",
                   }}
                 >
-                  Clicker
+                  Join Waiting List
                 </button>
 
 
