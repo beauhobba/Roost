@@ -23,6 +23,7 @@ exports.handler = async (event) => {
   console.log("firstname: "+ firstName)
   console.log("lastname: "+lastName)
   console.log("lastname: "+email)
+  console.log(mailchimp_key)
   console.log(process.env)
   // console.log("key: "+mailchimp_key)
   // console.log(process.env)

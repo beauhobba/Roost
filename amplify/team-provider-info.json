@@ -15,7 +15,7 @@
       "function": {
         "mailchimp": {
           "deploymentBucketName": "amplify-amplify5fa17488a0d94-staging-120822-deployment",
-          "s3Key": "amplify-builds/mailchimp-57627069796c48574258-build.zip"
+          "s3Key": "amplify-builds/mailchimp-4c7335485a5478424c66-build.zip"
         }
       },
       "api": {
