@@ -25,11 +25,7 @@ exports.handler = async (event) => {
   console.log("lastname: "+email)
   console.log(mailchimp_key)
   console.log(process.env)
-  // console.log("key: "+mailchimp_key)
-  // console.log(process.env)
-  // const secretData = await secretsManager .getSecretValue({ SecretId: 'roostgame' }) .promise(); 
-  // const secretValues = JSON.parse(secretData.SecretString); 
-  // console.log('DEMO_API_KEY', secretValues.DEMO_API_KEY);
+
 
     const response = await mailchimp.lists.addListMember(listId, {
         email_address: email,
