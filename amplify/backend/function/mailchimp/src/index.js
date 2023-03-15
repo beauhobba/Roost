@@ -25,7 +25,8 @@ exports.handler = async (event) => {
   console.log("lastname: "+email)
   console.log(mailchimp_key)
   console.log(process.env)
-
+  console.log(process.env.secrets)
+  console.log(process.env.staging)
 
     const response = await mailchimp.lists.addListMember(listId, {
         email_address: email,
