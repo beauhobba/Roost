@@ -8,7 +8,7 @@
 // const AWS = require('aws-sdk');const secretsManager = new AWS.SecretsManager();
 const process = require('process');
 
-const mailchimp_key =  "ce036a20d2207b82646ebf1ee1d7e82e-us14"
+const mailchimp_key =  process.env.MAILCHIMP_KEY
 const server_prefix = "us14"
 const mailchimp = require("@mailchimp/mailchimp_marketing");
 const listId = "fc4e154587";

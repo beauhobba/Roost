@@ -52,7 +52,7 @@ function Home() {
               <b>Roost</b>
             </h1>
             <p>
-              a card game about strategy, memorisiation, alliances and most
+              a card game about strategy, memorisation, alliances and most
               importantly birds. Avoid being bottom of the pecking order, stay
               aligned with the flock and fly away to overall victory.
               <ul>
