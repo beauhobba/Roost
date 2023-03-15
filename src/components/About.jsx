@@ -25,7 +25,7 @@ function About() {
       <div class="container">
         <div class="row align-items-center my-5">
           <div class="col-lg-5">
-            <h1 class="font-weight-light">How to Play</h1>
+            <h1 class="font-weight-light"><b>How to Play</b></h1>
             <p>
               Shuffle the deck.
               <br></br>

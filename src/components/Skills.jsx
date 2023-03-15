@@ -60,11 +60,9 @@ function Skills() {
             />
           </div>
           <div class="col-lg-5">
-            <h1 class="font-weight-light"><b>Purchase</b></h1>
+            <h1 class="font-weight-light"><b>Pre-launch</b></h1>
             <p>
-              Currently the kickstarter is the only way to obtain <i>Roost</i>
-              <br></br>
-              To get notified to the lauch of the kickstarter, subscribe below:
+              Subscribe below to be notified of the kickstarter launch:
 
             </p>
 
