@@ -23,9 +23,10 @@ exports.handler = async (event) => {
   console.log("firstname: "+ firstName)
   console.log("lastname: "+lastName)
   console.log("lastname: "+email)
+  console.log(process.env.secrets)
   // console.log("key: "+mailchimp_key)
   // console.log(process.env)
-  const secretData = await secretsManager .getSecretValue({ SecretId: 'MailchimpRoost' }) .promise(); 
+  const secretData = await secretsManager .getSecretValue({ SecretId: 'roostgame' }) .promise(); 
   const secretValues = JSON.parse(secretData.SecretString); 
   console.log('DEMO_API_KEY', secretValues.DEMO_API_KEY);
 
