@@ -28,10 +28,10 @@ function Contact() {
             />
           </div>
           <div class="col-lg-5">
-            <h1 class="font-weight-light">Contact</h1>
+            <h1 class="font-weight-light"><b>Contact</b></h1>
             <p>
               <i>
-                Contact Roost using the following email. Follow our social media and
+                Contact our team using the following email. Follow our social media and
                 support the kickstarter
               </i>
               <br></br>

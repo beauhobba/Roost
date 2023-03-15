@@ -1,0 +1,12 @@
+service: mailchimp
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: ap-southeast2
+
+functions:
+  mailchimp:
+    handler: src/index.handler
+    environment:
+      MAILCHIMP_KEY: ${env:MAILCHIMP_KEY}

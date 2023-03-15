@@ -6,6 +6,8 @@
  * const key = "af5fd7622e09b69a3f30fd64f3778930-us14"
 //  */
 // const AWS = require('aws-sdk');const secretsManager = new AWS.SecretsManager();
+const process = require('process');
+
 const mailchimp_key =  process.env.MAILCHIMP_KEY
 const server_prefix = "us14"
 const mailchimp = require("@mailchimp/mailchimp_marketing");
@@ -24,9 +26,9 @@ exports.handler = async (event) => {
   console.log("lastname: "+lastName)
   console.log("lastname: "+email)
   console.log(mailchimp_key)
-  console.log(process.env)
+  console.log(process.env.MAILCHIMP_KEY)
   console.log(process.env.secrets)
-  console.log(process.env.staging)
+  // console.log(process.env.staging)
 
     const response = await mailchimp.lists.addListMember(listId, {
         email_address: email,
@@ -38,7 +40,7 @@ exports.handler = async (event) => {
       });
     
       console.log(
-        `Successfully added contact as an audience member. The contact's id is ${
+        `Successfully added contact with id as ${
           response.id
         }.`  );
     
