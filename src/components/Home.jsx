@@ -17,7 +17,12 @@ import roost_peacock from "../images/9.png";
 import roost_goose from "../images/10.png";
 import roost_cassowary from "../images/10.png_3.png";
 import roost_bustard from "../images/10_2.png";
-import roost_turkey from "../images/10_3.png";
+import roost_turkey from "../images/turkey.png";
+
+import roost_stork from "../images/stork.png";
+import roost_pelican from "../images/pelican.png";
+import roost_flamingo from "../images/flamingo.png";
+import roost_chicken from "../images/12.png";
 
 import CardTile from "./cards/CardTile";
 import "react-image-gallery/styles/css/image-gallery.css";
@@ -138,6 +143,21 @@ function Home() {
             <Card front={roost_goose} />
             <Card front={roost_cassowary} />
             <Card front={roost_bustard} />
+          </div>
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            paddingTop: "20px",
+          }}
+        >
+          <div class="row">
+            <Card front={roost_stork} />
+            <Card front={roost_pelican} />
+            <Card front={roost_flamingo} />
+            <Card front={roost_chicken} />
           </div>
         </div>
       </div>

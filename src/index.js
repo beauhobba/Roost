@@ -10,8 +10,6 @@ import {
   About,
   Contact,
   Blog,
-  Posts,
-  Post,
 } from "./components";
 import Skills from "./components/Skills";
 import {Amplify} from "aws-amplify";
@@ -25,10 +23,8 @@ ReactDOM.render(
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
-      <Route path="/purchase" element={<Skills />}>
-        <Route path="" element={<Posts />} />
-        <Route path=":postSlug" element={<Post />} />
-      </Route>
+      <Route path="/purchase" element={<Skills />}/>
+      <Route path="/blog" element={<Blog />}/>
     </Routes>
     <Footer />
   </Router>,
