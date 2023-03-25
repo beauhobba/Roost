@@ -30,7 +30,6 @@ function Blog() {
       <div class="container">
 
         <h1 class="font-weight-light"><b>Blog</b></h1>
-
             <div class="row my-2">
           {posts.reverse().map((post) => (
             <BlogCard key={post.id} date={post.createdAt} name={post.name} description={post.description}></BlogCard>
