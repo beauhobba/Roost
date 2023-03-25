@@ -41,8 +41,8 @@ function Blog() {
           </p>
           {posts.map((post) => (
             <li key={post.id}>
-              <h2>{post.title}</h2>
-              <p>{post.content}</p>
+              <h2>{post.name}</h2>
+              <p>{post.description}</p>
             </li>
           ))}
         </ul>
