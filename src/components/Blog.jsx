@@ -31,7 +31,7 @@ function Blog() {
         
         <h1 class="font-weight-light"  style={{justifyContent: 'center', alignItems: 'center', display: 'flex',}}><b>Blog</b></h1>
         <p   style={{justifyContent: 'center', alignItems: 'center', display: 'flex',}}>
-          WThe home of all Roost related updates.
+          The home of all Roost related updates.
         </p>
             <div class="row justify-items-center my-2" style={{paddingLeft: 20, justifyContent: 'center',}}>
           {posts.reverse().map((post) => (
