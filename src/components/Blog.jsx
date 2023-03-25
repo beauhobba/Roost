@@ -28,9 +28,12 @@ function Blog() {
   return (
     <div className="blog">
       <div class="container">
-
-        <h1 class="font-weight-light"><b>Blog</b></h1>
-            <div class="row my-2">
+        
+        <h1 class="font-weight-light"  style={{justifyContent: 'center', alignItems: 'center', display: 'flex',}}><b>Blog</b></h1>
+        <p   style={{justifyContent: 'center', alignItems: 'center', display: 'flex',}}>
+          WThe home of all Roost related updates.
+        </p>
+            <div class="row justify-items-center my-2" style={{paddingLeft: 20, justifyContent: 'center',}}>
           {posts.reverse().map((post) => (
             <BlogCard key={post.id} date={post.createdAt} name={post.name} description={post.description}></BlogCard>
           ))}
