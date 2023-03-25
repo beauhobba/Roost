@@ -19,7 +19,17 @@
         }
       },
       "api": {
-        "mailchimp": {}
+        "mailchimp": {},
+        "roost": {}
+      },
+      "storage": {
+        "RoostBlog": {
+          "tableName": "RoostBlog",
+          "region": "ap-southeast-2",
+          "arn": "arn:aws:dynamodb:ap-southeast-2:554206055535:table/RoostBlog",
+          "partitionKeyName": "roost",
+          "partitionKeyType": "S"
+        }
       }
     }
   }

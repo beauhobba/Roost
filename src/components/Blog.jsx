@@ -13,7 +13,9 @@ function Blog() {
   async function fetchPosts() {
     try {
       const postData = await API.graphql({ query: getPosts });
-      console.log(postData.data.getPosts.items)
+      console.log("yo");
+      console.log(postData.data.getPosts.items);
+      console.log("yo");
       setPosts(postData.data.getPosts.items);
     } catch (error) {
       console.log('Error fetching posts', error);

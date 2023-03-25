@@ -38,6 +38,46 @@
           "resourceName": "mailchimp"
         }
       ]
+    },
+    "AMPLIFY_storage_RoostBlog_arn": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "RoostBlog"
+        }
+      ]
+    },
+    "AMPLIFY_storage_RoostBlog_partitionKeyName": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "RoostBlog"
+        }
+      ]
+    },
+    "AMPLIFY_storage_RoostBlog_partitionKeyType": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "RoostBlog"
+        }
+      ]
+    },
+    "AMPLIFY_storage_RoostBlog_region": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "RoostBlog"
+        }
+      ]
+    },
+    "AMPLIFY_storage_RoostBlog_tableName": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "RoostBlog"
+        }
+      ]
     }
   }
 }
