@@ -27,12 +27,7 @@ import roost_chicken from "../images/12.png";
 import CardTile from "./cards/CardTile";
 import "react-image-gallery/styles/css/image-gallery.css";
 
-import CardDisplay from "../images/mockup.png";
-
-import Heineken from "./modals/Heineken";
 import Card from "./modals/Card";
-import HerbicideMapping from "./modals/HerbicideMapping";
-import Robotatouille from "./modals/Robotatouille";
 import { Link } from "react-router-dom";
 
 function Home() {

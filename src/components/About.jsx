@@ -1,6 +1,4 @@
 import React from "react";
-import about_photo from "../images/about_photo.png";
-import aboutmephoto from "../images/aboutme.png";
 import Card from "./modals/Card";
 import roost_chook from "../images/-1.png";
 import roost_vulture from "../images/-1_2.png";
