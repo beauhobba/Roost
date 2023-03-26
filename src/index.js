@@ -16,6 +16,8 @@ import {Amplify} from "aws-amplify";
 import awsExports from "./aws-exports";
 Amplify.configure(awsExports);
 
+
+
 ReactDOM.render(
   <Router>
     <Navigation />
@@ -25,6 +27,7 @@ ReactDOM.render(
       <Route path="/contact" element={<Contact />} />
       <Route path="/purchase" element={<Skills />}/>
       <Route path="/blog" element={<Blog />}/>
+
     </Routes>
     <Footer />
   </Router>,
