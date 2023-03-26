@@ -17,7 +17,7 @@ import { AiFillContainer } from "react-icons/ai";
 
 function Contact() {
   return (
-    <div className="contact">
+    <div className="contact"   style={{paddingBottom: 100}}>
       <div class="container">
         <div class="row align-items-center my-5">
           <div class="col-lg-7">

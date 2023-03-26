@@ -47,7 +47,7 @@ function Skills() {
     <div
       className="about"
       style={{
-        paddingBottom: "80px",
+        paddingBottom: 100,
       }}
     >
       <div class="container">

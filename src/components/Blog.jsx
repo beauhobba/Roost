@@ -26,7 +26,7 @@ function Blog() {
   }
 
   return (
-    <div className="blog">
+    <div className="blog"  style={{paddingBottom: 100}}>
       <div class="container">
         
         <h1 class="font-weight-light"  style={{justifyContent: 'center', alignItems: 'center', display: 'flex',}}><b>Blog</b></h1>

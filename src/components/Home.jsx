@@ -79,7 +79,7 @@ function Home() {
       <div
         class="container"
         style={{
-          paddingBottom: "80px",
+          paddingBottom: 100,
         }}
       >
         <div class="row align-items-center my-5">
