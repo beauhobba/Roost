@@ -38,14 +38,14 @@ const CardTile = (props) => {
         >
           {props.font_type ? 
           <CardTitle  style={{ color: 'white', fontWeight:"heavy" }} >
-          <p  class="font-weight-heavy">
+          <p  class="font-weight-heavy" style={{ fontSize: props.text_size, textAlign: "center" }}>
 
             {props.text}
             </p>
           </CardTitle>
           :
-          <CardTitle  style={{ color: 'white', fontWeight:"light" }} >
-          <p  class="font-weight-light">
+          <CardTitle  style={{ color: 'white', fontWeight:"light"}} >
+          <p  class="font-weight-light" style={{ fontSize: props.text_size, textAlign: "center"}}>
 
             {props.text}
             </p>

@@ -10,6 +10,7 @@ const Card = (props) => {
   const [heavyfont, setHeavyfont] = React.useState(true);
 
   const class_text = props.text
+  const class_text_size = props.text_size
   // const handleSubmit = (e) => {
   //     setShow(!show)
   // };
@@ -30,6 +31,7 @@ const Card = (props) => {
         <CardTile
           photo={props.front}
           text={class_text}
+          text_size={class_text_size}
           show={show}
           back_photo={back}
           font_type = {heavyfont}

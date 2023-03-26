@@ -15,15 +15,21 @@ import { isMobile } from "react-device-detect";
 
 function About() {
   const [renderType, setRenderType] = useState("row");
+  const [cardTextSize, setCardTextSize] = useState(16);
+  const [cardTextMidSize, setCardTextMidSize] = useState(20);
+  const [cardTextLargeSize, setCardTextLargeSize] = useState(24);
 
   useEffect(() => {
     if (isMobile) {
       setRenderType("column");
+      setCardTextSize(10);
+      setCardTextMidSize(16);
+      setCardTextLargeSize(20);
     }
   }, []);
 
   return (
-    <div className="about" style={{paddingBottom: 100}}>
+    <div className="about" style={{ paddingBottom: 100 }}>
       <div class="container">
         <div
           style={{
@@ -187,15 +193,14 @@ function About() {
               <div
                 style={{
                   display: "flex",
-                  flexDirection: "column",
+                  flexDirection: "row",
+                  width: "100%",
                 }}
               >
-                <div class="row">
-                  <Card front={roost_goose} />
-                  <Card front={roost_cassowary} />
-                  <Card front={roost_back} />
-                  <Card front={roost_back} />
-                </div>
+                <Card front={roost_goose} />
+                <Card front={roost_cassowary} />
+                <Card front={roost_back} />
+                <Card front={roost_back} />
               </div>
               <br></br>
               <h5 class="font-weight-light">
@@ -237,17 +242,21 @@ function About() {
                 <div
                   style={{
                     display: "flex",
-                    flexDirection: "column",
+                    flexDirection: "row",
+                    width: "100%",
                   }}
                 >
-                  <div class="row">
-                    <Card
-                      front={roost_cassowary}
-                      back={roost_cassowary}
-                      text={"Discard Pile"}
-                    />
-                    <Card front={roost_back} text={"Unknown Pile"} />
-                  </div>
+                  <Card
+                    front={roost_cassowary}
+                    back={roost_cassowary}
+                    text_size={cardTextLargeSize}
+                    text={"Discard Pile"}
+                  />
+                  <Card
+                    front={roost_back}
+                    text_size={cardTextLargeSize}
+                    text={"Unknown Pile"}
+                  />
                 </div>
                 John picks up the top card from the <i>unknown pile</i>. It is a{" "}
                 <i>bustard</i>. He replaces one of his currently unknown cards,
@@ -256,23 +265,24 @@ function About() {
                 <div
                   style={{
                     display: "flex",
-                    flexDirection: "column",
+                    flexDirection: "row",
+                    width: "100%",
                   }}
                 >
-                  <div class="row">
-                    <Card
-                      front={roost_goose}
-                      text={"Memory"}
-                      font_heavy={false}
-                    />
-                    <Card
-                      front={roost_cassowary}
-                      text={"Memory"}
-                      font_heavy={false}
-                    />
-                    <Card front={roost_bustard} />
-                    <Card front={roost_back} />
-                  </div>
+                  <Card
+                    front={roost_goose}
+                    text={"Memory"}
+                    text_size={cardTextSize}
+                    font_heavy={false}
+                  />
+                  <Card
+                    front={roost_cassowary}
+                    text={"Memory"}
+                    text_size={cardTextSize}
+                    font_heavy={false}
+                  />
+                  <Card front={roost_bustard} />
+                  <Card front={roost_back} />
                 </div>
                 <br></br>
                 Now John has a <i>Goose, Cassowary, Bustard</i> and 1 unknown
@@ -296,22 +306,23 @@ function About() {
                 <div
                   style={{
                     display: "flex",
-                    flexDirection: "column",
+                    flexDirection: "row",
+                    width: "100%",
                   }}
                 >
-                  <div class="row">
-                    <Card
-                      front={roost_cassowary}
-                      text={"Memory"}
-                      font_heavy={false}
-                    />
-                    <Card
-                      front={roost_bustard}
-                      text={"Memory"}
-                      font_heavy={false}
-                    />
-                    <Card front={roost_back} />
-                  </div>
+                  <Card
+                    front={roost_cassowary}
+                    text={"Memory"}
+                    text_size={cardTextMidSize}
+                    font_heavy={false}
+                  />
+                  <Card
+                    front={roost_bustard}
+                    text={"Memory"}
+                    text_size={cardTextMidSize}
+                    font_heavy={false}
+                  />
+                  <Card front={roost_back} />
                 </div>
                 <br></br>
                 <li>
@@ -351,22 +362,23 @@ function About() {
               <div
                 style={{
                   display: "flex",
-                  flexDirection: "column",
+                  flexDirection: "row",
+                  width: "100%",
                 }}
               >
-                <div class="row">
-                  <Card
-                    front={roost_cassowary}
-                    text={"Memory"}
-                    font_heavy={false}
-                  />
-                  <Card
-                    front={roost_penguin}
-                    text={"Memory"}
-                    font_heavy={false}
-                  />
-                  <Card front={roost_duck} />
-                </div>
+                <Card
+                  front={roost_cassowary}
+                  text={"Memory"}
+                  text_size={cardTextMidSize}
+                  font_heavy={false}
+                />
+                <Card
+                  front={roost_penguin}
+                  text={"Memory"}
+                  text_size={cardTextMidSize}
+                  font_heavy={false}
+                />
+                <Card front={roost_duck} />
               </div>
               <br></br>
               There are three other cards (<i>Cool Chook, Vulture, Flamingo</i>)
@@ -391,32 +403,40 @@ function About() {
                 </div>
               </div>
               <br></br>
-              When a player calls <b>Roost</b>, all other players get 1 more
-              turn. A <b>Roost</b> is only finalised when a player has flipped
-              all of their cards face-up. If the next clockwise player is able
-              to pick up a new card before they have revealed all their cards
-              you get an additional turn. If a player has called <b>Roost</b>,
-              no other player can <b>Roost</b>. The player's cards are now
-              locked and immune to any abilities (
-              <i>
-                except an additional <b>-1</b> with <b>Vulture</b>
-              </i>
-              )<br></br>
-              <br></br>
-              The player with the lowest score for the round wins. If the player
-              who called <b>Roost</b> wins, their final score is reduced by 1.
-              If the player who called <b>Roost</b> loses or ties, their final
-              score is doubled.
-              <br></br>A player automatically <b>Roost</b>s if they have 0 cards
-              (and are the first player to have 0 cards)
-              <br></br>
-              If the deck runs out and no player has <b>Roost</b> the round ends
-              (with no player eligible for the 1 point reduction)
-              <br></br>
-              <br></br>
-              The game continues, shuffling the deck with each new round. When a
-              player reaches 100 points the game ends<i>**</i>. The player with
-              the lowest score ends.
+              <h5 class="font-weight-light">
+                <b>
+                  <u>Game End</u>
+                </b>
+              </h5>
+              <ul>
+                <li>
+                  When a player calls <b>Roost</b>, all other players get 1 more
+                  turn. A <b>Roost</b> is only finalised when a player has
+                  flipped all of their cards face-up. If the next clockwise
+                  player is able to pick up a new card before they have revealed
+                  all their cards you get an additional turn.
+                </li>
+                <li>
+                  If a player has called <b>Roost</b>, no other player can{" "}
+                  <b>Roost</b>. The player's cards are now locked and immune to
+                  any abilities (
+                  <i>
+                    except an additional <b>-1</b> with <b>Vulture</b>
+                  </i>)
+                </li>
+                <li>The player with the lowest score for the round wins. If the
+                player who called <b>Roost</b> wins, their final score is
+                reduced by 1. If the player who called <b>Roost</b> loses or
+                ties, their final score is doubled.</li>
+                <li>A player automatically <b>Roost</b>s if they have 0
+                cards (and are the first player to have 0 cards)</li>
+                <li>
+                If the deck runs out and no player has <b>Roost</b> the round
+                ends (with no players eligible for the 1 point reduction)</li>
+                <li>The game continues, shuffling the deck with each new round. When
+                a player reaches 100 points the game ends<i>**</i>. The player
+                with the lowest score ends.</li>
+              </ul>
             </p>
           </div>
         </div>
