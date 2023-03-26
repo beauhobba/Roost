@@ -25,6 +25,9 @@ function About() {
           <div class="col-lg-5">
             <h1 class="font-weight-light"><b>How to Play</b></h1>
             <p>
+              <i>This is an interactive tutorial</i>
+            </p>
+            <p>
               Shuffle the deck.
               <br></br>
               Place 1 card next to the deck. This is the <b>Discard Pile</b>

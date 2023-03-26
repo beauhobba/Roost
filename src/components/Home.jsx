@@ -118,7 +118,7 @@ function Home() {
                     border: "none",
                   }}
                 >
-                  Buy Now
+                  Join the Waiting List
                 </button>
               </Link>
             </p>
