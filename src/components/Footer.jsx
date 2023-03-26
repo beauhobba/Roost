@@ -4,11 +4,11 @@ function Footer() {
   return (
     <div className="footer">
       <footer class="py-3 fixed-bottom"   style={{
-      backgroundColor: '#EDEDED',
+      backgroundColor: '#EC2383',
     }}>
         <div class="container">
-          <p class="m-0 text-center text-black">
-            Copyright &copy; roostgame.com 2020
+          <p class="m-0 text-center text-white">
+            Copyright &copy; roostgame.com 2023
           </p>
         </div>
       </footer>

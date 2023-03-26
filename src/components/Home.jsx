@@ -1,41 +1,85 @@
-import React, { Text } from "react";
+import React, { Text, useState } from "react";
 import coverphoto from "../images/coverphoto.png";
-import heinkein_arm from "../images/robot_arms_heinkein.png";
-import weed_farm from "../images/weed_farm.png";
-import cooking_robot from "../images/cooking_robot.png";
-import roost_back from "../images/roost-74.png";
 
-import roost_chook from "../images/roost-02.png";
-import roost_vulture from "../images/roost-116.png";
-import roost_penguin from "../images/roost-04.png";
-import roost_galah from "../images/roost-28.png";
-import roost_pigeon from "../images/roost-38.png";
-import roost_woodpecker from "../images/roost-50.png";
-import roost_bluejay from "../images/roost-52.png";
-import roost_kingfisher from "../images/roost-62.png";
-import roost_eagle from "../images/roost-74.png";
-import roost_peacock from "../images/roost-76.png";
-import roost_goose from "../images/roost-86.png";
-import roost_cassowary from "../images/roost-98.png";
-import roost_bustard from "../images/roost-110.png";
+import roost_chook from "../images/-1.png";
+import roost_vulture from "../images/-1_2.png";
+import roost_penguin from "../images/0.png";
+import roost_duck from "../images/2.png";
+import roost_crow from "../images/1.png";
+import roost_galah from "../images/3.png";
+import roost_pigeon from "../images/4.png";
+import roost_woodpecker from "../images/5.png";
+import roost_bluejay from "../images/6.png";
+import roost_kingfisher from "../images/7.png";
+import roost_eagle from "../images/8.png";
+import roost_peacock from "../images/9.png";
+import roost_goose from "../images/10.png";
+import roost_cassowary from "../images/10.png_3.png";
+import roost_bustard from "../images/10_2.png";
+import roost_turkey from "../images/turkey.png";
 
-import CardTile from "./cards/CardTile";
+import roost_stork from "../images/stork.png";
+import roost_pelican from "../images/pelican.png";
+import roost_flamingo from "../images/flamingo.png";
+import roost_chicken from "../images/12.png";
+import { BrowserView, MobileView } from "react-device-detect";
+
 import "react-image-gallery/styles/css/image-gallery.css";
+import {
+  BsFillArrowLeftSquareFill,
+  BsFillArrowRightSquareFill,
+} from "react-icons/bs";
+import { IconContext } from "react-icons";
 
-import CardDisplay from "../images/mockup.png";
-
-import Heineken from "./modals/Heineken";
 import Card from "./modals/Card";
-import HerbicideMapping from "./modals/HerbicideMapping";
-import Robotatouille from "./modals/Robotatouille";
+import { Link } from "react-router-dom";
+
+export const card_datas = [
+  roost_chook,
+  roost_vulture,
+  roost_penguin,
+  roost_crow,
+  roost_duck,
+  roost_galah,
+  roost_pigeon,
+  roost_woodpecker,
+  roost_bluejay,
+  roost_kingfisher,
+  roost_eagle,
+  roost_peacock,
+  roost_turkey,
+  roost_goose,
+  roost_cassowary,
+  roost_bustard,
+  roost_stork,
+  roost_pelican,
+  roost_flamingo,
+  roost_chicken,
+];
 
 function Home() {
+  const [index, setIndex] = useState(0);
+
+  const slideLeft = () => {
+    if (index - 1 < 0) {
+      return;
+    }
+    setIndex(index - 1);
+  };
+
+  const slideRight = () => {
+    if (index + 1 > card_datas.length - 1) {
+      return;
+    }
+    setIndex(index + 1);
+  };
+
   return (
     <div>
       <div
         class="container"
         style={{
-          paddingBottom: "80px",
+          paddingBottom: 100,
         }}
       >
         <div class="row align-items-center my-5">
@@ -47,62 +91,112 @@ function Home() {
             />
           </div>
           <div class="col-lg-5">
-            <h1 class="font-weight-light">This is Roost</h1>
+            <h1 class="font-weight-light">
+              <b>Roost</b>
+            </h1>
             <p>
-              a 2-5 player game about strategy, memory, alliances and birds...
+              a card game about strategy, memorisation, alliances and most
+              importantly birds. Avoid being bottom of the pecking order, stay
+              aligned with the flock and fly away to overall victory.
+              <ul>
+                <li>2-5 players</li>
+                <li>10-30 minutes playtime</li>
+                <li>Ages 14+</li>
+                <li>Replayability <font color={'#cfb82d'}>★★★★★</font></li>
+                <li>
+                  <i>Expansion: <b>Spurs and Birds</b> coming in the future </i>
+                </li>
+              </ul>
+              <Link to="/purchase">
+                <button
+                  style={{
+                    color: "white",
+                    backgroundColor: "#EC2383",
+                    fontSize: 20,
+                    height: 40,
+                    width: "100%",
+                    border: "none",
+                  }}
+                >
+                  Join the Waiting List
+                </button>
+              </Link>
             </p>
           </div>
         </div>
 
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
-          <div class="row">
-            <Card front={roost_chook} />
-            <Card front={roost_vulture} />
-            <Card front={roost_penguin} />
-            <Card front={roost_galah} />
-            <Card front={roost_pigeon} />
+        <BrowserView>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              width: "100%",
+              alignItems: "center",
+            }}
+          >
+            <p>
+              Here is a quick preview of the <b>Roost</b> cards
+            </p>
+
+            <div
+              style={{
+                width: "35%",
+                alignItems: "center",
+                flexDirection: "row",
+                display: "flex",
+              }}
+            >
+              <IconContext.Provider value={{ color: "#EC2383", size: "50px" }}>
+                <BsFillArrowLeftSquareFill
+                  onClick={slideLeft}
+                  className="leftBtn"
+                ></BsFillArrowLeftSquareFill>
+
+                <Card front={card_datas[index]} />
+                <BsFillArrowRightSquareFill
+                  onClick={slideRight}
+                  className="rightBtn"
+                />
+              </IconContext.Provider>
+            </div>
           </div>
-        </div>
+        </BrowserView>
+        <MobileView>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              width: "100%",
+              alignItems: "center",
+            }}
+          >
+            <p>
+              Here is a quick preview of the <b>Roost</b> cards
+            </p>
 
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            paddingTop: "20px",
-          }}
-        >
-          <div class="row">
-            <Card front={roost_woodpecker} />
-            <Card front={roost_bluejay} />
-            <Card front={roost_kingfisher} />
-            <Card front={roost_eagle} />
-            <Card front={roost_peacock} />
+            <div
+              style={{
+                width: "100%",
+                alignItems: "center",
+                flexDirection: "row",
+                display: "flex",
+              }}
+            >
+              <IconContext.Provider value={{ color: "#EC2383", size: "50px" }}>
+                <BsFillArrowLeftSquareFill
+                  onClick={slideLeft}
+                  className="leftBtn"
+                ></BsFillArrowLeftSquareFill>
+
+                <Card front={card_datas[index]} />
+                <BsFillArrowRightSquareFill
+                  onClick={slideRight}
+                  className="rightBtn"
+                />
+              </IconContext.Provider>
+            </div>
           </div>
-        </div>
-
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            paddingTop: "20px",
-          }}
-        >
-          <div class="row">
-            
-          <Card front={roost_goose} />
-            <Card front={roost_goose} />
-            <Card front={roost_cassowary} />
-            <Card front={roost_bustard} />
-            <Card front={roost_goose} />
-          </div>
-        </div>
-
-
+        </MobileView>
       </div>
     </div>
   );

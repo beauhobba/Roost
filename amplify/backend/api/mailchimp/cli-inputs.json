@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/mailchimp": {
+      "name": "/mailchimp",
+      "lambdaFunction": "mailchimp",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

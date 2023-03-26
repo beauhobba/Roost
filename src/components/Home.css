@@ -34,3 +34,27 @@
   border-radius: 18px;
   border: 1px solid #cfcece;
 }
+.prevCard {
+  left: calc(0% + 2rem);
+  opacity: 0;
+  background-color: #3f00ff;
+}
+
+.activeCard {
+left: 50%;
+transform: translateX(-50%);
+background-color: #00ff66;
+}
+
+.nextCard {
+  left: 100%;
+  transform: translateX(calc(-100% - 2rem));
+  opacity: 0;
+  background-color: #ffcc00;
+}
+.card-container {
+  position: relative;
+
+  width: 20%;
+  background-color: #ff0000;
+}
