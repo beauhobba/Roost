@@ -422,20 +422,28 @@ function About() {
                   any abilities (
                   <i>
                     except an additional <b>-1</b> with <b>Vulture</b>
-                  </i>)
+                  </i>
+                  )
                 </li>
-                <li>The player with the lowest score for the round wins. If the
-                player who called <b>Roost</b> wins, their final score is
-                reduced by 1. If the player who called <b>Roost</b> loses or
-                ties, their final score is doubled.</li>
-                <li>A player automatically <b>Roost</b>s if they have 0
-                cards (and are the first player to have 0 cards)</li>
                 <li>
-                If the deck runs out and no player has <b>Roost</b> the round
-                ends (with no players eligible for the 1 point reduction)</li>
-                <li>The game continues, shuffling the deck with each new round. When
-                a player reaches 100 points the game ends<i>**</i>. The player
-                with the lowest score ends.</li>
+                  The player with the lowest score for the round wins. If the
+                  player who called <b>Roost</b> wins, their final score is
+                  reduced by 1. If the player who called <b>Roost</b> loses or
+                  ties, their final score is doubled.
+                </li>
+                <li>
+                  A player automatically <b>Roost</b>s if they have 0 cards (and
+                  are the first player to have 0 cards)
+                </li>
+                <li>
+                  If the deck runs out and no player has <b>Roost</b> the round
+                  ends (with no players eligible for the 1 point reduction)
+                </li>
+                <li>
+                  The game continues, shuffling the deck with each new round.
+                  When a player reaches 100 points the game ends<i>**</i>. The
+                  player with the lowest score ends.
+                </li>
               </ul>
             </p>
           </div>

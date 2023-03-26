@@ -102,9 +102,9 @@ function Home() {
                 <li>2-5 players</li>
                 <li>10-30 minutes playtime</li>
                 <li>Ages 14+</li>
-                <li>Replayability 5 out of 5</li>
+                <li>Replayability <font color={'#cfb82d'}>★★★★★</font></li>
                 <li>
-                  <i>Expansions coming in the future </i>
+                  <i>Expansion: <b>Spurs and Birds</b> coming in the future </i>
                 </li>
               </ul>
               <Link to="/purchase">
