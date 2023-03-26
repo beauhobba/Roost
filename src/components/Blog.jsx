@@ -4,12 +4,14 @@ import { API, graphqlOperation } from "aws-amplify";
 import { listTodos } from "../graphql/queries";
 import BlogCard from "./blog_cards/BlogCard";
 
-const myQuery = `
+const postQuery = `
   query MyQuery {
     listTodos {
       items {
         createdAt
         description
+        name
+        id
       }
     }
   }
@@ -24,7 +26,7 @@ function Blog() {
 
   async function fetchPosts() {
     try {
-      const postData = await API.graphql(graphqlOperation(myQuery)).then(
+      const postData = await API.graphql(graphqlOperation(postQuery)).then(
         (response) => {
           const sortedItems = response.data.listTodos.items.sort((a, b) => {
             return new Date(a.createdAt) - new Date(b.createdAt);
