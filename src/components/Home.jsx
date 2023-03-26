@@ -22,36 +22,54 @@ import roost_stork from "../images/stork.png";
 import roost_pelican from "../images/pelican.png";
 import roost_flamingo from "../images/flamingo.png";
 import roost_chicken from "../images/12.png";
+import { BrowserView, MobileView } from "react-device-detect";
 
 import "react-image-gallery/styles/css/image-gallery.css";
 import {
   BsFillArrowLeftSquareFill,
   BsFillArrowRightSquareFill,
 } from "react-icons/bs";
-import {IconContext} from "react-icons"
+import { IconContext } from "react-icons";
 
 import Card from "./modals/Card";
 import { Link } from "react-router-dom";
 
-
 export const card_datas = [
-  roost_chook, roost_vulture,roost_penguin, roost_crow, roost_duck, roost_galah, roost_pigeon, roost_woodpecker, roost_bluejay, roost_kingfisher, roost_eagle, roost_peacock, roost_turkey, roost_goose, roost_cassowary, roost_bustard, roost_stork, roost_pelican, roost_flamingo, roost_chicken
-]
+  roost_chook,
+  roost_vulture,
+  roost_penguin,
+  roost_crow,
+  roost_duck,
+  roost_galah,
+  roost_pigeon,
+  roost_woodpecker,
+  roost_bluejay,
+  roost_kingfisher,
+  roost_eagle,
+  roost_peacock,
+  roost_turkey,
+  roost_goose,
+  roost_cassowary,
+  roost_bustard,
+  roost_stork,
+  roost_pelican,
+  roost_flamingo,
+  roost_chicken,
+];
 
 function Home() {
-
-  const [index, setIndex] = useState(0)
+  const [index, setIndex] = useState(0);
 
   const slideLeft = () => {
-    if(index-1 < 0){
-      return
+    if (index - 1 < 0) {
+      return;
     }
     setIndex(index - 1);
   };
-  
+
   const slideRight = () => {
-    if(index+1 > card_datas.length-1){
-      return
+    if (index + 1 > card_datas.length - 1) {
+      return;
     }
     setIndex(index + 1);
   };
@@ -107,32 +125,78 @@ function Home() {
           </div>
         </div>
 
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            width: "100%",
-            alignItems: "center"
-          }}
-        >
-          <div class="row" style={{width: "35%", alignItems: 'center'}}>
-          <IconContext.Provider
-      value={{ color: '#EC2383', size: '50px' }}
-    >
-          <BsFillArrowLeftSquareFill 
-    onClick={slideLeft}
-    className="leftBtn"></BsFillArrowLeftSquareFill>
+        <BrowserView>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              width: "100%",
+              alignItems: "center",
+            }}
+          >
+            <p>
+              Here is a quick preview of the <b>Roost</b> cards
+            </p>
 
-            <Card front={card_datas[index]} />
-            <BsFillArrowRightSquareFill 
-     onClick={slideRight}
-     className="rightBtn"
-        />
+            <div
+              style={{
+                width: "35%",
+                alignItems: "center",
+                flexDirection: "row",
+                display: "flex",
+              }}
+            >
+              <IconContext.Provider value={{ color: "#EC2383", size: "50px" }}>
+                <BsFillArrowLeftSquareFill
+                  onClick={slideLeft}
+                  className="leftBtn"
+                ></BsFillArrowLeftSquareFill>
+
+                <Card front={card_datas[index]} />
+                <BsFillArrowRightSquareFill
+                  onClick={slideRight}
+                  className="rightBtn"
+                />
               </IconContext.Provider>
-            
+            </div>
           </div>
-        </div>
+        </BrowserView>
+        <MobileView>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              width: "100%",
+              alignItems: "center",
+            }}
+          >
+            <p>
+              Here is a quick preview of the <b>Roost</b> cards
+            </p>
 
+            <div
+              style={{
+                width: "100%",
+                alignItems: "center",
+                flexDirection: "row",
+                display: "flex",
+              }}
+            >
+              <IconContext.Provider value={{ color: "#EC2383", size: "50px" }}>
+                <BsFillArrowLeftSquareFill
+                  onClick={slideLeft}
+                  className="leftBtn"
+                ></BsFillArrowLeftSquareFill>
+
+                <Card front={card_datas[index]} />
+                <BsFillArrowRightSquareFill
+                  onClick={slideRight}
+                  className="rightBtn"
+                />
+              </IconContext.Provider>
+            </div>
+          </div>
+        </MobileView>
       </div>
     </div>
   );
