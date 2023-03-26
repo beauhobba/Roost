@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Card from "./modals/Card";
 import roost_chook from "../images/-1.png";
 import roost_vulture from "../images/-1_2.png";
@@ -16,17 +16,115 @@ import roost_bustard from "../images/10_2.png";
 import roost_turkey from "../images/10_3.png";
 import roost_back from "../images/roost-111.png";
 import roost_duck from "../images/2.png";
+import {isMobile} from 'react-device-detect';
 
 function About() {
+  const [renderType, setRenderType] = useState('row');
+
+
+useEffect(() => {
+  if (isMobile) {
+    setRenderType('column')
+  }
+}, []);
+
   return (
     <div className="about">
       <div class="container">
-        <div class="row align-items-center my-5">
+        <div
+          style={{
+            display: "flex",
+            flexDirection: renderType,
+            width: "100%",
+            justifyContent: "center",
+          }}
+        >
           <div class="col-lg-5">
-            <h1 class="font-weight-light"><b>How to Play</b></h1>
+            <h1 class="font-weight-light">
+              <b>Player Tutorial</b>
+            </h1>
+            <h5 class="font-weight-light">
+              <b><u>Turn Overview</u></b>
+            </h5>
             <p>
-              <i>This is an interactive tutorial</i>
+              <i></i>On your turn pick up a card from the
+              <ul>
+                <li>
+                  Unknown pile and then place it on top of an opponent’s face-up
+                  card <i>OR</i> place it directly onto the discard pile{" "}
+                  <i>OR</i> replace it with one of your own cards
+                </li>
+              </ul>
+              <b> OR </b>
+              <ul>
+                <li>
+                  Discard pile and then replace it with one of your own cards
+                  <i>(place this card face down)</i>.
+                </li>
+              </ul>
             </p>
+            <i>
+              <ul style={{ listStyleType: "circle" }}>
+                <li>
+                  You <b>must</b> put the replaced card onto the discard pile
+                  (you cannot put it on top of another player's card){" "}
+                </li>
+                <li>The replacement card cannot be flipped upwards. </li>
+                <li>
+                  When you place an Eagle, Peacock, Goose, Cassowary, Turkey,
+                  Pelican or Bustard onto the discard pile you perform the
+                  ability listed on the card.
+                </li>
+              </ul>
+            </i>
+            <br />
+            <h5 class="font-weight-light">
+              <b><u>Anytime</u></b>
+            </h5>
+            <p>
+              <ul style={{ listStyleType: "disc" }}>
+                <li>
+                  You can place <b>MATCHING</b> cards onto the top discard pile
+                  card <i>OR</i> other players' face-up cards.{" "}
+                </li>
+                <li>
+                  Only the player that played the original card gets the
+                  associated ability.
+                </li>
+                <li>If you play an incorrect card draw 2 cards. </li>
+                <li>
+                  If you play an incorrect card, you must wait until the next
+                  person's turn to be able to place any more cards on top of the
+                  discard pile.{" "}
+                </li>
+                <li>
+                  Call <b>Roost</b> when you think you have the lowest score. If
+                  you win the Roost, you get <b>-1</b> off your score. If you
+                  lose the Roost you get <b>double</b> the score.{" "}
+                </li>
+                <li>You automatically Roost if you have no cards.</li>
+              </ul>
+              <br />
+              <h5 class="font-weight-light">
+                <b><u>Rules</u></b>
+              </h5>
+              <ul>
+                <li>
+                  <b>Order is important.</b> Never move your cards into new
+                  positions. When switching cards, put each traded card in place
+                  of the previous card.
+                </li>
+                <li>
+                  The direction of play is determined by the <b>Direction</b>{" "}
+                  card. <i>Flamingo</i> is able to flip this direction.
+                </li>
+              </ul>
+            </p>
+          </div>
+          <div class="col-lg-5">
+            <h1 class="font-weight-light">
+              <b>Game Tutorial</b>
+            </h1>
             <p>
               Shuffle the deck.
               <br></br>
@@ -229,17 +327,32 @@ function About() {
                 </div>
               </div>
               <br></br>
-              When a player calls <b>Roost</b>, all other players get 1 more turn. A <b>Roost</b> is only finalised when a player has flipped all of their cards face-up. If the next clockwise player is able to pick up a new card before they have revealed all their cards you get an additional turn. If a player has called <b>Roost</b>, no other player can <b>Roost</b>. The player's cards are now locked and immune to any abilities (<i>except an additional <b>-1</b> with <b>Vulture</b></i>)
+              When a player calls <b>Roost</b>, all other players get 1 more
+              turn. A <b>Roost</b> is only finalised when a player has flipped
+              all of their cards face-up. If the next clockwise player is able
+              to pick up a new card before they have revealed all their cards
+              you get an additional turn. If a player has called <b>Roost</b>,
+              no other player can <b>Roost</b>. The player's cards are now
+              locked and immune to any abilities (
+              <i>
+                except an additional <b>-1</b> with <b>Vulture</b>
+              </i>
+              )<br></br>
+              <br></br>
+              The player with the lowest score for the round wins. If the player
+              who called <b>Roost</b> wins, their final score is reduced by 1.
+              If the player who called <b>Roost</b> loses or ties, their final
+              score is doubled.
+              <br></br>A player automatically <b>Roost</b>s if they have 0 cards
+              (and are the first player to have 0 cards)
+              <br></br>
+              If the deck runs out and no player has <b>Roost</b> the round ends
+              (with no player eligible for the 1 point reduction)
               <br></br>
               <br></br>
-              The player with the lowest score for the round wins. If the player who called <b>Roost</b> wins, their final score is reduced by 1. If the player who called <b>Roost</b> loses or ties, their final score is doubled.
-              <br></br>
-              A player automatically <b>Roost</b>s if they have 0 cards (and are the first player to have 0 cards)
-              <br></br>
-              If the deck runs out and no player has <b>Roost</b> the round ends (with no player eligible for the 1 point reduction)
-              <br></br>
-              <br></br>
-              The game continues, shuffling the deck with each new round. When a player reaches 100 points the game ends<i>**</i>. The player with the lowest score ends. 
+              The game continues, shuffling the deck with each new round. When a
+              player reaches 100 points the game ends<i>**</i>. The player with
+              the lowest score ends.
             </p>
           </div>
         </div>
