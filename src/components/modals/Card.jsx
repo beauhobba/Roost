@@ -1,9 +1,5 @@
 import React, { Text } from "react";
-import heinkein_arm from "../../images/robot_arms_heinkein.png";
 import CardTile from "../cards/CardTile";
-import { Modal } from "react-bootstrap";
-import ImageGallery from "react-image-gallery";
-import ReactPlayer from "react-player";
 import "react-image-gallery/styles/css/image-gallery.css";
 
 import roost_back from "../../images/roost-111.png";

@@ -79,7 +79,7 @@ function Skills() {
             </label>
             <br></br>
             <label>
-            Email<b>*</b>:
+            <b>*</b>Email:
             <br></br>
             <input type="text" value={email} onChange={handleChangeEmail}                   style={{
                     width: "100%",

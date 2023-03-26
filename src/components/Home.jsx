@@ -1,6 +1,5 @@
-import React, { Text } from "react";
+import React, { Text, useState } from "react";
 import coverphoto from "../images/coverphoto.png";
-import roost_back from "../images/roost-111.png";
 
 import roost_chook from "../images/-1.png";
 import roost_vulture from "../images/-1_2.png";
@@ -24,13 +23,39 @@ import roost_pelican from "../images/pelican.png";
 import roost_flamingo from "../images/flamingo.png";
 import roost_chicken from "../images/12.png";
 
-import CardTile from "./cards/CardTile";
 import "react-image-gallery/styles/css/image-gallery.css";
+import {
+  BsFillArrowLeftSquareFill,
+  BsFillArrowRightSquareFill,
+} from "react-icons/bs";
+import {IconContext} from "react-icons"
 
 import Card from "./modals/Card";
 import { Link } from "react-router-dom";
 
+
+export const card_datas = [
+  roost_chook, roost_vulture,roost_penguin, roost_crow, roost_duck, roost_galah, roost_pigeon, roost_woodpecker, roost_bluejay, roost_kingfisher, roost_eagle, roost_peacock, roost_turkey, roost_goose, roost_cassowary, roost_bustard, roost_stork, roost_pelican, roost_flamingo, roost_chicken
+]
+
 function Home() {
+
+  const [index, setIndex] = useState(0)
+
+  const slideLeft = () => {
+    if(index-1 < 0){
+      return
+    }
+    setIndex(index - 1);
+  };
+  
+  const slideRight = () => {
+    if(index+1 > card_datas.length-1){
+      return
+    }
+    setIndex(index + 1);
+  };
+
   return (
     <div>
       <div
@@ -86,75 +111,28 @@ function Home() {
           style={{
             display: "flex",
             flexDirection: "column",
+            width: "100%",
+            alignItems: "center"
           }}
         >
-          <div class="row">
-            <Card front={roost_chook} />
-            <Card front={roost_vulture} />
-            <Card front={roost_penguin} />
-            <Card front={roost_crow} />
+          <div class="row" style={{width: "35%", alignItems: 'center'}}>
+          <IconContext.Provider
+      value={{ color: '#EC2383', size: '50px' }}
+    >
+          <BsFillArrowLeftSquareFill 
+    onClick={slideLeft}
+    className="leftBtn"></BsFillArrowLeftSquareFill>
+
+            <Card front={card_datas[index]} />
+            <BsFillArrowRightSquareFill 
+     onClick={slideRight}
+     className="rightBtn"
+        />
+              </IconContext.Provider>
+            
           </div>
         </div>
 
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            paddingTop: "20px",
-          }}
-        >
-          <div class="row">
-            <Card front={roost_duck} />
-            <Card front={roost_galah} />
-            <Card front={roost_pigeon} />
-            <Card front={roost_woodpecker} />
-          </div>
-        </div>
-
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            paddingTop: "20px",
-          }}
-        >
-          <div class="row">
-            <Card front={roost_bluejay} />
-            <Card front={roost_kingfisher} />
-            <Card front={roost_eagle} />
-            <Card front={roost_peacock} />
-          </div>
-        </div>
-
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            paddingTop: "20px",
-          }}
-        >
-          <div class="row">
-            <Card front={roost_turkey} />
-            <Card front={roost_goose} />
-            <Card front={roost_cassowary} />
-            <Card front={roost_bustard} />
-          </div>
-        </div>
-
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            paddingTop: "20px",
-          }}
-        >
-          <div class="row">
-            <Card front={roost_stork} />
-            <Card front={roost_pelican} />
-            <Card front={roost_flamingo} />
-            <Card front={roost_chicken} />
-          </div>
-        </div>
       </div>
     </div>
   );
