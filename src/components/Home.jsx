@@ -104,7 +104,7 @@ function Home() {
                 <li>Ages 14+</li>
                 <li>Replayability <font color={'#cfb82d'}>★★★★★</font></li>
                 <li>
-                  <i>Expansion: <b>Spurs and Birds</b> coming in the future </i>
+                  <i>Expansion: <b>Spurs and more Birds</b> coming in the future </i>
                 </li>
               </ul>
               <Link to="/purchase">

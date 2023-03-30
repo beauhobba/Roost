@@ -1,9 +1,6 @@
 import React from "react";
 import {
   AiTwotoneMail,
-  AiFillLinkedin,
-  AiFillPhone,
-  AiFillGithub,
   AiFillInstagram,
   AiFillYoutube,
   AiFillShopping,
@@ -13,8 +10,6 @@ import {
   FaTiktok
 } from "react-icons/fa";
 import coverphoto from "../images/coverphoto.png";
-import { AiFillContainer } from "react-icons/ai";
-
 function Contact() {
   return (
     <div className="contact"   style={{paddingBottom: 100}}>
