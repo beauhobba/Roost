@@ -39,7 +39,15 @@ function About() {
             justifyContent: "center",
           }}
         >
-          <div class="col-lg-5">
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              width: "100%",
+              alignItems: "left",
+              paddingTop: 20,
+            }}
+          >
             <h1 class="font-weight-light">
               <b>Player Tutorial</b>
             </h1>
@@ -48,29 +56,27 @@ function About() {
                 <u>Turn Overview</u>
               </b>
             </h5>
-            <p>
-              <i></i>On your turn pick up a card from the
-              <ul>
-                <li>
-                  <a style={{ backgroundColor: "#eb88b7" }}>
-                    <b>Unknown pile</b>
-                  </a>{" "}
-                  and then place it on top of an opponent’s face-up card{" "}
-                  <i>OR</i> place it directly onto the discard pile <i>OR</i>{" "}
-                  replace it with one of your own cards
-                </li>
-              </ul>
+            <i></i>On your turn pick up a card from the
+            <ul>
+              <li>
+                <a style={{ backgroundColor: "#eb88b7" }}>
+                  <b>Unknown pile</b>
+                </a>{" "}
+                and then place it on top of an opponent’s face-up card <i>OR</i>{" "}
+                place it directly onto the discard pile <i>OR</i> replace it
+                with one of your own cards
+              </li>
+
               <b> OR </b>
-              <ul>
-                <li>
-                  <a style={{ backgroundColor: "#eb88b7" }}>
-                    <b>Discard pile</b>
-                  </a>{" "}
-                  and then replace it with one of your own cards
-                  <i>(place this card face down)</i>.
-                </li>
-              </ul>
-            </p>
+
+              <li>
+                <a style={{ backgroundColor: "#eb88b7" }}>
+                  <b>Discard pile</b>
+                </a>{" "}
+                and then replace it with one of your own cards
+                <i>(place this card face down)</i>.
+              </li>
+            </ul>
             <i>
               <ul style={{ listStyleType: "circle" }}>
                 <li>
@@ -136,28 +142,65 @@ function About() {
                 </li>
               </ul>
             </p>
+            <h1 class="font-weight-light">
+              <b>2 Player Variation</b>
+            </h1>
+            Remove the following cards from the decks
+            <ul>
+              <li>Flamingo (x1) </li>
+              <li>Woodpecker (x4) </li>
+              <li>Stork (x4) </li>
+              <li>Goose (x4) </li>
+              <li>Seagull (x4) </li>
+            </ul>
+            <h5 class="font-weight-light">
+              <b>
+                <u>Game Start</u>
+              </b>
+            </h5>
+            Players start with 6 cards instead of 4.
+            <h5 class="font-weight-light">
+              <b>
+                <u>Card Changes</u>
+              </b>
+            </h5>
+            When Pelican’s ability is used, place the Pelican card and the
+            discarded card at the BOTTOM of the discard pile.
+            <h5 class="font-weight-light">
+              <b>
+                <u>Game End</u>
+              </b>
+            </h5>
+            The game ends when any player reaches 40 or more points. The player
+            with the lowest score wins.
           </div>
-          <div class="col-lg-5">
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              width: "100%",
+              alignItems: "left",
+              paddingTop: 20,
+            }}
+          >
             <h1 class="font-weight-light">
               <b>Game Tutorial</b>
             </h1>
-            <p style={{ fontSize: 13 }}>
-              <ul style={{ listStyleType: "square" }}>
+            <ul style={{ listStyleType: "square" }}>
+              <li>
+                This is an interactive rule guide. You can hover over cards
+                which the example player can see/has memorised.
                 <li>
-                  This is an interactive rule guide. You can hover over cards
-                  which the example player can see/has memorised.
-                  <li>
-                    If you are on a mobile device, you can click on these images
-                    instead.
-                  </li>
+                  If you are on a mobile device, you can click on these images
+                  instead.
                 </li>
-                <li>
-                  Memory infers a card that the example player remembers. In the
-                  actual game you cannot re-check a card without a special
-                  ability card.{" "}
-                </li>
-              </ul>
-            </p>
+              </li>
+              <li>
+                Memory infers a card that the example player remembers. In the
+                actual game you cannot re-check a card without a special ability
+                card.{" "}
+              </li>
+            </ul>
             <h5 class="font-weight-light">
               <b>
                 <u>Setup</u>
