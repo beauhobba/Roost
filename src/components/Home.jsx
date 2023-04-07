@@ -1,6 +1,9 @@
 import React, { Text, useState } from "react";
 import coverphoto from "../images/coverphoto.png";
 
+import { fadeOutLeft, fadeOutRight } from "react-animations";
+import Radium, { StyleRoot } from "radium";
+
 import roost_chook from "../images/-1.png";
 import roost_vulture from "../images/vulture.png";
 import roost_penguin from "../images/0.png";
@@ -57,15 +60,43 @@ export const card_datas = [
   roost_chicken,
 ];
 
+const styles = {
+  regular: {},
+
+  animation_left: {
+    animation: "x .3s",
+    animationName: Radium.keyframes(fadeOutLeft, "fadeOutLeft"),
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "row",
+    display: "flex",
+  },
+  animation_right: {
+    animation: "x  .3s",
+    animationName: Radium.keyframes(fadeOutRight, "fadeOutRight"),
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "row",
+    display: "flex",
+  },
+};
+
 function Home() {
   const [index, setIndex] = useState(0);
+  const [show_left, setShowLeft] = useState(styles.regular);
+  const [show_right, setShowRight] = useState(styles.regular);
+
 
   const slideLeft = () => {
     if (index - 1 < 0) {
       return;
     }
-
+    setShowLeft(styles.animation_left);
     setIndex(index - 1);
+
+    setTimeout(() => {
+      setShowLeft(styles.regular);
+    }, 100);
   };
 
   const slideRight = () => {
@@ -78,7 +109,12 @@ function Home() {
         return;
       }
     }
+    setShowRight(styles.animation_right);
     setIndex(index + 1);
+
+    setTimeout(() => {
+      setShowRight(styles.regular);
+    }, 100);
   };
 
   return (
@@ -127,7 +163,8 @@ function Home() {
                 </li>
                 <li>
                   <i>
-                    Expansion: <b>Spurs and more Birds</b> coming in the future{" "}
+                    Expansion: <b>Parliament, Gangs and Murder</b> coming in the
+                    future{" "}
                   </i>
                 </li>
               </ul>
@@ -170,16 +207,34 @@ function Home() {
                 display: "flex",
               }}
             >
-              <IconContext.Provider value={{ color: "#EC2383", size: "50px" }}>
+              <IconContext.Provider value={{ color: "#EC2383", size: "150px" }}>
                 <BsFillArrowLeftSquareFill
                   onClick={slideLeft}
                   className="leftBtn"
                 ></BsFillArrowLeftSquareFill>
 
-                <Card front={card_datas[index]} />
-                <Card front={card_datas[index + 1]} />
-                <Card front={card_datas[index + 2]} />
-                <Card front={card_datas[index + 3]} />
+                <StyleRoot
+                  style={{
+                    alignItems: "center",
+                    flexDirection: "row",
+                    display: "flex",
+                  }}
+                >
+                  <div style={show_right}>
+                    <Card front={card_datas[index]} />
+                  </div>
+
+                  <div style={{ display: "flex" }}>
+                  <Card front={card_datas[index + 1]} />
+                  <Card front={card_datas[index + 2]} />
+                  </div>
+
+                  <div style={show_left}>
+                    <Card front={card_datas[index+3]} />
+                  </div>
+                  
+                </StyleRoot>
+
                 <BsFillArrowRightSquareFill
                   onClick={slideRight}
                   className="rightBtn"
