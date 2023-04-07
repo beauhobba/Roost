@@ -1,4 +1,4 @@
-import React, { Text, useState } from "react";
+import React, { Text, useState, useEffect } from "react";
 import coverphoto from "../images/coverphoto.png";
 
 import { fadeOutLeft, fadeOutRight } from "react-animations";
@@ -40,12 +40,15 @@ import { Link } from "react-router-dom";
 export const card_datas = [
   roost_chook,
   roost_vulture,
+  roost_flamingo,
   roost_penguin,
+  roost_pelican,
   roost_crow,
   roost_duck,
   roost_galah,
   roost_pigeon,
   roost_woodpecker,
+  roost_stork,
   roost_bluejay,
   roost_kingfisher,
   roost_eagle,
@@ -54,9 +57,6 @@ export const card_datas = [
   roost_goose,
   roost_cassowary,
   roost_bustard,
-  roost_stork,
-  roost_pelican,
-  roost_flamingo,
   roost_chicken,
 ];
 
@@ -85,17 +85,28 @@ function Home() {
   const [index, setIndex] = useState(0);
   const [show_left, setShowLeft] = useState(styles.regular);
   const [show_right, setShowRight] = useState(styles.regular);
+  const [showmobile, setShowMobile] = useState(styles.regular);
+  const [buttonFontSize, setButtonFontSize] = useState(20);
+  const [textContSize, setTextContSize] = useState('50%');
 
+  useEffect(() => {
+    if (isMobile) {
+      setButtonFontSize(14);
+      setTextContSize('100%');
+    }
+  }, []);
 
   const slideLeft = () => {
     if (index - 1 < 0) {
       return;
     }
     setShowLeft(styles.animation_left);
+    setShowMobile(styles.animation_left);
     setIndex(index - 1);
 
     setTimeout(() => {
       setShowLeft(styles.regular);
+      setShowMobile(styles.regular);
     }, 100);
   };
 
@@ -110,10 +121,12 @@ function Home() {
       }
     }
     setShowRight(styles.animation_right);
+    setShowMobile(styles.animation_right);
     setIndex(index + 1);
 
     setTimeout(() => {
       setShowRight(styles.regular);
+      setShowMobile(styles.regular);
     }, 100);
   };
 
@@ -145,7 +158,7 @@ function Home() {
             style={{
               display: "flex",
               flexDirection: "column",
-              width: "50%",
+              width: textContSize,
               alignItems: "center",
               paddingTop: 20,
             }}
@@ -173,7 +186,7 @@ function Home() {
                   style={{
                     color: "white",
                     backgroundColor: "#EC2383",
-                    fontSize: 20,
+                    fontSize: buttonFontSize,
                     height: 40,
                     width: "100%",
                     border: "none",
@@ -225,14 +238,13 @@ function Home() {
                   </div>
 
                   <div style={{ display: "flex" }}>
-                  <Card front={card_datas[index + 1]} />
-                  <Card front={card_datas[index + 2]} />
+                    <Card front={card_datas[index + 1]} />
+                    <Card front={card_datas[index + 2]} />
                   </div>
 
                   <div style={show_left}>
-                    <Card front={card_datas[index+3]} />
+                    <Card front={card_datas[index + 3]} />
                   </div>
-                  
                 </StyleRoot>
 
                 <BsFillArrowRightSquareFill
@@ -264,13 +276,23 @@ function Home() {
                 display: "flex",
               }}
             >
-              <IconContext.Provider value={{ color: "#EC2383", size: "50px" }}>
+              <IconContext.Provider value={{ color: "#EC2383", size: "100px" }}>
                 <BsFillArrowLeftSquareFill
                   onClick={slideLeft}
                   className="leftBtn"
                 ></BsFillArrowLeftSquareFill>
 
-                <Card front={card_datas[index]} />
+                <StyleRoot
+                  style={{
+                    alignItems: "center",
+                    flexDirection: "row",
+                    display: "flex",
+                  }}
+                >
+                  <div style={showmobile}>
+                    <Card front={card_datas[index]} />
+                  </div>
+                </StyleRoot>
                 <BsFillArrowRightSquareFill
                   onClick={slideRight}
                   className="rightBtn"
