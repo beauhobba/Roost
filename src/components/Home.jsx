@@ -22,7 +22,7 @@ import roost_stork from "../images/stork.png";
 import roost_pelican from "../images/pelican.png";
 import roost_flamingo from "../images/flamingo.png";
 import roost_chicken from "../images/seagull.png";
-import { BrowserView, MobileView } from "react-device-detect";
+import { BrowserView, MobileView, isMobile } from "react-device-detect";
 
 import "react-image-gallery/styles/css/image-gallery.css";
 import {
@@ -64,12 +64,19 @@ function Home() {
     if (index - 1 < 0) {
       return;
     }
+
     setIndex(index - 1);
   };
 
   const slideRight = () => {
-    if (index + 1 > card_datas.length - 1) {
-      return;
+    if (isMobile) {
+      if (index + 1 > card_datas.length - 1) {
+        return;
+      }
+    } else {
+      if (index + 4 > card_datas.length - 1) {
+        return;
+      }
     }
     setIndex(index + 1);
   };
@@ -88,7 +95,7 @@ function Home() {
             flexDirection: "column",
             width: "100%",
             alignItems: "center",
-            paddingTop: 20
+            paddingTop: 20,
           }}
         >
           <div class="col-lg-7">
@@ -98,17 +105,19 @@ function Home() {
               alt=""
             />
           </div>
-          <div  style ={{
-            display: "flex",
-            flexDirection: "column",
-            width: "50%",
-            alignItems: "center",
-            paddingTop: 20,
-          }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              width: "50%",
+              alignItems: "center",
+              paddingTop: 20,
+            }}
+          >
             <p>
-              Roost is a card game about strategy, memorisation, alliances and most
-              importantly birds. Avoid being bottom of the pecking order, stay
-              aligned with the flock and fly away to overall victory.
+              Roost is a card game about strategy, memorisation, alliances and
+              most importantly birds. Avoid being bottom of the pecking order,
+              stay aligned with the flock and fly away to overall victory.
               <ul>
                 <li>2-5 players</li>
                 <li>10-30 minutes playtime</li>
@@ -155,7 +164,7 @@ function Home() {
 
             <div
               style={{
-                width: "35%",
+                width: "100%",
                 alignItems: "center",
                 flexDirection: "row",
                 display: "flex",
@@ -168,6 +177,9 @@ function Home() {
                 ></BsFillArrowLeftSquareFill>
 
                 <Card front={card_datas[index]} />
+                <Card front={card_datas[index + 1]} />
+                <Card front={card_datas[index + 2]} />
+                <Card front={card_datas[index + 3]} />
                 <BsFillArrowRightSquareFill
                   onClick={slideRight}
                   className="rightBtn"
