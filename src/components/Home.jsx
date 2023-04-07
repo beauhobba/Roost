@@ -2,14 +2,14 @@ import React, { Text, useState } from "react";
 import coverphoto from "../images/coverphoto.png";
 
 import roost_chook from "../images/-1.png";
-import roost_vulture from "../images/-1_2.png";
+import roost_vulture from "../images/vulture.png";
 import roost_penguin from "../images/0.png";
 import roost_duck from "../images/2.png";
 import roost_crow from "../images/1.png";
 import roost_galah from "../images/3.png";
 import roost_pigeon from "../images/4.png";
 import roost_woodpecker from "../images/5.png";
-import roost_bluejay from "../images/6.png";
+import roost_bluejay from "../images/blue-jay.png";
 import roost_kingfisher from "../images/7.png";
 import roost_eagle from "../images/8.png";
 import roost_peacock from "../images/9.png";
@@ -21,7 +21,7 @@ import roost_turkey from "../images/turkey.png";
 import roost_stork from "../images/stork.png";
 import roost_pelican from "../images/pelican.png";
 import roost_flamingo from "../images/flamingo.png";
-import roost_chicken from "../images/12.png";
+import roost_chicken from "../images/seagull.png";
 import { BrowserView, MobileView } from "react-device-detect";
 
 import "react-image-gallery/styles/css/image-gallery.css";
@@ -82,7 +82,15 @@ function Home() {
           paddingBottom: 100,
         }}
       >
-        <div class="row align-items-center my-5">
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            width: "100%",
+            alignItems: "center",
+            paddingTop: 20
+          }}
+        >
           <div class="col-lg-7">
             <img
               class="img-fluid rounded mb-4 mb-lg-0"
@@ -90,21 +98,28 @@ function Home() {
               alt=""
             />
           </div>
-          <div class="col-lg-5">
-            <h1 class="font-weight-light">
-              <b>Roost</b>
-            </h1>
+          <div  style ={{
+            display: "flex",
+            flexDirection: "column",
+            width: "50%",
+            alignItems: "center",
+            paddingTop: 20,
+          }}>
             <p>
-              a card game about strategy, memorisation, alliances and most
+              Roost is a card game about strategy, memorisation, alliances and most
               importantly birds. Avoid being bottom of the pecking order, stay
               aligned with the flock and fly away to overall victory.
               <ul>
                 <li>2-5 players</li>
                 <li>10-30 minutes playtime</li>
                 <li>Ages 14+</li>
-                <li>Replayability <font color={'#cfb82d'}>★★★★★</font></li>
                 <li>
-                  <i>Expansion: <b>Spurs and more Birds</b> coming in the future </i>
+                  Replayability <font color={"#cfb82d"}>★★★★★</font>
+                </li>
+                <li>
+                  <i>
+                    Expansion: <b>Spurs and more Birds</b> coming in the future{" "}
+                  </i>
                 </li>
               </ul>
               <Link to="/purchase">
