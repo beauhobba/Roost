@@ -88,11 +88,14 @@ function Home() {
   const [showmobile, setShowMobile] = useState(styles.regular);
   const [buttonFontSize, setButtonFontSize] = useState(20);
   const [textContSize, setTextContSize] = useState('50%');
+  const [logoSize, setLogoSize] = useState('40%');
+
 
   useEffect(() => {
     if (isMobile) {
       setButtonFontSize(14);
       setTextContSize('100%');
+      setLogoSize('80%');
     }
   }, []);
 
@@ -147,7 +150,12 @@ function Home() {
             paddingTop: 20,
           }}
         >
-          <div class="col-lg-7">
+          <div style={{
+            display: "flex",
+            flexDirection: "column",
+            width: logoSize,
+            alignItems: "center",
+          }}>
             <img
               class="img-fluid rounded mb-4 mb-lg-0"
               src={coverphoto}
