@@ -9,6 +9,7 @@ import {
   Home,
   About,
   Contact,
+  Supporters,
   Blog,
 } from "./components";
 import Skills from "./components/Skills";
@@ -27,6 +28,7 @@ ReactDOM.render(
       <Route path="/contact" element={<Contact />} />
       <Route path="/purchase" element={<Skills />}/>
       <Route path="/blog" element={<Blog />}/>
+      <Route path="/supporters" element={<Supporters />}/>
 
     </Routes>
     <Footer />

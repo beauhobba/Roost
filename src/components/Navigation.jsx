@@ -54,6 +54,11 @@ function Navigation() {
                 </NavLink>
               </li>
 
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/supporters">
+                  Supporters
+                </NavLink>
+              </li>
 
             </ul>
           </div>

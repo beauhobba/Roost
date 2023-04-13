@@ -87,7 +87,7 @@ function Home() {
   const [show_right, setShowRight] = useState(styles.regular);
   const [showmobile, setShowMobile] = useState(styles.regular);
   const [buttonFontSize, setButtonFontSize] = useState(20);
-  const [textContSize, setTextContSize] = useState('50%');
+  const [textContSize, setTextContSize] = useState('100%');
   const [logoSize, setLogoSize] = useState('40%');
 
 
