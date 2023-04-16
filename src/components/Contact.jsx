@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Text, useState, useEffect } from "react";
 import {
   AiTwotoneMail,
   AiFillInstagram,
@@ -9,21 +9,48 @@ import {
 import {
   FaTiktok
 } from "react-icons/fa";
-import coverphoto from "../images/coverphoto.png";
+import environmentgif from "../images/Comp-2.gif"
+import { BrowserView, MobileView, isMobile } from "react-device-detect";
+
+
 function Contact() {
+  const [logoSize, setLogoSize] = useState('40%');
+  useEffect(() => {
+    if (isMobile) {
+      setLogoSize('100%');
+    }
+  }, []);
+
+
   return (
     <div className="contact"   style={{paddingBottom: 100}}>
       <div class="container">
         <div class="row align-items-center my-5">
-          <div class="col-lg-7">
+          <div style={{
+            display: "flex",
+            flexDirection: "column",
+            width: logoSize,
+            alignItems: "center",
+          }}>
             <img
               class="img-fluid rounded mb-4 mb-lg-0"
-              src={coverphoto}
+              src={environmentgif}
               alt=""
             />
           </div>
           <div class="col-lg-5">
-            <h1 class="font-weight-light"><b>Contact</b></h1>
+          <h1 class="font-weight-light"><b>Our Commitments</b></h1>
+          <p>
+                The Roost team will be donating <b>$1*</b> from every game purchase to supporting bird conservation. 
+                Being an Australia based company this money will be used to aid local wildlife. <br></br>
+                We hope that we can spread awareness of the factors impacting our avian friends and help ensure that we continue to see these species in the wild 
+                <br></br>
+                <br></br>
+                *<i>Our kickstarter goals will be aimed at increasing this contribution</i>
+            </p>
+            <br></br>
+
+            <h1 class="font-weight-light"><b>About</b></h1>
             <p>
               <i>
                 Contact our team using the following email. Follow our social media and

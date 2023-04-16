@@ -33,7 +33,7 @@ function Navigation() {
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/about">
-                  How to Play
+                  Play
                 </NavLink>
               </li>
               <li className="nav-item">
@@ -56,7 +56,7 @@ function Navigation() {
 
               <li className="nav-item">
                 <NavLink className="nav-link" to="/supporters">
-                  Supporters
+                  Patrons
                 </NavLink>
               </li>
 

@@ -1,8 +1,11 @@
-import React from "react";
+import React, { Text, useState, useEffect } from "react";
 import about_photo from "../images/coverphoto.png";
+import box from "../images/box.gif";
+import { BrowserView, MobileView, isMobile } from "react-device-detect";
 import {Amplify, API } from 'aws-amplify'
 
 const myAPI = "mailchimp"
+
 
 
 function Skills() {
@@ -10,6 +13,13 @@ function Skills() {
   const [lastName, setLastName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [error, setError] = React.useState("");
+  const [logoSize, setLogoSize] = useState('40%');
+  useEffect(() => {
+    if (isMobile) {
+      setLogoSize('100%');
+    }
+  }, []);
+
 
   //Function to fetch from our backend and update customers array
   function addEmail(e) {
@@ -44,6 +54,7 @@ function Skills() {
   }
 
   return (
+    
     <div
       className="about"
       style={{
@@ -52,10 +63,15 @@ function Skills() {
     >
       <div class="container">
         <div class="row align-items-center my-5">
-          <div class="col-lg-7">
+        <div style={{
+            display: "flex",
+            flexDirection: "column",
+            width: logoSize,
+            alignItems: "center",
+          }}>
             <img
               class="img-fluid rounded mb-4 mb-lg-0"
-              src={about_photo}
+              src={box}
               alt=""
             />
           </div>
