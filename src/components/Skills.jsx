@@ -13,10 +13,12 @@ function Skills() {
   const [lastName, setLastName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [error, setError] = React.useState("");
-  const [logoSize, setLogoSize] = useState('40%');
+  const [logoSize, setLogoSize] = useState('50%');
+  const [shapeSize, setShapeSize] = useState('50%');
   useEffect(() => {
     if (isMobile) {
-      setLogoSize('100%');
+      setLogoSize('60%');
+      setShapeSize('100%')
     }
   }, []);
 
@@ -66,13 +68,14 @@ function Skills() {
         <div style={{
             display: "flex",
             flexDirection: "column",
-            width: logoSize,
+            width: shapeSize,
             alignItems: "center",
           }}>
             <img
               class="img-fluid rounded mb-4 mb-lg-0"
               src={box}
               alt=""
+              style={{ alignSelf: 'center', width: logoSize }}
             />
           </div>
           <div class="col-lg-5">

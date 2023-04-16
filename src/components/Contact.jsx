@@ -39,11 +39,11 @@ function Contact() {
             />
           </div>
           <div class="col-lg-5">
-          <h1 class="font-weight-light"><b>Our Commitments</b></h1>
+          <h1 class="font-weight-light"><b>Our Commitment</b></h1>
           <p>
-                The Roost team will be donating <b>$1*</b> from every game purchase to supporting bird conservation. 
+                The Roost team will be donating <b>$1*</b> from every game purchase to support bird conservation. 
                 Being an Australia based company this money will be used to aid local wildlife. <br></br>
-                We hope that we can spread awareness of the factors impacting our avian friends and help ensure that we continue to see these species in the wild 
+                We hope that we can spread awareness of factors impacting our avian friends and help ensure we continue to see winged species in the wild 
                 <br></br>
                 <br></br>
                 *<i>Our kickstarter goals will be aimed at increasing this contribution</i>
