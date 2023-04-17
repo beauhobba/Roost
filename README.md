@@ -1,3 +1,10 @@
+
+## Roost Website
+This is the source code used to develop the Roost website<br />
+Developed and Designed by Beau Hobba
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
