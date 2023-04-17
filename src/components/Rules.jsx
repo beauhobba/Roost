@@ -13,7 +13,7 @@ import roost_back from "../images/roost-111.png";
 import roost_duck from "../images/2.png";
 import { isMobile } from "react-device-detect";
 
-function About() {
+function Rules() {
   const [renderType, setRenderType] = useState("row");
   const [cardTextSize, setCardTextSize] = useState(16);
   const [cardTextMidSize, setCardTextMidSize] = useState(20);
@@ -29,7 +29,7 @@ function About() {
   }, []);
 
   return (
-    <div className="about" style={{ paddingBottom: 100 }}>
+    <div className="rules" style={{ paddingBottom: 100 }}>
       <div class="container">
         <div
           style={{
@@ -496,4 +496,4 @@ function About() {
   );
 }
 
-export default About;
+export default Rules;

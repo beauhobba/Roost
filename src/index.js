@@ -7,12 +7,12 @@ import {
   Navigation,
   Footer,
   Home,
-  About,
+  Rules,
   Contact,
   Supporters,
   Blog,
 } from "./components";
-import Skills from "./components/Skills";
+import Purchase from "./components/Purchase";
 import {Amplify} from "aws-amplify";
 import awsExports from "./aws-exports";
 Amplify.configure(awsExports);
@@ -24,9 +24,9 @@ ReactDOM.render(
     <Navigation />
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
+      <Route path="/rules" element={<Rules />} />
       <Route path="/contact" element={<Contact />} />
-      <Route path="/purchase" element={<Skills />}/>
+      <Route path="/purchase" element={<Purchase />}/>
       <Route path="/blog" element={<Blog />}/>
       <Route path="/supporters" element={<Supporters />}/>
 

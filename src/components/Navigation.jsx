@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import coverphoto from "../images/roost_banner.png";
-import {BrowserView, MobileView} from 'react-device-detect';
+import {BrowserView} from 'react-device-detect';
 
 function Navigation() {
   return (
@@ -32,7 +32,7 @@ function Navigation() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/about">
+                <NavLink className="nav-link" to="/rules">
                   Play
                 </NavLink>
               </li>
