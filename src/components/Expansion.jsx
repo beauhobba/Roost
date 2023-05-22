@@ -29,24 +29,11 @@ function Expansion() {
   const [shapeSize, setShapeSize] = useState("50%");
   useEffect(() => {
     if (isMobile) {
-      setLogoSize("60%");
+      setLogoSize("100%");
       setShapeSize("100%");
     }
   }, []);
 
-
-
-  function handleChangeEmail(event) {
-    setEmail(event.target.value);
-  }
-
-  function handleChangeFirstName(event) {
-    setFirstName(event.target.value);
-  }
-
-  function handleChangeLastName(event) {
-    setLastName(event.target.value);
-  }
 
   return (
     <div
@@ -57,15 +44,6 @@ function Expansion() {
     >
       <div class="container">
         <div class="row align-items-center my-5">
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              width: shapeSize,
-              alignItems: "center",
-            }}
-          >
-          </div>
           <div class="col-lg-5">
             <h1 class="font-weight-light">
               <b>Expansion</b>
@@ -76,7 +54,7 @@ function Expansion() {
             <div style={{                   alignItems: "center",
                     flexDirection: "row",
                     display: "flex",
-                    width: '75%'}}>
+                    width: '100%'}}>
 
             <Card front={roost_chicken} />
             <Card front={roost_booby} />
@@ -86,7 +64,7 @@ function Expansion() {
             <div style={{                   alignItems: "center",
                     flexDirection: "row",
                     display: "flex",
-                    width: '75%'}}>
+                    width: '100%'}}>
 
             <Card front={roost_crow} back={roost_exp} />
             <Card front={roost_stork_ability} back={roost_exp}  />
@@ -98,7 +76,7 @@ function Expansion() {
             <div style={{                   alignItems: "center",
                     flexDirection: "row",
                     display: "flex",
-                    width: '75%'}}>
+                    width: '100%'}}>
 
             <Card front={roost_sticks} back={roost_resource} />
             <Card front={roost_caterpillar} back={roost_resource}  />
