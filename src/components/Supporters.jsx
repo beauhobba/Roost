@@ -93,7 +93,7 @@ function Supporters() {
 
             <ul>
               <li>Steven Gonzalez</li>
-              <li>Jarrod Reynolds</li>
+              <li>Jarod Reynolds</li>
               <li>Alex Liang</li>
               <li>Zac Hobba</li>
             </ul>
