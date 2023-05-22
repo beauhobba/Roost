@@ -41,8 +41,8 @@ function Contact() {
           <div class="col-lg-5">
           <h1 class="font-weight-light"><b>Our Commitment</b></h1>
           <p>
-                The Roost team will be donating <b>$1*</b> from every game purchase to support bird conservation. 
-                Being an Australia based company this money will be used to aid local wildlife. <br></br>
+                The Roost team will be using a percentage from every game purchase to support bird conservation. 
+                Being an Australia based company this money will be used to aid local wildlife by building bird boxes. <br></br>
                 We hope that we can spread awareness of factors impacting our avian friends and help ensure we continue to see winged species in the wild 
                 <br></br>
                 <br></br>

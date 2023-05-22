@@ -5,3 +5,4 @@ export { default as Rules } from "./Rules";
 export { default as Contact } from "./Contact";
 export { default as Blog } from "./Blog";
 export { default as Supporters } from "./Supporters";
+export { default as Expansion } from "./Expansion";

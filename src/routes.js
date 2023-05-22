@@ -8,6 +8,6 @@ export default (
   <Route path="/contact" />
   <Route path="/purchase" />
   <Route path="/blog" />
-
+  <Route path="/expansion" />
 </Route>
 );

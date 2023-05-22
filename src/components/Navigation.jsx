@@ -1,7 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import coverphoto from "../images/roost_banner.png";
-import {BrowserView} from 'react-device-detect';
+import {BrowserView, MobileView} from 'react-device-detect';
+import { FaHome, FaMoneyBillWave, FaPhoneAlt, FaKiwiBird, FaBlogger, FaPeopleCarry } from "react-icons/fa";
+import { FaGamepad } from "react-icons/fa";
 
 function Navigation() {
   return (
@@ -10,8 +12,9 @@ function Navigation() {
       backgroundColor: '#EC2383',
     }}>
       
-        <div className="container">
+
         <BrowserView>
+        <div className="container" style={{alignItems: 'center', display: "flex", width: '100%', alignContent: 'center'}}>
           <NavLink className="navbar-brand" to="/">
             <div>
             <img
@@ -22,7 +25,7 @@ function Navigation() {
             />
             </div>
           </NavLink>
-          </BrowserView>
+
           <div>
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
@@ -47,6 +50,12 @@ function Navigation() {
                   Contact
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/expansion">
+                  Expansion
+                </NavLink>
+              </li>
+
 
               <li className="nav-item">
                 <NavLink className="nav-link" to="/blog">
@@ -62,7 +71,62 @@ function Navigation() {
 
             </ul>
           </div>
-        </div>
+          </div>
+          </BrowserView>
+          <MobileView>
+          <div className="container" style={{alignContent: 'center', display: "flex", width: '100%'}}>
+          <div >
+            <ul className="navbar-nav ml-auto">
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/">
+                <FaHome style={{width: 30}}/>
+                  <span className="sr-only">(current)</span>
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/rules">
+                  <FaGamepad style={{width: 30}}/>
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/purchase">
+                  <FaMoneyBillWave style={{width: 30}}/>
+                </NavLink>
+              </li>
+
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/contact">
+                  <FaPhoneAlt style={{width: 30}}/>
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/expansion">
+                  <FaKiwiBird style={{width: 30}}/>
+                </NavLink>
+              </li>
+
+
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/blog">
+                  <FaBlogger style={{width: 30}}/>
+                </NavLink>
+              </li>
+
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/supporters">
+                  <FaPeopleCarry style={{width: 30}}/>
+                </NavLink>
+              </li>
+
+            </ul>
+          </div>
+          </div>
+
+          </MobileView>
+
+
+
+
       </nav>
     </div>
   );

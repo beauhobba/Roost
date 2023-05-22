@@ -7,6 +7,9 @@ import {
   CardImgOverlay,
 } from "react-bootstrap-card";
 
+
+
+
 const CardTile = (props) => {
   const [show, setShow] = React.useState(false);
   const [opacity, setOpacity] = React.useState(0.15);
@@ -24,7 +27,7 @@ const CardTile = (props) => {
       
       <CardBlock>
         {show ? (
-          <CardImg src={props.photo} alt="" />
+          <CardImg src={props.photo} alt=""/>
         ) : (
           <CardImg src={props.back_photo} alt="" />
         )}
