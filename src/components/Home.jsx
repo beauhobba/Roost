@@ -1,15 +1,18 @@
-import React, { Text, useState } from "react";
+import React, { Text, useState, useEffect } from "react";
 import coverphoto from "../images/coverphoto.png";
 
+import { fadeOutLeft, fadeOutRight } from "react-animations";
+import Radium, { StyleRoot } from "radium";
+
 import roost_chook from "../images/-1.png";
-import roost_vulture from "../images/-1_2.png";
+import roost_vulture from "../images/vulture.png";
 import roost_penguin from "../images/0.png";
 import roost_duck from "../images/2.png";
 import roost_crow from "../images/1.png";
 import roost_galah from "../images/3.png";
 import roost_pigeon from "../images/4.png";
 import roost_woodpecker from "../images/5.png";
-import roost_bluejay from "../images/6.png";
+import roost_bluejay from "../images/blue-jay.png";
 import roost_kingfisher from "../images/7.png";
 import roost_eagle from "../images/8.png";
 import roost_peacock from "../images/9.png";
@@ -21,8 +24,8 @@ import roost_turkey from "../images/turkey.png";
 import roost_stork from "../images/stork.png";
 import roost_pelican from "../images/pelican.png";
 import roost_flamingo from "../images/flamingo.png";
-import roost_chicken from "../images/12.png";
-import { BrowserView, MobileView } from "react-device-detect";
+import roost_chicken from "../images/seagull.png";
+import { BrowserView, MobileView, isMobile } from "react-device-detect";
 
 import "react-image-gallery/styles/css/image-gallery.css";
 import {
@@ -37,12 +40,15 @@ import { Link } from "react-router-dom";
 export const card_datas = [
   roost_chook,
   roost_vulture,
+  roost_flamingo,
   roost_penguin,
+  roost_pelican,
   roost_crow,
   roost_duck,
   roost_galah,
   roost_pigeon,
   roost_woodpecker,
+  roost_stork,
   roost_bluejay,
   roost_kingfisher,
   roost_eagle,
@@ -51,27 +57,80 @@ export const card_datas = [
   roost_goose,
   roost_cassowary,
   roost_bustard,
-  roost_stork,
-  roost_pelican,
-  roost_flamingo,
   roost_chicken,
 ];
 
+const styles = {
+  regular: {},
+
+  animation_left: {
+    animation: "x .3s",
+    animationName: Radium.keyframes(fadeOutLeft, "fadeOutLeft"),
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "row",
+    display: "flex",
+  },
+  animation_right: {
+    animation: "x  .3s",
+    animationName: Radium.keyframes(fadeOutRight, "fadeOutRight"),
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "row",
+    display: "flex",
+  },
+};
+
 function Home() {
   const [index, setIndex] = useState(0);
+  const [show_left, setShowLeft] = useState(styles.regular);
+  const [show_right, setShowRight] = useState(styles.regular);
+  const [showmobile, setShowMobile] = useState(styles.regular);
+  const [buttonFontSize, setButtonFontSize] = useState(20);
+  const [textContSize, setTextContSize] = useState('100%');
+  const [logoSize, setLogoSize] = useState('40%');
+
+
+  useEffect(() => {
+    if (isMobile) {
+      setButtonFontSize(14);
+      setTextContSize('100%');
+      setLogoSize('80%');
+    }
+  }, []);
 
   const slideLeft = () => {
     if (index - 1 < 0) {
       return;
     }
+    setShowLeft(styles.animation_left);
+    setShowMobile(styles.animation_left);
     setIndex(index - 1);
+
+    setTimeout(() => {
+      setShowLeft(styles.regular);
+      setShowMobile(styles.regular);
+    }, 100);
   };
 
   const slideRight = () => {
-    if (index + 1 > card_datas.length - 1) {
-      return;
+    if (isMobile) {
+      if (index + 1 > card_datas.length - 1) {
+        return;
+      }
+    } else {
+      if (index + 4 > card_datas.length - 1) {
+        return;
+      }
     }
+    setShowRight(styles.animation_right);
+    setShowMobile(styles.animation_right);
     setIndex(index + 1);
+
+    setTimeout(() => {
+      setShowRight(styles.regular);
+      setShowMobile(styles.regular);
+    }, 100);
   };
 
   return (
@@ -82,29 +141,52 @@ function Home() {
           paddingBottom: 100,
         }}
       >
-        <div class="row align-items-center my-5">
-          <div class="col-lg-7">
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            width: "100%",
+            alignItems: "center",
+            paddingTop: 20,
+          }}
+        >
+          <div style={{
+            display: "flex",
+            flexDirection: "column",
+            width: logoSize,
+            alignItems: "center",
+          }}>
             <img
               class="img-fluid rounded mb-4 mb-lg-0"
               src={coverphoto}
               alt=""
             />
           </div>
-          <div class="col-lg-5">
-            <h1 class="font-weight-light">
-              <b>Roost</b>
-            </h1>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              width: textContSize,
+              alignItems: "center",
+              paddingTop: 20,
+            }}
+          >
             <p>
-              a card game about strategy, memorisation, alliances and most
-              importantly birds. Avoid being bottom of the pecking order, stay
-              aligned with the flock and fly away to overall victory.
+              Roost is a card game about strategy, memorisation, alliances and
+              most importantly birds. Avoid being bottom of the pecking order,
+              stay aligned with the flock and fly away to overall victory.
               <ul>
                 <li>2-5 players</li>
                 <li>10-30 minutes playtime</li>
                 <li>Ages 14+</li>
-                <li>Replayability <font color={'#cfb82d'}>★★★★★</font></li>
                 <li>
-                  <i>Expansion: <b>Spurs and Birds</b> coming in the future </i>
+                  Replayability <font color={"#cfb82d"}>★★★★★</font>
+                </li>
+                <li>
+                  <i>
+                    Expansion: <b>Parliament, Gangs and Murder</b> coming in the
+                    future{" "}
+                  </i>
                 </li>
               </ul>
               <Link to="/purchase">
@@ -112,7 +194,7 @@ function Home() {
                   style={{
                     color: "white",
                     backgroundColor: "#EC2383",
-                    fontSize: 20,
+                    fontSize: buttonFontSize,
                     height: 40,
                     width: "100%",
                     border: "none",
@@ -140,19 +222,39 @@ function Home() {
 
             <div
               style={{
-                width: "35%",
+                width: "100%",
                 alignItems: "center",
                 flexDirection: "row",
                 display: "flex",
               }}
             >
-              <IconContext.Provider value={{ color: "#EC2383", size: "50px" }}>
+              <IconContext.Provider value={{ color: "#EC2383", size: "150px" }}>
                 <BsFillArrowLeftSquareFill
                   onClick={slideLeft}
                   className="leftBtn"
                 ></BsFillArrowLeftSquareFill>
 
-                <Card front={card_datas[index]} />
+                <StyleRoot
+                  style={{
+                    alignItems: "center",
+                    flexDirection: "row",
+                    display: "flex",
+                  }}
+                >
+                  <div style={show_right}>
+                    <Card front={card_datas[index]} />
+                  </div>
+
+                  <div style={{ display: "flex" }}>
+                    <Card front={card_datas[index + 1]} />
+                    <Card front={card_datas[index + 2]} />
+                  </div>
+
+                  <div style={show_left}>
+                    <Card front={card_datas[index + 3]} />
+                  </div>
+                </StyleRoot>
+
                 <BsFillArrowRightSquareFill
                   onClick={slideRight}
                   className="rightBtn"
@@ -182,13 +284,23 @@ function Home() {
                 display: "flex",
               }}
             >
-              <IconContext.Provider value={{ color: "#EC2383", size: "50px" }}>
+              <IconContext.Provider value={{ color: "#EC2383", size: "100px" }}>
                 <BsFillArrowLeftSquareFill
                   onClick={slideLeft}
                   className="leftBtn"
                 ></BsFillArrowLeftSquareFill>
 
-                <Card front={card_datas[index]} />
+                <StyleRoot
+                  style={{
+                    alignItems: "center",
+                    flexDirection: "row",
+                    display: "flex",
+                  }}
+                >
+                  <div style={showmobile}>
+                    <Card front={card_datas[index]} />
+                  </div>
+                </StyleRoot>
                 <BsFillArrowRightSquareFill
                   onClick={slideRight}
                   className="rightBtn"

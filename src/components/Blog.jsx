@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import coverphoto from "../images/coverphoto.png";
 import { API, graphqlOperation } from "aws-amplify";
-import { listTodos } from "../graphql/queries";
 import BlogCard from "./blog_cards/BlogCard";
 
 const postQuery = `

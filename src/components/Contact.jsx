@@ -1,9 +1,6 @@
-import React from "react";
+import React, { Text, useState, useEffect } from "react";
 import {
   AiTwotoneMail,
-  AiFillLinkedin,
-  AiFillPhone,
-  AiFillGithub,
   AiFillInstagram,
   AiFillYoutube,
   AiFillShopping,
@@ -12,23 +9,48 @@ import {
 import {
   FaTiktok
 } from "react-icons/fa";
-import coverphoto from "../images/coverphoto.png";
-import { AiFillContainer } from "react-icons/ai";
+import environmentgif from "../images/Comp-2.gif"
+import { BrowserView, MobileView, isMobile } from "react-device-detect";
+
 
 function Contact() {
+  const [logoSize, setLogoSize] = useState('40%');
+  useEffect(() => {
+    if (isMobile) {
+      setLogoSize('100%');
+    }
+  }, []);
+
+
   return (
     <div className="contact"   style={{paddingBottom: 100}}>
       <div class="container">
         <div class="row align-items-center my-5">
-          <div class="col-lg-7">
+          <div style={{
+            display: "flex",
+            flexDirection: "column",
+            width: logoSize,
+            alignItems: "center",
+          }}>
             <img
               class="img-fluid rounded mb-4 mb-lg-0"
-              src={coverphoto}
+              src={environmentgif}
               alt=""
             />
           </div>
           <div class="col-lg-5">
-            <h1 class="font-weight-light"><b>Contact</b></h1>
+          <h1 class="font-weight-light"><b>Our Commitment</b></h1>
+          <p>
+                The Roost team will be using a percentage from every game purchase to support bird conservation. 
+                Being an Australia based company this money will be used to aid local wildlife by building bird boxes. <br></br>
+                We hope that we can spread awareness of factors impacting our avian friends and help ensure we continue to see winged species in the wild 
+                <br></br>
+                <br></br>
+                *<i>Our kickstarter goals will be aimed at increasing this contribution</i>
+            </p>
+            <br></br>
+
+            <h1 class="font-weight-light"><b>About</b></h1>
             <p>
               <i>
                 Contact our team using the following email. Follow our social media and
