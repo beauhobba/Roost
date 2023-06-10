@@ -9,5 +9,6 @@ export default (
   <Route path="/purchase" />
   <Route path="/blog" />
   <Route path="/expansion" />
+  <Route path="/supports" />
 </Route>
 );
