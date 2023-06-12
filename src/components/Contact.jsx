@@ -13,7 +13,7 @@ import birdbox from "../images/birdbox.png";
 
 function Contact() {
   const [logoSize, setLogoSize] = useState("40%");
-  const [imgSize, setimgSize] = useState("15%");
+  const [imgSize, setimgSize] = useState("25%");
 
   useEffect(() => {
     if (isMobile) {
