@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { API, graphqlOperation } from "aws-amplify";
 import BlogCard from "./blog_cards/BlogCard";
-
+import { Helmet } from "react-helmet";
 const postQuery = `
   query MyQuery {
     listTodos {
@@ -40,6 +40,13 @@ function Blog() {
 
   return (
     <div className="blog" style={{ paddingBottom: 100 }}>
+      <Helmet>
+        <title>Blog - roostgame.com</title>
+        <meta
+          name="description"
+          content="The home of all Roost related updates"
+        />
+      </Helmet>
       <div class="container">
         <h1
           class="font-weight-light"

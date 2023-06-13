@@ -26,6 +26,7 @@ import roost_pelican from "../images/pelican.png";
 import roost_flamingo from "../images/flamingo.png";
 import roost_chicken from "../images/seagull.png";
 import { BrowserView, MobileView, isMobile } from "react-device-detect";
+import { Helmet } from "react-helmet";
 
 import "react-image-gallery/styles/css/image-gallery.css";
 import {
@@ -87,15 +88,14 @@ function Home() {
   const [show_right, setShowRight] = useState(styles.regular);
   const [showmobile, setShowMobile] = useState(styles.regular);
   const [buttonFontSize, setButtonFontSize] = useState(20);
-  const [textContSize, setTextContSize] = useState('100%');
-  const [logoSize, setLogoSize] = useState('40%');
-
+  const [textContSize, setTextContSize] = useState("100%");
+  const [logoSize, setLogoSize] = useState("40%");
 
   useEffect(() => {
     if (isMobile) {
       setButtonFontSize(14);
-      setTextContSize('100%');
-      setLogoSize('80%');
+      setTextContSize("100%");
+      setLogoSize("80%");
     }
   }, []);
 
@@ -135,6 +135,13 @@ function Home() {
 
   return (
     <div>
+      <Helmet>
+        <title>Home - roostgame.com</title>
+        <meta
+          name="description"
+          content="Roost is a 2 to 5 player card game about strategy, memorisation, alliances and most importantly birds. It has a 30 minutes to 1 hour playtime and features beautiful cards with some cool birds."
+        />
+      </Helmet>
       <div
         class="container"
         style={{
@@ -150,12 +157,14 @@ function Home() {
             paddingTop: 20,
           }}
         >
-          <div style={{
-            display: "flex",
-            flexDirection: "column",
-            width: logoSize,
-            alignItems: "center",
-          }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              width: logoSize,
+              alignItems: "center",
+            }}
+          >
             <img
               class="img-fluid rounded mb-4 mb-lg-0"
               src={coverphoto}

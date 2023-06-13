@@ -15,10 +15,9 @@ import roost_resource from "../images/expansion/Asset 1resource_back.png";
 import roost_caterpillar from "../images/expansion/Asset 2caterpillar.png";
 import roost_grapes from "../images/expansion/Asset 3grapes.png";
 import roost_sticks from "../images/expansion/Asset 5sticks.png";
-
+import { Helmet } from "react-helmet";
 
 import Card from "./modals/Card";
-
 
 function Expansion() {
   const [firstName, setFirstName] = React.useState("");
@@ -34,7 +33,6 @@ function Expansion() {
     }
   }, []);
 
-
   return (
     <div
       className="about"
@@ -42,6 +40,13 @@ function Expansion() {
         paddingBottom: 100,
       }}
     >
+      <Helmet>
+        <title>Expansion - roostgame.com</title>
+        <meta
+          name="description"
+          content="All details on the upcoming Roost expansion: Parliament, Gangs and Murder"
+        />
+      </Helmet>
       <div class="container">
         <div class="row align-items-center my-5">
           <div class="col-lg-5">
@@ -49,38 +54,52 @@ function Expansion() {
               <b>Expansion</b>
             </h1>
             <p>The expansion includes</p>
-            <p><b>12 New Unique Cards and Abilities</b></p>
+            <p>
+              <b>12 New Unique Cards and Abilities</b>
+            </p>
 
-            <div style={{                   alignItems: "center",
-                    flexDirection: "row",
-                    display: "flex",
-                    width: '100%'}}>
-
-            <Card front={roost_chicken} />
-            <Card front={roost_booby} />
-            <Card front={roost_stork} />
+            <div
+              style={{
+                alignItems: "center",
+                flexDirection: "row",
+                display: "flex",
+                width: "100%",
+              }}
+            >
+              <Card front={roost_chicken} />
+              <Card front={roost_booby} />
+              <Card front={roost_stork} />
             </div>
-            <p><b>50 Epic Battle Cards</b></p>
-            <div style={{                   alignItems: "center",
-                    flexDirection: "row",
-                    display: "flex",
-                    width: '100%'}}>
-
-            <Card front={roost_crow} back={roost_exp} />
-            <Card front={roost_stork_ability} back={roost_exp}  />
-            <Card front={roost_budgie} back={roost_exp}  />
+            <p>
+              <b>50 Epic Battle Cards</b>
+            </p>
+            <div
+              style={{
+                alignItems: "center",
+                flexDirection: "row",
+                display: "flex",
+                width: "100%",
+              }}
+            >
+              <Card front={roost_crow} back={roost_exp} />
+              <Card front={roost_stork_ability} back={roost_exp} />
+              <Card front={roost_budgie} back={roost_exp} />
             </div>
 
-
-            <p><b>Resource Cards</b></p>
-            <div style={{                   alignItems: "center",
-                    flexDirection: "row",
-                    display: "flex",
-                    width: '100%'}}>
-
-            <Card front={roost_sticks} back={roost_resource} />
-            <Card front={roost_caterpillar} back={roost_resource}  />
-            <Card front={roost_grapes} back={roost_resource}  />
+            <p>
+              <b>Resource Cards</b>
+            </p>
+            <div
+              style={{
+                alignItems: "center",
+                flexDirection: "row",
+                display: "flex",
+                width: "100%",
+              }}
+            >
+              <Card front={roost_sticks} back={roost_resource} />
+              <Card front={roost_caterpillar} back={roost_resource} />
+              <Card front={roost_grapes} back={roost_resource} />
             </div>
           </div>
         </div>

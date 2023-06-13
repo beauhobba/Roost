@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import box from "../images/box.gif";
 import { isMobile } from "react-device-detect";
 import { API } from "aws-amplify";
-
+import { Helmet } from "react-helmet";
 const myAPI = "mailchimp";
 
 function Purchase() {
@@ -55,6 +55,13 @@ function Purchase() {
         paddingBottom: 100,
       }}
     >
+      <Helmet>
+        <title>Purchase - roostgame.com</title>
+        <meta
+          name="description"
+          content="Subscribe to the Kickstarter launch"
+        />
+      </Helmet>
       <div class="container">
         <div class="row align-items-center my-5">
           <div

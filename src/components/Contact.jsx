@@ -10,6 +10,7 @@ import { FaTiktok } from "react-icons/fa";
 import environmentgif from "../images/Comp-2.gif";
 import { isMobile } from "react-device-detect";
 import birdbox from "../images/birdbox.png";
+import { Helmet } from "react-helmet";
 
 function Contact() {
   const [logoSize, setLogoSize] = useState("40%");
@@ -24,6 +25,14 @@ function Contact() {
 
   return (
     <div className="contact" style={{ paddingBottom: 100 }}>
+      <Helmet>
+        <title>Contact - roostgame.com</title>
+        <meta
+          name="description"
+          content="Contact our team using the following links"
+        />
+      </Helmet>
+
       <div class="container">
         <div class="row align-items-center my-5">
           <div

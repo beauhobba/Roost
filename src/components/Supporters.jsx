@@ -3,6 +3,7 @@ import { isMobile } from "react-device-detect";
 import { FaGamepad } from "react-icons/fa";
 import { GiDirectorChair, GiCardRandom } from "react-icons/gi";
 import { BiTestTube, BiFirstPage } from "react-icons/bi";
+import { Helmet } from "react-helmet";
 
 import coverphoto from "../images/card_flip.gif";
 
@@ -19,6 +20,14 @@ function Supporters() {
 
   return (
     <div className="contact" style={{ paddingBottom: 100 }}>
+      <Helmet>
+        <title>Supporters - roostgame.com</title>
+        <meta
+          name="description"
+          content="All supporters of the Roost Kickstarter Launch"
+        />
+      </Helmet>
+
       <div class="container">
         <div class="row align-items-center my-5">
           <div
