@@ -97,7 +97,7 @@ function Supporters() {
             <h2 class="font-weight-light">Initial Playtesters</h2>
             <p>
               These people helped test the rules and crease out any broken game
-              mechnics <BiTestTube />
+              mechanics <BiTestTube />
             </p>
 
             <ul>

@@ -52,6 +52,7 @@ function Expansion() {
           <div class="col-lg-5">
             <h1 class="font-weight-light">
               <b>Expansion</b>
+              <i style={{fontSize: 10}}>  (Coming Late 2023)</i>
             </h1>
             <p>The expansion includes</p>
             <p>

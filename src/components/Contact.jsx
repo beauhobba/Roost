@@ -72,11 +72,6 @@ function Contact() {
               >
                 <img src={birdbox} style={{ width: imgSize }}></img>
               </div>
-              <br></br>*
-              <i>
-                Our kickstarter goals will be aimed at increasing this
-                contribution
-              </i>
             </p>
             <br></br>
 
