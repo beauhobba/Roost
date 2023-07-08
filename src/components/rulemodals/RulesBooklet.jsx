@@ -56,7 +56,7 @@ export const rules = [
 ];
 
 function RulesBooklet() {
-  const [imgSize, setImgSize] = useState("30%");
+  const [imgSize, setImgSize] = useState("40%");
   const [index, setIndex] = useState(0);
 
   const slideLeft = () => {
