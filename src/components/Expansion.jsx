@@ -52,8 +52,17 @@ function Expansion() {
           <div class="col-lg-5">
             <h1 class="font-weight-light">
               <b>Expansion</b>
-              <i style={{fontSize: 10}}>  (Coming Late 2023)</i>
+              <i style={{ fontSize: 10 }}> (Coming Late 2023/Early 2024)</i>
             </h1>
+
+            <p>
+              While the base game is designed to be fast-paced and accessible,
+              the expansion takes the gameplay to a new level by introducing
+              additional cards and mechanics that enhance the strategic and
+              teamwork depth of the game.
+              <br />
+            </p>
+
             <p>The expansion includes</p>
             <p>
               <b>12 New Unique Cards and Abilities</b>
