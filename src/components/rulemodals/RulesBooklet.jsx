@@ -21,7 +21,6 @@ import page_19 from "../../images/rules/page_19.png";
 import page_20 from "../../images/rules/page_20.png";
 import page_21 from "../../images/rules/page_21.png";
 import page_22 from "../../images/rules/page_22.png";
-import page_23 from "../../images/rules/page_23.png";
 import page_24 from "../../images/rules/page_24.png";
 import { isMobile } from "react-device-detect";
 import {
@@ -53,7 +52,6 @@ export const rules = [
   page_20,
   page_21,
   page_22,
-  page_23,
   page_24,
 ];
 
@@ -68,7 +66,7 @@ function RulesBooklet() {
     setIndex(index - 2);
   };
   const slideRight = () => {
-    if (index + 1 > 23) {
+    if (index + 1 > 22) {
       return;
     }
     setIndex(index + 2);
@@ -125,7 +123,7 @@ function RulesBooklet() {
             justifyContent: "center",
           }}
         >
-          {index == 0 || index == 23 ? (
+          {index == 0 || index == 22 ? (
             <img style={{ width: imgSize }} src={rules[index]}></img>
           ) : (
             <>
