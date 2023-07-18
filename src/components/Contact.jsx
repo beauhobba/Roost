@@ -74,6 +74,13 @@ function Contact() {
               </div>
             </p>
             <br></br>
+            <p>
+              Being a paper based game, we are aware that our game directly impacts a primary environment of birds (trees). <br/>
+              It is estimated that one tree roughly produces around 11500 standard playing card decks. As Roost is larger,
+              features a game box and a rule book, we estimate that one tree roughly produces <b>6000</b> games of Roost. <br/><br/>
+              Promoting being net positive, we will plant a tree with every <b>2000</b> games of Roost sold. The coordinates of each tree will be featured on this website.
+
+            </p>
 
             <h1 class="font-weight-light">
               <b>About</b>

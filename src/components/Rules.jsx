@@ -106,7 +106,6 @@ function Rules() {
                   <img style={{ width: "100%" }} src={birds_classification_1}></img>
                 ) : (
                   <>
-                  null
                     {/* <PlayerTutorial />
                     <TwoPlayer /> */}
                   </>
