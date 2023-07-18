@@ -106,8 +106,9 @@ function Rules() {
                   <img style={{ width: "100%" }} src={birds_classification_1}></img>
                 ) : (
                   <>
-                    <PlayerTutorial />
-                    <TwoPlayer />
+                  null
+                    {/* <PlayerTutorial />
+                    <TwoPlayer /> */}
                   </>
                 )}
               </div><div
@@ -122,7 +123,8 @@ function Rules() {
                   {showImgs ? (
                     <img style={{ width: "100%" }} src={birds_classification_2}></img>
                   ) : (
-                    <GameTutorial></GameTutorial>
+                    null
+                    // <GameTutorial></GameTutorial>
                   )}
                 </div></>
             )}
