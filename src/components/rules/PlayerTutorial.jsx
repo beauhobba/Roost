@@ -1,17 +1,5 @@
-import React, { useState, useEffect } from "react";
-import Card from "../modals/Card";
-import roost_chook from "../../images/-1.png";
-import roost_vulture from "../../images/-1_2.png";
-import roost_penguin from "../../images/0.png";
-import roost_eagle from "../../images/8.png";
-import roost_peacock from "../../images/9.png";
-import roost_goose from "../../images/10.png";
-import roost_cassowary from "../../images/10.png_3.png";
-import roost_bustard from "../../images/10_2.png";
-import roost_turkey from "../../images/10_3.png";
-import roost_back from "../../images/roost-111.png";
-import roost_duck from "../../images/2.png";
-import { isMobile } from "react-device-detect";
+import React from "react";
+
 
 function PlayerTutorial() {
   return (

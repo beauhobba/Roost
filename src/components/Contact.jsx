@@ -95,19 +95,19 @@ function Contact() {
               <AiTwotoneMail /> roostgame@gmail.com
               <br></br>
               <AiFillInstagram />{" "}
-              <a href="https://www.instagram.com/roostgame/">Instagram</a>
+              <a href="https://www.instagram.com/roostgame/"  target="_blank">Instagram</a>
               <br></br>
               <AiFillYoutube />{" "}
-              <a href="https://www.youtube.com/@Roostgame">Youtube</a>
+              <a href="https://www.youtube.com/@Roostgame" target="_blank">Youtube</a>
               <br></br>
               <FaTiktok />{" "}
-              <a href="https://www.youtube.com/@Roostgame">TikTok</a>
+              <a href="https://www.tiktok.com/@roostgame?_t=8e8xO22xcvQ&_r=1" target="_blank">TikTok</a>
               <br></br>
               <AiFillTwitterCircle />{" "}
-              <a href="https://twitter.com/RoostCardGame">Twitter</a>
+              <a href="https://twitter.com/RoostCardGame" target="_blank">Twitter</a>
               <br></br>
               <AiFillShopping />{" "}
-              <a href="https://www.instagram.com/roostgame/">
+              <a href="https://www.instagram.com/roostgame/" target="_blank">
                 Kickstarter (coming soon)
               </a>
             </p>

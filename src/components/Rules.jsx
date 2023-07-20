@@ -72,10 +72,10 @@ function Rules() {
         style={{ padding: 10, display: "flex", justifyContent: "space-evenly" }}
       >
         <button style={button_style} onClick={handleClick}>
-          Show Classification Cards
+          The Birds
         </button>
         <button style={button_style_rules} onClick={handleClickRules}>
-          Show Rules Booklet
+          Rules Booklet
         </button>
       </div>
 
