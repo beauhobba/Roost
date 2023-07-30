@@ -10,6 +10,8 @@ import { FaTiktok } from "react-icons/fa";
 import environmentgif from "../images/Comp-2.gif";
 import { isMobile } from "react-device-detect";
 import birdbox from "../images/birdbox.png";
+import easset from "../images/environment_asset1.png";
+import easset2 from "../images/environment_asset2.png";
 import { Helmet } from "react-helmet";
 
 function Contact() {
@@ -34,22 +36,11 @@ function Contact() {
       </Helmet>
 
       <div class="container">
-        <div class="row align-items-center my-5">
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              width: logoSize,
-              alignItems: "center",
-            }}
-          >
-            <img
-              class="img-fluid rounded mb-4 mb-lg-0"
-              src={environmentgif}
-              alt=""
-            />
-          </div>
-          <div class="col-lg-5">
+        <div class="row align-items-top my-5">
+
+          
+
+        <div class="col-lg-5">
             <h1 class="font-weight-light">
               <b>Our Commitment</b>
             </h1>
@@ -76,12 +67,26 @@ function Contact() {
             <br></br>
             <p>
               Being a paper based game, we are aware that our game directly impacts a primary environment of birds (trees). <br/>
-              It is estimated that one tree roughly produces around 11500 standard playing card decks. As Roost is larger,
-              features a game box and a rule book, we estimate that one tree roughly produces <b>6000</b> games of Roost. <br/><br/>
-              Promoting being net positive, we will plant a tree with every <b>2000</b> games of Roost sold. The coordinates of each tree will be featured on this website.
-
+              It is estimated that one tree produces around <i>11500</i> standard playing card decks. Roost being larger than a
+              features a game box and a rule book;  estimate that one tree roughly produces <b>6000</b> games of Roost. <br/><br/>
+              Promoting being net positive, we will plant a tree with every <b>2000</b> games of Roost sold. The coordinates of each tree will be featured here.
+              <br/>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  padding: 10,
+                }}
+              >
+                <img src={easset} style={{ width: imgSize*1.2 }}></img>
+              </div>
             </p>
+          </div>
 
+
+
+          <div class="col-lg-5">
             <h1 class="font-weight-light">
               <b>About</b>
             </h1>

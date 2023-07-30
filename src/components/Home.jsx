@@ -82,6 +82,11 @@ function Home() {
                   Replayability <font color={"#cfb82d"}>★★★★★</font>
                 </li>
                 <li>
+                <i>
+                    Micro Expansion: <b>Feathers in the Game</b> kickstarter exclusive{" "}
+                  </i>
+                  </li>
+                  <li>
                   <i>
                     Expansion: <b>Parliament, Gangs and Murder</b> coming in the
                     future{" "}

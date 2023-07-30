@@ -10,9 +10,9 @@ function Rules() {
   const [renderType, setRenderType] = useState("row");
   const [buttonSize, setButtonSize] = useState("30%");
   const [showImgs, setShowImgs] = useState(false);
-  const [showRulesBooklet, setShowRulesBooklet] = useState(false);
+  const [showRulesBooklet, setShowRulesBooklet] = useState(true);
   const [buttonColour, setButtonColour] = useState("#9e607e");
-  const [buttonRulesColour, setRulesButtonColour] = useState("#9e607e");
+  const [buttonRulesColour, setRulesButtonColour] = useState("#EC2383");
 
   const button_style = {
     color: "white",
