@@ -15,13 +15,6 @@ import page_13 from "../../images/rules/page_13.png";
 import page_14 from "../../images/rules/page_14.png";
 import page_15 from "../../images/rules/page_15.png";
 import page_16 from "../../images/rules/page_16.png";
-import page_17 from "../../images/rules/page_17.png";
-import page_18 from "../../images/rules/page_18.png";
-import page_19 from "../../images/rules/page_19.png";
-import page_20 from "../../images/rules/page_20.png";
-import page_21 from "../../images/rules/page_21.png";
-import page_22 from "../../images/rules/page_22.png";
-import page_24 from "../../images/rules/page_24.png";
 import { isMobile } from "react-device-detect";
 import {
   BsFillArrowLeftSquareFill,
@@ -46,13 +39,6 @@ export const rules = [
   page_14,
   page_15,
   page_16,
-  page_17,
-  page_18,
-  page_19,
-  page_20,
-  page_21,
-  page_22,
-  page_24,
 ];
 
 function RulesBooklet() {

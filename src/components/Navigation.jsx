@@ -50,11 +50,11 @@ function Navigation() {
                   Contact
                 </NavLink>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <NavLink className="nav-link" to="/expansion">
                   Expansion
                 </NavLink>
-              </li>
+              </li> */}
 
 
               <li className="nav-item">
