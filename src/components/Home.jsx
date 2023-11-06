@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import coverphoto from "../images/coverphoto.png";
 import promo_1 from "../images/promos/promo_1.jpg";
 import promo_2 from "../images/promos/promo_2.jpg";
+import promo_12 from "../images/promos/promo_12.jpg";
 import { BrowserView, MobileView, isMobile } from "react-device-detect";
 import { Helmet } from "react-helmet";
 
@@ -37,7 +38,6 @@ function Home() {
         />
       </Helmet>
       <div
-        class="container"
         style={{
           paddingBottom: 100,
           flexDirection: "row",
@@ -48,29 +48,26 @@ function Home() {
             display: "flex",
             flexDirection: "row",
             width: "100%",
-
-            paddingBottom: 100,
           }}
         >
-          {~isMobile ? (
+          {isMobile ? null : (
             <div
               style={{
                 display: "flex",
                 flexDirection: "column",
                 width: sideImgSize,
                 alignItems: "center",
-                padding: 20,
               }}
             >
-              <div style={{ width: "75%" }}>
+              <div style={{ width: "100%" }}>
                 <img
                   class="img-fluid rounded mb-4 mb-lg-0"
-                  src={promo_2}
+                  src={promo_12}
                   alt=""
                 />
               </div>
             </div>
-          ) : null}
+          )}
 
           <div
             style={{
@@ -102,6 +99,8 @@ function Home() {
                 width: textContSize,
                 alignItems: "center",
                 paddingTop: 20,
+                paddingLeft: 20,
+                paddingRight: 20,
               }}
             >
               <p>
@@ -117,39 +116,35 @@ function Home() {
                   </li>
                   <li>
                     <i>
-                      Micro Expansion: <b>Feathers in the Game</b> kickstarter
-                      exclusive{" "}
+                      Micro Expansion: Feathers in the Game included with kickstarter version
                     </i>
                   </li>
-                  <li>
-                    <i>
-                      Expansion: <b>Parliament, Gangs and Murder</b> coming in
-                      the future{" "}
-                    </i>
-                  </li>
-                </ul>
-                <div style={{ display: "flex", justifyContent: "center" }}>
-                <Link to="/purchase">
-                  <button
-                    style={{
-                      color: "white",
-                      backgroundColor: "#EC2383",
 
-                      fontSize: buttonFontSize,
-                      height: 40,
-                      width: "100%",
-                      paddingLeft: 20,
-                      paddingRight: 20,
-                      border: "none",
-                    }}
-                  >
-                    Join the Waiting List
-                  </button>
-                </Link>
-                </div>
+                </ul>
               </p>
             </div>
           </div>
+        </div>
+        <div style={{backgroundColor: "#EC2383", height: "100px", alignItems: "center",  display: "flex", justifyContent: "center" }}>
+                  <Link to="/purchase">
+                    <button
+                      style={{
+                        color: "white",
+                        backgroundColor: "#EC2383",
+
+                        fontSize: buttonFontSize,
+                        height: 80,
+                        width: "100%",
+                        paddingLeft: 20,
+                        paddingRight: 20,
+                        border: "none",
+                      }}
+                    >
+                      Join the Waiting List
+                    </button>
+                  </Link>
+
+                  
         </div>
 
         <BrowserView>
@@ -159,11 +154,9 @@ function Home() {
               flexDirection: "column",
               width: "100%",
               alignItems: "center",
+              paddingTop: 20
             }}
           >
-            <p>
-              Here is a quick preview of the <b>Roost</b> cards
-            </p>
 
             <CardDisplay type={false} />
           </div>
@@ -177,9 +170,6 @@ function Home() {
               alignItems: "center",
             }}
           >
-            <p>
-              Here is a quick preview of the <b>Roost</b> cards
-            </p>
 
             <CardDisplay type={true} />
           </div>
