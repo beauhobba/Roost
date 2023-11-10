@@ -57,11 +57,11 @@ function Navigation() {
               </li> */}
 
 
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <NavLink className="nav-link" to="/blog">
                   Blog
                 </NavLink>
-              </li>
+              </li> */}
 
               <li className="nav-item">
                 <NavLink className="nav-link" to="/supporters">
@@ -75,6 +75,8 @@ function Navigation() {
           </BrowserView>
           <MobileView>
           <div className="container" style={{alignContent: 'center', display: "flex", width: '100%'}}>
+
+
           <div >
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
@@ -99,18 +101,18 @@ function Navigation() {
                   <FaPhoneAlt style={{width: 30}}/>
                 </NavLink>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <NavLink className="nav-link" to="/expansion">
                   <FaKiwiBird style={{width: 30}}/>
                 </NavLink>
-              </li>
+              </li> */}
 
-
+{/* 
               <li className="nav-item">
                 <NavLink className="nav-link" to="/blog">
                   <FaBlogger style={{width: 30}}/>
                 </NavLink>
-              </li>
+              </li> */}
 
               <li className="nav-item">
                 <NavLink className="nav-link" to="/supporters">

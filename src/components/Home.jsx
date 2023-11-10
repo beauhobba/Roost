@@ -3,6 +3,9 @@ import coverphoto from "../images/coverphoto.png";
 import promo_1 from "../images/promos/promo_1.jpg";
 import promo_2 from "../images/promos/promo_2.jpg";
 import promo_12 from "../images/promos/promo_12.jpg";
+
+
+
 import { BrowserView, MobileView, isMobile } from "react-device-detect";
 import { Helmet } from "react-helmet";
 
@@ -11,7 +14,13 @@ import "react-image-gallery/styles/css/image-gallery.css";
 import { Link } from "react-router-dom";
 
 import { CardDisplay } from "./display";
+
 import { FaBorderNone } from "react-icons/fa";
+import { useInView } from 'react-intersection-observer';
+import { Loading } from "./modals";
+
+
+
 
 function Home() {
   const [buttonFontSize, setButtonFontSize] = useState(20);
@@ -116,37 +125,77 @@ function Home() {
                   </li>
                   <li>
                     <i>
-                      Micro Expansion: Feathers in the Game included with kickstarter version
+                      Micro Expansion: Feathers in the Game included with
+                      kickstarter version
                     </i>
                   </li>
-
                 </ul>
               </p>
             </div>
           </div>
         </div>
-        <div style={{backgroundColor: "#EC2383", height: "100px", alignItems: "center",  display: "flex", justifyContent: "center" }}>
-                  <Link to="/purchase">
-                    <button
-                      style={{
-                        color: "white",
-                        backgroundColor: "#EC2383",
+        <div
+          style={{
+            backgroundColor: "#EC2383",
+            height: "100px",
+            alignItems: "center",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <Link to="/purchase">
+            <button
+              style={{
+                color: "white",
+                backgroundColor: "#EC2383",
 
-                        fontSize: buttonFontSize,
-                        height: 80,
-                        width: "100%",
-                        paddingLeft: 20,
-                        paddingRight: 20,
-                        border: "none",
-                      }}
-                    >
-                      Join the Waiting List
-                    </button>
-                  </Link>
-
-                  
+                fontSize: buttonFontSize,
+                height: 80,
+                width: "100%",
+                paddingLeft: 20,
+                paddingRight: 20,
+                border: "none",
+              }}
+            >
+              Join the Waiting List
+            </button>
+          </Link>
         </div>
 
+        {isMobile ? null : (
+          <>
+          <Loading />
+
+
+        <div
+          style={{
+            backgroundColor: "#EC2383",
+            height: "100px",
+            alignItems: "center",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <Link to="/purchase">
+            <button
+              style={{
+                color: "white",
+                backgroundColor: "#EC2383",
+
+                fontSize: buttonFontSize,
+                height: 80,
+                width: "100%",
+                paddingLeft: 20,
+                paddingRight: 20,
+                border: "none",
+              }}
+            >
+              Meet the Birds
+            </button>
+          </Link>
+        </div>
+        </>
+        )}
         <BrowserView>
           <div
             style={{
@@ -154,10 +203,9 @@ function Home() {
               flexDirection: "column",
               width: "100%",
               alignItems: "center",
-              paddingTop: 20
+              paddingTop: 20,
             }}
           >
-
             <CardDisplay type={false} />
           </div>
         </BrowserView>
@@ -170,10 +218,10 @@ function Home() {
               alignItems: "center",
             }}
           >
-
             <CardDisplay type={true} />
           </div>
         </MobileView>
+
       </div>
     </div>
   );

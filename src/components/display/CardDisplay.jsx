@@ -20,7 +20,7 @@ import roost_turkey from "../../images/10_3.png";
 import roost_stork from "../../images/stork.png";
 import roost_pelican from "../../images/pelican.png";
 import roost_flamingo from "../../images/flamingo.png";
-import roost_chicken from "../../images/seagull.png";
+import roost_chicken from "../../images/12.png";
 import { isMobile } from "react-device-detect";
 import { fadeOutLeft, fadeOutRight } from "react-animations";
 import Radium, { StyleRoot } from "radium";
