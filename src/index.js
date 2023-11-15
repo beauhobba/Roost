@@ -18,7 +18,11 @@ import {Amplify} from "aws-amplify";
 import awsExports from "./aws-exports";
 Amplify.configure(awsExports);
 
-
+// Import the Google Fonts link
+const googleFontsLink = document.createElement('link');
+googleFontsLink.rel = 'stylesheet';
+googleFontsLink.href = 'https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap';
+document.head.appendChild(googleFontsLink);
 
 ReactDOM.render(
   <Router>

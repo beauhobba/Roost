@@ -83,22 +83,26 @@ function Navigation() {
                 <NavLink className="nav-link" to="/">
                 <FaHome style={{width: 30}}/>
                   <span className="sr-only">(current)</span>
+                  Home
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/rules">
                   <FaGamepad style={{width: 30}}/>
+                  Rules
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/purchase">
                   <FaMoneyBillWave style={{width: 30}}/>
+                  Shop
                 </NavLink>
               </li>
 
               <li className="nav-item">
                 <NavLink className="nav-link" to="/contact">
                   <FaPhoneAlt style={{width: 30}}/>
+                  Contact
                 </NavLink>
               </li>
               {/* <li className="nav-item">
@@ -117,6 +121,7 @@ function Navigation() {
               <li className="nav-item">
                 <NavLink className="nav-link" to="/supporters">
                   <FaPeopleCarry style={{width: 30}}/>
+                  Patrons
                 </NavLink>
               </li>
 

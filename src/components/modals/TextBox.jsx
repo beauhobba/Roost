@@ -4,7 +4,7 @@ import { AiFillTwitterCircle, AiFillFacebook, AiFillInstagram } from "react-icon
 import { BsPatchQuestion} from "react-icons/bs";
 import {BiCrown} from "react-icons/bi";
 import {GiBirdCage} from "react-icons/gi";
-
+import {colours, font_families} from "../styles"
 
 const CustomIcon = ({ symbol, size }) => {
     let IconComponent;
@@ -59,9 +59,8 @@ const TextBox = (props) => {
 
 
     useEffect(() => {
-        console.log(' in here')
         if (props.active === true) {
-            setColourLarge("#EC2383");
+            setColourLarge(colours.roost_pink);
         }else{
             setColourLarge("#000000");  
         }
@@ -74,13 +73,13 @@ const TextBox = (props) => {
   return (
     <div>
       <div
-        style={{ display: "flex", flexDirection: "row", alignItems: "center" }}
+        style={{ display: "flex", flexDirection: "row", alignItems: "center", fontFamily: font_families.roost}}
       >
         <div style={{ paddingRight: 10 }}>
           <CircleWithIcon symbol={props.symbol}/>
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column" }}>
+        <div style={{ display: "flex", flexDirection: "column", fontFamily: 'Roboto' }}>
           <div>
             <p
               style={{

@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import coverphoto from "../images/coverphoto.png";
-import promo_1 from "../images/promos/promo_1.jpg";
-import promo_2 from "../images/promos/promo_2.jpg";
 import promo_12 from "../images/promos/promo_12.jpg";
 
 
@@ -14,11 +12,9 @@ import "react-image-gallery/styles/css/image-gallery.css";
 import { Link } from "react-router-dom";
 
 import { CardDisplay } from "./display";
-
-import { FaBorderNone } from "react-icons/fa";
-import { useInView } from 'react-intersection-observer';
 import { Loading } from "./modals";
-
+import {colours, font_families} from "./styles"
+import { FaFeather} from 'react-icons/fa'; // Import a bird icon from a popular icon library
 
 
 
@@ -37,6 +33,7 @@ function Home() {
     }
   }, []);
 
+
   return (
     <div>
       <Helmet>
@@ -50,6 +47,7 @@ function Home() {
         style={{
           paddingBottom: 100,
           flexDirection: "row",
+          fontFamily: font_families.roost,
         }}
       >
         <div
@@ -131,35 +129,60 @@ function Home() {
                   </li>
                 </ul>
               </p>
+              <Link to="/purchase">
+          <button
+      style={{
+        color: "#ffffff", // White text for visibility
+        backgroundColor: colours.roost_pink, // Blue background
+        fontSize: buttonFontSize,
+        height: 80,
+        width: "100%",
+        paddingLeft: 20,
+        paddingRight: 50,
+        marginBottom: 20,
+        border: "none",
+        borderRadius: 20,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        position: 'relative',
+        overflow: 'hidden',
+        transition: 'background 0.3s', // Smooth transition for the background
+        cursor: 'pointer', // Change cursor on hover
+
+        
+      }}
+      
+      onMouseOver={(e) => {
+        e.currentTarget.style.background = 'linear-gradient(45deg, #F87DB2 10%, #5AC5C9 80%)'
+        e.currentTarget.querySelector('.bird-icon').style.transform = 'translateX(230px)';
+      }}
+      onMouseOut={(e) => {
+        e.currentTarget.style.background = colours.roost_pink;
+        e.currentTarget.querySelector('.bird-icon').style.transform = 'translateX(0)';
+        
+      }}
+    >
+      <FaFeather  className="bird-icon" style={{ marginRight: 10, fontSize: '1.5em', transition: 'transform 0.3s' }} /> {/* Bird icon */}
+      Join the Waiting List
+    </button>
+
+          </Link>
+
+
             </div>
           </div>
         </div>
         <div
           style={{
-            backgroundColor: "#EC2383",
+            backgroundColor: colours.roost_pink,
             height: "100px",
             alignItems: "center",
             display: "flex",
             justifyContent: "center",
           }}
         >
-          <Link to="/purchase">
-            <button
-              style={{
-                color: "white",
-                backgroundColor: "#EC2383",
 
-                fontSize: buttonFontSize,
-                height: 80,
-                width: "100%",
-                paddingLeft: 20,
-                paddingRight: 20,
-                border: "none",
-              }}
-            >
-              Join the Waiting List
-            </button>
-          </Link>
         </div>
 
         {isMobile ? null : (
@@ -169,7 +192,7 @@ function Home() {
 
         <div
           style={{
-            backgroundColor: "#EC2383",
+            backgroundColor: colours.roost_pink,
             height: "100px",
             alignItems: "center",
             display: "flex",
@@ -180,7 +203,7 @@ function Home() {
             <button
               style={{
                 color: "white",
-                backgroundColor: "#EC2383",
+                backgroundColor: colours.roost_pink,
 
                 fontSize: buttonFontSize,
                 height: 80,

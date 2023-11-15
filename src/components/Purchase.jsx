@@ -12,10 +12,12 @@ function Purchase() {
   const [error, setError] = React.useState("");
   const [logoSize, setLogoSize] = useState("50%");
   const [shapeSize, setShapeSize] = useState("50%");
+  const [direction, setDirection] = useState("row");
   useEffect(() => {
     if (isMobile) {
-      setLogoSize("60%");
+      setLogoSize("70%");
       setShapeSize("100%");
+      setDirection("column");
     }
   }, []);
 
@@ -63,7 +65,13 @@ function Purchase() {
         />
       </Helmet>
       <div class="container">
-        <div class="row align-items-center my-5">
+        <div
+          style={{
+            display: "flex",
+            flexDirection: direction,
+            padding: 20,
+          }}
+        >
           <div
             style={{
               display: "flex",
@@ -79,13 +87,13 @@ function Purchase() {
               style={{ alignSelf: "center", width: logoSize }}
             />
           </div>
-          <div class="col-lg-5">
+          <div style={{alignItems: 'center', display: 'flex', flexDirection: 'column'}}>
             <h1 class="font-weight-light">
               <b>Pre-launch</b>
             </h1>
             <p>Subscribe below to be notified of the kickstarter launch:</p>
 
-            <label>
+            <label style={{marginBottom: 0}}>
               First Name:
               <br></br>
               <input
@@ -94,8 +102,7 @@ function Purchase() {
                 onChange={handleChangeFirstName}
               />
             </label>
-            <br></br>
-            <label>
+            <label style={{marginBottom: 0}}>
               Last Name:
               <br></br>
               <input
@@ -104,7 +111,6 @@ function Purchase() {
                 onChange={handleChangeLastName}
               />
             </label>
-            <br></br>
             <label>
               <b>*</b>Email:
               <br></br>

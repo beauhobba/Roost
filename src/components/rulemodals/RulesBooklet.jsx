@@ -52,7 +52,7 @@ function RulesBooklet() {
     setIndex(index - 2);
   };
   const slideRight = () => {
-    if (index + 1 > 22) {
+    if (index + 1 > rules.length-2) {
       return;
     }
     setIndex(index + 2);
