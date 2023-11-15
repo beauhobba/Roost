@@ -1,5 +1,7 @@
 import React, { Text, useState, useEffect } from "react";
 import { isMobile } from "react-device-detect";
+import { font_families } from "../styles";
+
 
 function AboutMe() {
   const [logoSize, setLogoSize] = useState("40%");
@@ -17,10 +19,11 @@ function AboutMe() {
       style={{
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
+        alignItems: "flex-start",
         width: "100%",
         paddingLeft: 10,
         paddingRight: 10,
+        fontFamily: font_families.roost,
 
       }}
     >

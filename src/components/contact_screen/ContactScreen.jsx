@@ -8,6 +8,7 @@ import {
   AiFillTwitterCircle,
 } from "react-icons/ai";
 import { FaTiktok } from "react-icons/fa";
+import { font_families } from "../styles";
 
 function ContactScreen() {
   const [logoSize, setLogoSize] = useState("40%");
@@ -25,10 +26,11 @@ function ContactScreen() {
       style={{
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
+        alignItems: "flex-start",
         width: "100%",
         paddingLeft: 10,
         paddingRight: 10,
+        fontFamily: font_families.roost,
       }}
     >
       <h1 class="font-weight-light">

@@ -1,6 +1,7 @@
 import React, { Text, useState, useEffect } from "react";
 import { isMobile } from "react-device-detect";
 import birdbox from "../../images/birdbox.jpg";
+import { font_families } from "../styles";
 
 function Commitment() {
   const [imgSize, setimgSize] = useState("25%");
@@ -16,10 +17,11 @@ function Commitment() {
       style={{
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
+        alignItems: "flex-start",
         width: "100%",
         paddingLeft: 10,
         paddingRight: 10,
+        fontFamily: font_families.roost,
       }}
     >
       <h1 class="font-weight-light">

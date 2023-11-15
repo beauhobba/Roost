@@ -74,33 +74,33 @@ function Navigation() {
           </div>
           </BrowserView>
           <MobileView>
-          <div className="container" style={{alignContent: 'center', display: "flex", width: '100%'}}>
+          <div className="container" style={{alignContent: 'center', display: "flex", width: '100%', justifyContent: 'space-evenly'}}>
 
 
-          <div >
+          <div  style={{justifyContent: 'space-evenly', display: "flex", width: '100%'}}>
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <NavLink className="nav-link" to="/">
+                <NavLink className="nav-link" to="/"  style={{justifyContent: "center", display: "flex", alignItems: "center", flexDirection: "column"}}>
                 <FaHome style={{width: 30}}/>
                   <span className="sr-only">(current)</span>
                   Home
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/rules">
+                <NavLink className="nav-link" to="/rules"  style={{justifyContent: "center", display: "flex", alignItems: "center", flexDirection: "column"}}>
                   <FaGamepad style={{width: 30}}/>
                   Rules
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/purchase">
+                <NavLink className="nav-link" to="/purchase"  style={{justifyContent: "center", display: "flex", alignItems: "center", flexDirection: "column"}}>
                   <FaMoneyBillWave style={{width: 30}}/>
                   Shop
                 </NavLink>
               </li>
 
               <li className="nav-item">
-                <NavLink className="nav-link" to="/contact">
+                <NavLink className="nav-link" to="/contact"  style={{justifyContent: "center", display: "flex", alignItems: "center", flexDirection: "column"}}>
                   <FaPhoneAlt style={{width: 30}}/>
                   Contact
                 </NavLink>
@@ -119,7 +119,7 @@ function Navigation() {
               </li> */}
 
               <li className="nav-item">
-                <NavLink className="nav-link" to="/supporters">
+                <NavLink className="nav-link" to="/supporters"  style={{justifyContent: "center", display: "flex", alignItems: "center", flexDirection: "column"}}>
                   <FaPeopleCarry style={{width: 30}}/>
                   Patrons
                 </NavLink>

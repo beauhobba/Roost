@@ -3,6 +3,7 @@ import box from "../images/box.gif";
 import { isMobile } from "react-device-detect";
 import { API } from "aws-amplify";
 import { Helmet } from "react-helmet";
+import { font_families } from "./styles";
 const myAPI = "mailchimp";
 
 function Purchase() {
@@ -55,6 +56,7 @@ function Purchase() {
       className="about"
       style={{
         paddingBottom: 100,
+        fontFamily: font_families.roost
       }}
     >
       <Helmet>

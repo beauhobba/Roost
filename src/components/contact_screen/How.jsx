@@ -5,7 +5,7 @@ import { FaTiktok } from "react-icons/fa";
 import kingfisher from "../../images/kingfisher.jpeg";
 
 import { Helmet } from "react-helmet";
-import { colours } from "../styles";
+import { colours, font_families} from "../styles";
 
 function How() {
   const [logoSize, setLogoSize] = useState("40%");
@@ -23,10 +23,11 @@ function How() {
       style={{
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
+        alignItems: "flex_start",
         width: "100%",
         paddingLeft: 10,
         paddingRight: 10,
+        fontFamily: font_families.roost,
 
       }}
     >
@@ -57,7 +58,7 @@ function How() {
           <img src={kingfisher} style={{ width: imgSize}}></img>
         </div>
       </p>
-      <p style={{ color: colours.roost_pink }}>Beau Hobba</p>
+      <p style={{ color: colours.roost_pink,  justifyContent: "center", display: "flex" }}>Beau Hobba</p>
     </div>
   );
 }

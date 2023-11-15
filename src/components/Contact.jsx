@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet";
 import { Commitment, ContactScreen, How, AboutMe } from "./contact_screen";
 
 function Contact() {
-  const [direction, setDirection] = useState("row");
+  const [direction, setDirection] = useState("column");
 
   useEffect(() => {
     if (isMobile) {
@@ -29,13 +29,15 @@ function Contact() {
           style={{
             display: "flex",
             flexDirection: direction,
-            justifyContent: "space-evenly",
+            justifyContent: "center",
+            paddingLeft: 50,
+            paddingRight: 50,
             paddingTop: 20,
           }}
         >
 
           <ContactScreen style={{width: "50%"}} />
-          <Commitment style={{width: "50%"}}/>
+          {/* <Commitment style={{width: "50%"}}/> */}
 
         </div>
         <div
@@ -46,8 +48,8 @@ function Contact() {
             paddingTop: 20,
           }}
         >
-          <AboutMe style={{width: "50%"}}/>
-          <How style={{width: "50%"}} />
+          {/* <AboutMe style={{width: "50%"}}/>
+          <How style={{width: "50%"}} /> */}
         </div>
       </div>
     </div>

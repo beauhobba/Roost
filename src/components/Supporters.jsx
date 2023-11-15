@@ -4,6 +4,7 @@ import { FaGamepad } from "react-icons/fa";
 import { GiDirectorChair, GiCardRandom } from "react-icons/gi";
 import { BiTestTube, BiFirstPage } from "react-icons/bi";
 import { Helmet } from "react-helmet";
+import { font_families } from "./styles";
 
 import coverphoto from "../images/card_flip.gif";
 
@@ -28,7 +29,7 @@ function Supporters() {
         />
       </Helmet>
 
-      <div class="container">
+      <div style = {{fontFamily: font_families.roost,}}>
         <div class="row align-items-center my-5">
           <div
             style={{
@@ -46,14 +47,14 @@ function Supporters() {
             />
           </div>
 
-          <div class="col-lg-5">
+          <div class="col-lg-5" style={{padding: 20}}>
             <h1 class="font-weight-light">
               <b>Patrons</b>
             </h1>
             <p>
               <i>
                 It would be impossible to fully design a game without some help.
-                I am ever grateful for the people who have supported me along
+                I am forever grateful for the people who have supported me along
                 this journey.{" "}
               </i>
             </p>
