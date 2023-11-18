@@ -39,6 +39,15 @@ exports.handler = async (event) => {
     Source: "roostcardgame@gmail.com",
   };
 
-  return ses.sendEmail(params).promise();
+  await ses.sendEmail(params).promise();
+  return {
+    statusCode: 200,
+//  Uncomment below to enable CORS requests
+ headers: {
+     "Access-Control-Allow-Origin": "*",
+     "Access-Control-Allow-Headers": "*"
+ }, 
+    body: JSON.stringify('Sent Request'),
+};
 };
 
