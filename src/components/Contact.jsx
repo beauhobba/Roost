@@ -143,7 +143,7 @@ function Contact() {
 
 <div  style={{width: "100%"}} >
           <ContactScreen/>
-          <div style={{alignItems: 'center', display: 'flex', flexDirection: 'column'}}>
+          <div style={{alignItems: 'flex-start', display: 'flex', flexDirection: 'column', paddingLeft: 10}}>
             <p>
               Need to get in touch, use the form below! 
             </p>
@@ -186,6 +186,7 @@ function Contact() {
                 onChange={handleChangeSubject}
                 style={{
                   width: "100%",
+                  height: 100
                 }}
               />
             </label>
@@ -198,6 +199,7 @@ function Contact() {
                 onChange={handleChangeDescription}
                 style={{
                   width: "100%",
+                  height: 100
                 }}
               />
             </label>
