@@ -1,5 +1,19 @@
 {
   "api": {
+    "Contact": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "Contact"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    },
     "mailchimp": {
       "dependsOn": [
         {
@@ -32,6 +46,11 @@
     }
   },
   "function": {
+    "Contact": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "mailchimp": {
       "build": true,
       "providerPlugin": "awscloudformation",
@@ -39,6 +58,22 @@
     }
   },
   "parameters": {
+    "AMPLIFY_function_Contact_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "Contact"
+        }
+      ]
+    },
+    "AMPLIFY_function_Contact_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "Contact"
+        }
+      ]
+    },
     "AMPLIFY_function_mailchimp_deploymentBucketName": {
       "usedBy": [
         {

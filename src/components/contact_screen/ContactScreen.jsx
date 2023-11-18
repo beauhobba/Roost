@@ -30,6 +30,7 @@ function ContactScreen() {
         width: "100%",
         paddingLeft: 10,
         paddingRight: 10,
+        paddingTop: 20,
         fontFamily: font_families.roost,
       }}
     >
