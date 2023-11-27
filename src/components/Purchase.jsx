@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import box from "../images/box.gif";
+import rich_rooster from "../images/newbird.png";
 import { isMobile } from "react-device-detect";
 import { API } from "aws-amplify";
 import { Helmet } from "react-helmet";
@@ -11,7 +12,7 @@ function Purchase() {
   const [lastName, setLastName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [error, setError] = React.useState("");
-  const [logoSize, setLogoSize] = useState("50%");
+  const [logoSize, setLogoSize] = useState("40%");
   const [shapeSize, setShapeSize] = useState("50%");
   const [direction, setDirection] = useState("row");
   useEffect(() => {
@@ -82,12 +83,16 @@ function Purchase() {
               alignItems: "center",
             }}
           >
+            <p style={{paddingTop: 20}}>
+          Sign up pre-Kickstarter for an extra card in your physical package!
+            </p>
             <img
               class="img-fluid rounded mb-4 mb-lg-0"
-              src={box}
+              src={rich_rooster}
               alt=""
-              style={{ alignSelf: "center", width: logoSize }}
+              style={{ alignSelf: "center", width: logoSize}}
             />
+
           </div>
           <div style={{alignItems: 'center', display: 'flex', flexDirection: 'column'}}>
             <h1 class="font-weight-light">
@@ -143,6 +148,8 @@ function Purchase() {
             >
               Join Waiting List
             </button>
+
+
           </div>
         </div>
       </div>
