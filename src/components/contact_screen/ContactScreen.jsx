@@ -28,7 +28,7 @@ function ContactScreen() {
         flexDirection: "column",
         alignItems: "flex-start",
         width: "100%",
-        paddingLeft: 10,
+        paddingLeft: 30,
         paddingRight: 10,
         paddingTop: 20,
         fontFamily: font_families.roost,

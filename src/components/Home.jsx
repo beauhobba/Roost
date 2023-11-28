@@ -138,7 +138,7 @@ function Home() {
         height: 80,
         width: "100%",
         paddingLeft: 20,
-        paddingRight: 50,
+        paddingRight: 60,
         marginBottom: 20,
         border: "none",
         borderRadius: 20,

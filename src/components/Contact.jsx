@@ -143,7 +143,7 @@ function Contact() {
 
 <div  style={{width: "100%"}} >
           <ContactScreen/>
-          <div style={{alignItems: 'flex-start', display: 'flex', flexDirection: 'column', paddingLeft: 10}}>
+          <div style={{alignItems: 'flex-start', display: 'flex', flexDirection: 'column', paddingLeft: 30}}>
             <p>
               Need to get in touch, use the form below! 
             </p>
@@ -228,7 +228,7 @@ function Contact() {
                 marginBottom: 20
               }}
             >
-              Send Email
+              Send Message
             </button>
 
             </div>

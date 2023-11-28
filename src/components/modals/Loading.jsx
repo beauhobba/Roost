@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { LoadingSection } from '.';
-import box from '../../images/box/box_asset.png';
-import box_2 from '../../images/box/birds_2.png';
-import box_3 from '../../images/box/newbird.png';
+import { LoadingSection, LoadingSectionText } from '.';
+import box from '../../images/box.gif';
+import box_2 from '../../images/point_birds.png';
+import box_3 from '../../images/exp_birds.png';
 
 
 
@@ -14,8 +14,9 @@ const Loading = (props) => {
     const handleScroll = () => {
       // Calculate the index of the active module based on the scroll position
       const scrollPosition = window.scrollY;
-      const moduleHeight = 350; // Adjust module height as needed
+      const moduleHeight = 200; // Adjust module height as needed
       const activeModuleIndex = Math.floor(scrollPosition / moduleHeight);
+      
 
       // Update the active module
       setActiveModule(activeModuleIndex);
@@ -53,14 +54,24 @@ const Loading = (props) => {
     <>
       {modules.map((module, index) => (
         <div key={index} ref={(ref) => (moduleRefs.current[index] = ref)}>
-          <LoadingSection
+          <div style={{width: "50%", height: "200px"}} >
+          <LoadingSectionText style={{width: "50%"}}
             text={module.text}
             title={module.title}
             image={module.image}
             active={activeModule === index}
             symbol={module.symbol}
           />
+          </div>
         </div>
+          /* <LoadingSection
+            text={module.text}
+            title={module.title}
+            image={module.image}
+            active={activeModule === index}
+            symbol={module.symbol}
+          />
+        </div> */
       ))}
     </>
   );
