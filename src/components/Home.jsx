@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import coverphoto from "../images/coverphoto.png";
 import promo_12 from "../images/promos/promo_12.jpg";
 
-
-
 import { BrowserView, MobileView, isMobile } from "react-device-detect";
 import { Helmet } from "react-helmet";
 
@@ -13,10 +11,8 @@ import { Link } from "react-router-dom";
 
 import { CardDisplay } from "./display";
 import { Loading } from "./modals";
-import {colours, font_families} from "./styles"
-import { FaFeather} from 'react-icons/fa'; // Import a bird icon from a popular icon library
-
-
+import { colours, font_families } from "./styles";
+import { FaFeather } from "react-icons/fa"; // Import a bird icon from a popular icon library
 
 function Home() {
   const [buttonFontSize, setButtonFontSize] = useState(20);
@@ -33,9 +29,11 @@ function Home() {
     }
   }, []);
 
-
   return (
-    <div>
+    <div style={{
+      position: "relative",
+      height: "4000px",
+    }}>
       <Helmet>
         <title>Home - roostgame.com</title>
         <meta
@@ -130,75 +128,57 @@ function Home() {
                 </ul>
               </p>
               <Link to="/purchase">
-          <button
-      style={{
-        color: "#ffffff", // White text for visibility
-        backgroundColor: colours.roost_pink, // Blue background
-        fontSize: buttonFontSize,
-        height: 80,
-        width: "100%",
-        paddingLeft: 20,
-        paddingRight: 60,
-        marginBottom: 20,
-        border: "none",
-        borderRadius: 20,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        position: 'relative',
-        overflow: 'hidden',
-        transition: 'background 0.3s', // Smooth transition for the background
-        cursor: 'pointer', // Change cursor on hover
-
-        
-      }}
-      
-      onMouseOver={(e) => {
-        e.currentTarget.style.background = 'linear-gradient(45deg, #F87DB2 10%, #5AC5C9 80%)'
-        e.currentTarget.querySelector('.bird-icon').style.transform = 'translateX(230px)';
-      }}
-      onMouseOut={(e) => {
-        e.currentTarget.style.background = colours.roost_pink;
-        e.currentTarget.querySelector('.bird-icon').style.transform = 'translateX(0)';
-        
-      }}
-    >
-      <FaFeather  className="bird-icon" style={{ marginRight: 10, fontSize: '1.5em', transition: 'transform 0.3s' }} /> {/* Bird icon */}
-      Join the Waiting List
-    </button>
-
-          </Link>
-
-
+                <button
+                  style={{
+                    color: "#ffffff", // White text for visibility
+                    backgroundColor: colours.roost_pink, // Blue background
+                    fontSize: buttonFontSize,
+                    height: 80,
+                    width: "100%",
+                    paddingLeft: 20,
+                    paddingRight: 60,
+                    marginBottom: 20,
+                    border: "none",
+                    borderRadius: 20,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    position: "relative",
+                    overflow: "hidden",
+                    transition: "background 0.3s", // Smooth transition for the background
+                    cursor: "pointer", // Change cursor on hover
+                  }}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.background =
+                      "linear-gradient(45deg, #F87DB2 10%, #5AC5C9 80%)";
+                    e.currentTarget.querySelector(
+                      ".bird-icon"
+                    ).style.transform = "translateX(230px)";
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.background = colours.roost_pink;
+                    e.currentTarget.querySelector(
+                      ".bird-icon"
+                    ).style.transform = "translateX(0)";
+                  }}
+                >
+                  <FaFeather
+                    className="bird-icon"
+                    style={{
+                      marginRight: 10,
+                      fontSize: "1.5em",
+                      transition: "transform 0.3s",
+                    }}
+                  />{" "}
+                  {/* Bird icon */}
+                  Join the Waiting List
+                </button>
+              </Link>
             </div>
           </div>
         </div>
-        <div
-          style={{
-            backgroundColor: colours.roost_pink,
-            height: "100px",
-            alignItems: "center",
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
 
-        </div>
-
-        {isMobile ? null : (
-          <>
-          <Loading />
-
-
-        <div
-          style={{
-            backgroundColor: colours.roost_pink,
-            height: "100px",
-            alignItems: "center",
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
+        <div>
           <Link to="/purchase">
             <button
               style={{
@@ -216,37 +196,73 @@ function Home() {
               Meet the Birds
             </button>
           </Link>
-        </div>
-        </>
-        )}
-        <BrowserView>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              width: "100%",
-              alignItems: "center",
-              paddingTop: 20,
-            }}
-          >
-            <CardDisplay type={false} />
-          </div>
-        </BrowserView>
-        <MobileView>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              width: "100%",
-              alignItems: "center",
-            }}
-          >
-            <CardDisplay type={true} />
-          </div>
-        </MobileView>
 
+          <BrowserView>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                width: "100%",
+                alignItems: "center",
+                paddingTop: 20,
+              }}
+            >
+              <CardDisplay type={false} />
+            </div>
+          </BrowserView>
+          <MobileView>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                width: "100%",
+                alignItems: "center",
+              }}
+            >
+              <CardDisplay type={true} />
+            </div>
+          </MobileView>
+        </div>
+
+        <div
+          style={{
+            backgroundColor: colours.roost_pink,
+            height: "100px",
+            alignItems: "center",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        ></div>
       </div>
-    </div>
+        {isMobile ? null : (
+          <>
+            <div style={{ height: "50px" }}></div>
+            <div
+              style={{
+                position: "sticky",
+                top: "20%",
+                transform: "translateY(-0%)",
+                padding: "10px",
+                zIndex: 1,
+                display: "flex",
+                justifyContent: "center",
+                flexDirection: "column",
+              }}
+            >
+              <Loading />
+            </div>
+
+            <div
+              style={{
+                backgroundColor: colours.roost_pink,
+                alignItems: "center",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            ></div>
+          </>
+        )}
+      </div>
   );
 }
 

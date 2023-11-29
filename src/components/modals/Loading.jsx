@@ -1,10 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { LoadingSection, LoadingSectionText } from '.';
-import box from '../../images/box.gif';
-import box_2 from '../../images/point_birds.png';
-import box_3 from '../../images/exp_birds.png';
-
-
+import React, { useState, useEffect, useRef } from "react";
+import { LoadingSection, LoadingSectionText } from ".";
+import box from "../../images/box.gif";
+import box_2 from "../../images/point_birds.png";
+import box_3 from "../../images/exp_birds.png";
 
 const Loading = (props) => {
   const [activeModule, setActiveModule] = useState(0);
@@ -13,21 +11,20 @@ const Loading = (props) => {
   useEffect(() => {
     const handleScroll = () => {
       // Calculate the index of the active module based on the scroll position
-      const scrollPosition = window.scrollY;
-      const moduleHeight = 200; // Adjust module height as needed
+      const scrollPosition = window.scrollY-300;
+      const moduleHeight = 900; // Adjust module height as needed
       const activeModuleIndex = Math.floor(scrollPosition / moduleHeight);
-      
 
       // Update the active module
       setActiveModule(activeModuleIndex);
     };
 
     // Attach the scroll event listener
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     // Cleanup the event listener on component unmount
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
   const modules = [
@@ -49,30 +46,42 @@ const Loading = (props) => {
       image: box_3,
       symbol: "else",
     },
-]
+  ];
+
   return (
     <>
-      {modules.map((module, index) => (
-        <div key={index} ref={(ref) => (moduleRefs.current[index] = ref)}>
-          <div style={{width: "50%", height: "200px"}} >
-          <LoadingSectionText style={{width: "50%"}}
-            text={module.text}
-            title={module.title}
-            image={module.image}
-            active={activeModule === index}
-            symbol={module.symbol}
-          />
-          </div>
+      {/* <div style={{height: "1000px", position: "relative"}}> */}
+      <div
+        style={{
+          width: "100%",
+          display: "flex",
+          flexDirection: "row",
+          height: "200px",
+        }}
+      >
+        <div style={{ width: "50%", display: "flex", flexDirection: "column" }}>
+          {modules.map((module, index) => (
+            <div key={index} ref={(ref) => (moduleRefs.current[index] = ref)}>
+              <LoadingSectionText
+                text={module.text}
+                title={module.title}
+                image={module.image}
+                active={activeModule === index}
+                symbol={module.symbol}
+              />
+            </div>
+          ))}
         </div>
-          /* <LoadingSection
-            text={module.text}
-            title={module.title}
-            image={module.image}
-            active={activeModule === index}
-            symbol={module.symbol}
+        <div style={{ width: "50%", paddingLeft: 20 }}>
+          <LoadingSection
+            text={modules[0].text}
+            title={modules[0].title}
+            image={modules[0].image}
+            active={true}
+            symbol={modules[0].symbol}
           />
-        </div> */
-      ))}
+        </div>
+      </div>
     </>
   );
 };
