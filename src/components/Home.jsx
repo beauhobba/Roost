@@ -28,7 +28,7 @@ function Home() {
       setTextContSize("100%");
       setLogoSize("80%");
       setSideImgSize("100%");
-      setScreenSize("600px")
+      setScreenSize("400px")
     }
   }, []);
 
@@ -212,22 +212,8 @@ function Home() {
             >
               <CardDisplay type={false} />
             </div>
-          </BrowserView>
-          <MobileView>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                width: "100%",
-                alignItems: "center",
-              }}
-            >
-              <CardDisplay type={true} />
-            </div>
-          </MobileView>
-        </div>
 
-        <div
+            <div
           style={{
             backgroundColor: colours.roost_pink,
             height: "100px",
@@ -236,6 +222,24 @@ function Home() {
             justifyContent: "center",
           }}
         ></div>
+
+          </BrowserView>
+          <MobileView>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                width: "100%",
+                alignItems: "center",
+                paddingTop: 35,
+              }}
+            >
+              <CardDisplay type={true} />
+            </div>
+          </MobileView>
+        </div>
+
+
       </div>
         {isMobile ? null : (
           <>
