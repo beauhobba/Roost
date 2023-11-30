@@ -7,15 +7,11 @@ const LoadingSectionText = (props) => {
     const [active, setActive] = React.useState(false);
 
     useEffect(() => {
-        console.log(props.active + props.title)
         if (props.active == true) {
-            console.log("set Active")
             setActive(true);
         }else{
-            console.log("not set Active")
             setActive(false);   
         }
-        console.log("Active ^")
     }, [props.active]);
 
 
@@ -27,6 +23,7 @@ const LoadingSectionText = (props) => {
           display: "flex",
           flexDirection: "row",
           paddingLeft: 50,
+          paddingTop: 20,
           alignItems: "center",
         }}
       >

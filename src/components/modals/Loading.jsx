@@ -1,12 +1,49 @@
 import React, { useState, useEffect, useRef } from "react";
 import { LoadingSection, LoadingSectionText } from ".";
-import box from "../../images/box.gif";
+
 import box_2 from "../../images/point_birds.png";
 import box_3 from "../../images/exp_birds.png";
+
+const images = [];
+for (let i = 1; i <= 14; i++) {
+    images.push(require(`../../images/animation/${i}.png`));
+}
+
+
+
 
 const Loading = (props) => {
   const [activeModule, setActiveModule] = useState(0);
   const moduleRefs = useRef([]);
+  const [activeModule2, setactiveModule2] = useState(0);
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Calculate the index of the active module based on the scroll position
+      const scrollPosition = window.scrollY-800;
+      const moduleHeight = 170; // Adjust module height as needed
+      var activeModuleIndex = Math.floor(scrollPosition / moduleHeight);
+
+      // Update the active module
+      if(activeModuleIndex > 13){
+        activeModuleIndex = 13;
+      }
+
+
+
+      setactiveModule2(activeModuleIndex);
+    };
+
+    // Attach the scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,11 +64,14 @@ const Loading = (props) => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+
+
   const modules = [
     {
       title: "What is Roost",
       text: "Roost consists of beautiful birds from all continents",
-      image: box,
+      image: box_2,
       symbol: "roost",
     },
     {
@@ -72,14 +112,8 @@ const Loading = (props) => {
             </div>
           ))}
         </div>
-        <div style={{ width: "50%", paddingLeft: 20 }}>
-          <LoadingSection
-            text={modules[0].text}
-            title={modules[0].title}
-            image={modules[0].image}
-            active={true}
-            symbol={modules[0].symbol}
-          />
+        <div style={{ width: "50%", height: "450px", paddingLeft: 20, display: "flex", justifyContent: "center", alignItems: "center"}}>
+          <img src={images[activeModule2]}  style={{width: '40%'}}/>
         </div>
       </div>
     </>
