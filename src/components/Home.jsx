@@ -19,6 +19,8 @@ function Home() {
   const [textContSize, setTextContSize] = useState("100%");
   const [sideImgSize, setSideImgSize] = useState("50%");
   const [logoSize, setLogoSize] = useState("40%");
+  const [screenSize, setScreenSize] = useState("4000px");
+
 
   useEffect(() => {
     if (isMobile) {
@@ -26,13 +28,14 @@ function Home() {
       setTextContSize("100%");
       setLogoSize("80%");
       setSideImgSize("100%");
+      setScreenSize("600px")
     }
   }, []);
 
   return (
     <div style={{
       position: "relative",
-      height: "4000px",
+      height: {screenSize},
     }}>
       <Helmet>
         <title>Home - roostgame.com</title>
