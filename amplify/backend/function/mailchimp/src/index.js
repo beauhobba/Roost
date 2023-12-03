@@ -28,7 +28,7 @@ exports.handler = async (event) => {
   console.log("API: "+process.env.MAILCHIMP_KEY)
 
     const response = await mailchimp.lists.addListMember(listId, {
-        email_address: email,
+        email_address: email,e
         status: "subscribed",
         merge_fields: {
           FNAME: firstName,

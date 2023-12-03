@@ -52,17 +52,17 @@ function Contact() {
       setError("Please enter an email address");
       return;
     }
-    if (isChecked == true) {
-      let data = { firstName: firstName, lastName: lastName, email: email };
-      API.post(otherAPI, "/mailchimp", { body: data })
-        .then((response) => {
-          console.log(response);
-          setError("Thankyou for joining the waitlist!");
-        })
-        .catch((error) => {
-          setError("There was an error with joining the waitlist");
-        });
-    }
+    // if (isChecked == true) {
+    //   let data = { firstName: firstName, lastName: lastName, email: email };
+    //   API.post(otherAPI, "/mailchimp", { body: data })
+    //     .then((response) => {
+    //       console.log(response);
+    //       setError("Thankyou for joining the waitlist!");
+    //     })
+    //     .catch((error) => {
+    //       setError("There was an error with joining the waitlist");
+    //     });
+    // }
 
     let data = {
       firstName: firstName,
@@ -71,9 +71,11 @@ function Contact() {
       description: description,
       subject: subject,
     };
+
+    console.log(data)
     API.post(myAPI, "/Contact", { body: data })
       .then((response) => {
-        console.log(response);
+        console.log(data);
         setError("Message Sent");
       })
       .catch((error) => {
@@ -143,13 +145,23 @@ function Contact() {
 
             <div
               style={{
-                alignItems: "flex-start",
-                display: "flex",
-                flexDirection: "column",
-                paddingLeft: 30,
-                paddingTop: 30,
+                padding: 30,
               }}
             >
+            <div
+              style={{
+                backgroundColor: colours.roost_blue,
+                width: "100%",
+                borderRadius: "10px",
+                padding: 10,
+                alignItems: "center",
+                justifyContent: 'center',
+                display: "flex",
+                flexDirection: "column",
+
+              }}
+            >
+
 
               <label style={{ marginBottom: 0, width: '60%', display: 'block' }}>
                 First Name:
@@ -269,8 +281,9 @@ function Contact() {
           {/* <AboutMe style={{width: "50%"}}/>
           <How style={{width: "50%"}} /> */}
         </div>
+        </div>
       </div>
-    </div>
+      </div>
   );
 }
 
