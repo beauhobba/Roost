@@ -126,27 +126,31 @@ function Contact() {
                 alignItems: "center",
               }}
             >
-              <div style={{ width: "100%" }}>
+              {/* <div style={{ width: "100%" }}>
                 <img
                   class="img-fluid rounded mb-4 mb-lg-0"
                   src={promo_13}
                   alt=""
                 />
-              </div>
+              </div> */}
+      <ContactScreen />
+
+
             </div>
           )}
 
           <div style={{ width: "100%" }}>
-            <ContactScreen />
+
             <div
               style={{
                 alignItems: "flex-start",
                 display: "flex",
                 flexDirection: "column",
                 paddingLeft: 30,
+                paddingTop: 30,
               }}
             >
-              <p>Need to get in touch, use the form below!</p>
+
               <label style={{ marginBottom: 0, width: '60%', display: 'block' }}>
                 First Name:
                 <br></br>
@@ -232,9 +236,9 @@ function Contact() {
                   backgroundColor: "#EC2383",
                   fontSize: 20,
                   height: 40,
-                  width: "100%",
                   border: "none",
                   marginBottom: 20,
+                  width: "50%"
                 }}
               >
                 Send Message

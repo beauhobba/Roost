@@ -19,7 +19,7 @@
         },
         "Contact": {
           "deploymentBucketName": "amplify-amplify5fa17488a0d94-staging-120822-deployment",
-          "s3Key": "amplify-builds/Contact-72524c4d707777526470-build.zip"
+          "s3Key": "amplify-builds/Contact-464d61787878686e3152-build.zip"
         }
       },
       "api": {

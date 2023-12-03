@@ -1,0 +1,10 @@
+service: Contact
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: ap-southeast2
+
+functions:
+  Contact:
+    handler: src/index.handler

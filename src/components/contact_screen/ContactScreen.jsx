@@ -35,12 +35,11 @@ function ContactScreen() {
       }}
     >
       <h1 class="font-weight-light">
-        <b>Contact</b>
+        <b>Get in Touch</b>
       </h1>
       <p>
         <i>
-          Contact our team using the following email. Follow our social media
-          and support the kickstarter
+          Links to our social media and the Kickstarter
         </i>
         <br></br>
         <br></br>
@@ -74,6 +73,8 @@ function ContactScreen() {
           Kickstarter (coming soon)
         </a>
       </p>
+      <p>IF you need to get in touch, use the following form!</p>
+
     </div>
   );
 }

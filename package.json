@@ -31,6 +31,7 @@
     "react-router-dom": "^6.0.2",
     "react-router-sitemap": "^1.2.0",
     "react-scripts": "^3.4.1",
+    "react-scroll-parallax": "^3.4.5",
     "react-skillbars": "^1.6.1",
     "react-spring": "^9.7.1",
     "reactjs-popup": "^2.0.5"
