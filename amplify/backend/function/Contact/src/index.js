@@ -14,6 +14,8 @@ const ses = new aws.SES({ region: "ap-southeast-2" });
 
 
 exports.handler = async (event) => {
+
+  console.log('here')
   const { firstName, lastName, email, subject, description} = JSON.parse(event.body);
   console.log("firstname: "+ firstName)
   console.log("lastname: "+lastName)

@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import "react-image-gallery/styles/css/image-gallery.css";
-import { AiFillTwitterCircle, AiFillFacebook, AiFillInstagram } from "react-icons/ai";
+import { AiFillTwitterCircle, AiFillFacebook, AiFillInstagram,   AiTwotoneMail,
+  AiFillYoutube,
+  AiFillShopping,} from "react-icons/ai";
 import { BsPatchQuestion} from "react-icons/bs";
 import {BiCrown} from "react-icons/bi";
 import {GiBirdCage} from "react-icons/gi";
 import {colours, font_families} from "../styles"
+import { FaTiktok } from "react-icons/fa";
 
 const CustomIcon = ({ symbol, size, color }) => {
     let IconComponent;
@@ -20,6 +23,29 @@ const CustomIcon = ({ symbol, size, color }) => {
       case 'else':
         IconComponent = GiBirdCage;
         break;
+      case 'email':
+        IconComponent = AiTwotoneMail;
+        break;
+      case 'facebook':
+        IconComponent = AiFillFacebook;
+        break;
+      case 'twitter':
+        IconComponent = AiFillTwitterCircle;
+        break;
+      case 'tiktok':
+        IconComponent = FaTiktok;
+        break;
+      case 'instagram':
+        IconComponent = AiFillInstagram;
+        break;
+      case 'youtube':
+        IconComponent = AiFillYoutube;
+        break;
+      case 'shopping':
+        IconComponent = AiFillShopping;
+        break;
+  
+
       default:
         // Default to AiFillTwitterCircle if the symbol is not recognized
         IconComponent = BsPatchQuestion;
@@ -42,9 +68,18 @@ const CircleWithIcon = (props) => {
     }
 }, [props.active]);
 
+useEffect(() => {
+  if (props.circleBorder === true) {
+      setShowCircle(true)
+  }else{
+    setShowCircle(false)
+  }
+}, [props.circleBorder]);
+
+
   const circleStyle = {
-    width: "100px", // Adjust the size of the circle as needed
-    height: "100px", // Adjust the size of the circle as needed
+    width: props.circleSize, // Adjust the size of the circle as needed
+    height: props.circleSize, // Adjust the size of the circle as needed
     backgroundColor: "white",
     borderRadius: "50%",
     display: "flex",
@@ -53,8 +88,8 @@ const CircleWithIcon = (props) => {
     boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)", // Optional: Add a box shadow for a visual effect
   };
   const circleStyleNull = {
-    width: "100px", // Adjust the size of the circle as needed
-    height: "100px", // Adjust the size of the circle as needed
+    width: props.circleSize, // Adjust the size of the circle as needed
+    height: props.circleSize, // Adjust the size of the circle as needed
     backgroundColor: "white",
     borderRadius: "50%",
     display: "flex",
@@ -67,11 +102,11 @@ const CircleWithIcon = (props) => {
     <>
     {showCircle ?
     <div style={circleStyle}>
-        <CustomIcon symbol={props.symbol} size={50} color={props.color} />
+        <CustomIcon symbol={props.symbol} size={props.iconSize} color={props.color} />
     </div>
     :
     <div style={circleStyleNull}>
-    <CustomIcon symbol={props.symbol} size={50} color={props.color} />
+    <CustomIcon symbol={props.symbol} size={props.iconSize} color={props.color} />
     </div>
     
     }
@@ -102,12 +137,11 @@ const TextBox = (props) => {
 
 
   return (
-    <div>
       <div
-        style={{ display: "flex", flexDirection: "row", alignItems: "center", fontFamily: font_families.roost}}
+        style={{ display: "flex", flexDirection: "row", alignItems: "center", fontFamily: font_families.roost, height: props.height, width: props.width}}
       >
         <div style={{ paddingRight: 10 }}>
-          <CircleWithIcon symbol={props.symbol} color={colourIcon} active={props.active}/>
+          <CircleWithIcon symbol={props.symbol} color={colourIcon} active={props.active} circleSize={props.circleSize} iconSize={props.iconSize} circleBorder={props.circleBorder}/>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", fontFamily: 'Roboto' }}>
@@ -129,7 +163,6 @@ const TextBox = (props) => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 

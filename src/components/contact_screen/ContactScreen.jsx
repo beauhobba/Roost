@@ -8,7 +8,13 @@ import {
   AiFillTwitterCircle,
 } from "react-icons/ai";
 import { FaTiktok } from "react-icons/fa";
-import { font_families } from "../styles";
+import { font_families, colours } from "../styles";
+import {
+  LoadingSection,
+  LoadingSectionText,
+  TextBox,
+  HoverTextBox,
+} from "../modals";
 
 function ContactScreen() {
   const [logoSize, setLogoSize] = useState("40%");
@@ -22,60 +28,52 @@ function ContactScreen() {
   }, []);
 
   return (
+    <div style={{display: 'flex', flexDirection: 'column'}}>
     <div
       style={{
         display: "flex",
         flexDirection: "column",
-        alignItems: "flex-start",
+        alignItems: "center",
         width: "100%",
-        paddingLeft: 30,
-        paddingRight: 10,
-        paddingTop: 20,
+
+        paddingTop: 40,
         fontFamily: font_families.roost,
       }}
     >
       <h1 class="font-weight-light">
-        <b>Get in Touch</b>
+        <b>Stay Connected</b>
       </h1>
       <p>
-        <i>
-          Links to our social media and the Kickstarter
-        </i>
-        <br></br>
-        <br></br>
-        <AiTwotoneMail /> roostgame@gmail.com
-        <br></br>
-        <AiFillInstagram />{" "}
+        <i>Links to our social media and the Kickstarter</i>
+      </p>
+      </div>
+
+      <div style={{ display: "flex", flexDirection: "column", alignItems: 'flex-start', justifyContent: 'flex-start', width: "100%" }}>
+        <HoverTextBox text={"roostgame@gmail.com"} symbol={"email"} />
+
         <a href="https://www.instagram.com/roostgame/" target="_blank">
-          Instagram
+          <HoverTextBox text={"Instagram"} symbol={"instagram"} />
         </a>
-        <br></br>
-        <AiFillYoutube />{" "}
         <a href="https://www.youtube.com/@Roostgame" target="_blank">
-          Youtube
+          <HoverTextBox text={"Youtube"} symbol={"youtube"} />
         </a>
-        <br></br>
-        <FaTiktok />{" "}
         <a
           href="https://www.tiktok.com/@roostgame?_t=8e8xO22xcvQ&_r=1"
           target="_blank"
         >
-          TikTok
+          <HoverTextBox text={"Tiktok"} symbol={"tiktok"} />
         </a>
-        <br></br>
-        <AiFillTwitterCircle />{" "}
         <a href="https://twitter.com/RoostCardGame" target="_blank">
-          Twitter
+          <HoverTextBox text={"Twitter"} symbol={"twitter"} />
         </a>
-        <br></br>
-        <AiFillShopping />{" "}
         <a href="https://www.instagram.com/roostgame/" target="_blank">
-          Kickstarter (coming soon)
+          <HoverTextBox
+            text={"Kickstarter (coming soon)"}
+            symbol={"shopping"}
+          />
         </a>
-      </p>
-      <p>IF you need to get in touch, use the following form!</p>
-
-    </div>
+      </div>
+      </div>
   );
 }
 

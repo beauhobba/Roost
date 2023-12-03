@@ -13,6 +13,8 @@ import { CardDisplay } from "./display";
 import { Loading } from "./modals";
 import { colours, font_families } from "./styles";
 import { FaFeather } from "react-icons/fa"; // Import a bird icon from a popular icon library
+import {RoostButton} from "./modals"
+
 
 function Home() {
   const [buttonFontSize, setButtonFontSize] = useState(20);
@@ -131,51 +133,7 @@ function Home() {
                 </ul>
               </p>
               <Link to="/purchase">
-                <button
-                  style={{
-                    color: "#ffffff", // White text for visibility
-                    backgroundColor: colours.roost_pink, // Blue background
-                    fontSize: buttonFontSize,
-                    height: 80,
-                    width: "100%",
-                    paddingLeft: 20,
-                    paddingRight: 60,
-                    marginBottom: 20,
-                    border: "none",
-                    borderRadius: 20,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    position: "relative",
-                    overflow: "hidden",
-                    transition: "background 0.3s", // Smooth transition for the background
-                    cursor: "pointer", // Change cursor on hover
-                  }}
-                  onMouseOver={(e) => {
-                    e.currentTarget.style.background =
-                      "linear-gradient(45deg, #F87DB2 10%, #5AC5C9 80%)";
-                    e.currentTarget.querySelector(
-                      ".bird-icon"
-                    ).style.transform = "translateX(230px)";
-                  }}
-                  onMouseOut={(e) => {
-                    e.currentTarget.style.background = colours.roost_pink;
-                    e.currentTarget.querySelector(
-                      ".bird-icon"
-                    ).style.transform = "translateX(0)";
-                  }}
-                >
-                  <FaFeather
-                    className="bird-icon"
-                    style={{
-                      marginRight: 10,
-                      fontSize: "1.5em",
-                      transition: "transform 0.3s",
-                    }}
-                  />{" "}
-                  {/* Bird icon */}
-                  Join the Waiting List
-                </button>
+              <RoostButton text="Join the Waiting List"></RoostButton>
               </Link>
             </div>
           </div>

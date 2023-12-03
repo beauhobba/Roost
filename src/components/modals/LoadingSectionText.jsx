@@ -32,6 +32,9 @@ const LoadingSectionText = (props) => {
               text={props.text}
               title={props.title}
               symbol={props.symbol}
+              circleSize={"100px"}
+              iconSize={50}
+
             />
       </div>
     </>

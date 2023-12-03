@@ -1,8 +1,8 @@
 {
   "version": 1,
   "paths": {
-    "/items": {
-      "name": "/items",
+    "/Contact": {
+      "name": "/Contact",
       "lambdaFunction": "Contact",
       "permissions": {
         "setting": "open"
