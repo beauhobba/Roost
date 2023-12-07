@@ -46,6 +46,7 @@ function Home() {
           content="Roost is a 2 to 6 player card game about strategy, memorisation, alliances and most importantly birds. It has a 30 minutes to 1 hour playtime and features beautiful cards with some cool birds."
         />
       </Helmet>
+
       <div
         style={{
           paddingBottom: 100,
@@ -96,6 +97,15 @@ function Home() {
                 alignItems: "center",
               }}
             >
+<div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', width: '100%'}}>
+<a class="e-widget no-button" href="https://gleam.io/G4wK2/roost-card-game-giveaway" rel="nofollow">
+<RoostButton text="Click here for Roost Giveaway"></RoostButton>
+</a>
+<script type="text/javascript" src="https://widget.gleamjs.io/e.js" async="true"></script>
+
+</div>
+
+
               <img
                 class="img-fluid rounded mb-4 mb-lg-0"
                 src={coverphoto}
