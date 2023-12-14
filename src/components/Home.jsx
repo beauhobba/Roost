@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import coverphoto from "../images/coverphoto.png";
 import promo_12 from "../images/promos/promo_12.jpg";
+import kickstarter from "../images/kickstarter.png";
+import box_gif from "../images/box.gif";
 
 import { BrowserView, MobileView, isMobile } from "react-device-detect";
 import { Helmet } from "react-helmet";
@@ -14,9 +16,100 @@ import { Loading } from "./modals";
 import { colours, font_families } from "./styles";
 import { FaFeather } from "react-icons/fa"; // Import a bird icon from a popular icon library
 import {RoostButton} from "./modals"
+import './NotificationAnimation.css'; // Import the CSS file with animations
+
+
+const StickyNotificationBar = (props) => {
+  const [showNotification, setShowNotification] = useState(true);
+
+
+  const notificationStyle = {
+    display: showNotification ? 'block' : 'none',
+    position: 'fixed',
+    top: "62%",
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: props.mobile ? '90%' : '30%',
+    backgroundColor: '#fff',
+    color: colours.roost_pink,
+    justify: 'center',
+    zIndex: 999, // Ensure it's above other elements
+    padding: 20,
+    borderRadius: '10px', // Rounded corners
+    border: '2px solid '+colours.roost_pink, // White outline
+    animation: 'jitter 1s ease infinite, bounce 1s ease infinite', // Apply the animations
+  };
+
+  const handleClose = () => {
+    setShowNotification(false);
+  };
+
+  return (
+    <div style={notificationStyle}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'row' }}>
+      <img src={kickstarter} alt="Notification icon" style={{ width: '30px', marginRight: '30px', }} />
+      <a className="e-widget no-button" href="https://www.kickstarter.com/projects/roostgame/roost-0" rel="nofollow" style={{ color: '#000', textDecoration: 'none', margin: 0 }}>
+
+          <div>
+          <p style={{margin: 0,  fontWeight: 'bold', fontSize: 20}}> Kickstarter Pre-Launch </p>
+          <p style={{margin: 0}}>Click here to sign up to the Roost Pre-Launch Kickstarter for early bird deals! </p>
+          </div>
+        </a>
+        <button onClick={handleClose} style={{ color: '#000', background: 'transparent', border: 'none', cursor: 'pointer', paddingLeft: 10 }}>
+          &#x2715; {/* Close icon */}
+        </button>
+      </div>
+    </div>
+  );
+};
+
+const StickyNotificationGleam = (props) => {
+  const [showNotification, setShowNotification] = useState(true);
+
+  const notificationStyle = {
+    display: showNotification ? 'block' : 'none',
+    position: 'fixed',
+    top: "80%",
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: props.mobile ? '90%' : '30%',
+    backgroundColor: '#fff',
+    color: colours.roost_pink,
+    justify: 'center',
+    zIndex: 999, // Ensure it's above other elements
+    padding: 20,
+    borderRadius: '10px', // Rounded corners
+    border: '2px solid '+colours.roost_pink, // White outline
+    animation: 'swivel 1s ease-in-out infinite', // Apply the animations
+  };
+
+  const handleClose = () => {
+    setShowNotification(false);
+  };
+
+  return (
+    <div style={notificationStyle}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'row' }}>
+      <img src={box_gif} alt="Notification icon" style={{ width: '30px', marginRight: '30px', }} />
+      <a className="e-widget no-button" href="https://gleam.io/G4wK2/roost-card-game-giveaway" rel="nofollow" style={{ color: '#000', textDecoration: 'none', margin: 0 }}>
+
+          <div>
+          <p style={{margin: 0,  fontWeight: 'bold', fontSize: 20}}> Game Giveaway </p>
+          <p style={{margin: 0}}>Click here for your chance at winning Roost early </p>
+          </div>
+        </a>
+        <button onClick={handleClose} style={{ color: '#000', background: 'transparent', border: 'none', cursor: 'pointer', paddingLeft: 10 }}>
+          &#x2715; {/* Close icon */}
+        </button>
+      </div>
+    </div>
+  );
+};
+
 
 
 function Home() {
+  const [mobileDevice, setMobileDevice] = useState(false)
   const [buttonFontSize, setButtonFontSize] = useState(20);
   const [textContSize, setTextContSize] = useState("100%");
   const [sideImgSize, setSideImgSize] = useState("50%");
@@ -31,6 +124,7 @@ function Home() {
       setLogoSize("80%");
       setSideImgSize("100%");
       setScreenSize("400px")
+      setMobileDevice(true); 
     }
   }, []);
 
@@ -54,6 +148,14 @@ function Home() {
           fontFamily: font_families.roost,
         }}
       >
+        
+        {mobileDevice ?
+        <>
+        <StickyNotificationBar mobile={mobileDevice}/>
+        <StickyNotificationGleam mobile={mobileDevice}/>
+        </>
+        : null}
+        
         <div
           style={{
             display: "flex",
@@ -97,13 +199,6 @@ function Home() {
                 alignItems: "center",
               }}
             >
-<div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', width: '100%'}}>
-<a class="e-widget no-button" href="https://gleam.io/G4wK2/roost-card-game-giveaway" rel="nofollow">
-<RoostButton text="Click here for Roost Giveaway"></RoostButton>
-</a>
-<script type="text/javascript" src="https://widget.gleamjs.io/e.js" async="true"></script>
-
-</div>
 
 
               <img
