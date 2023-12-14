@@ -98,7 +98,7 @@ function Purchase() {
             <h1 class="font-weight-light">
               <b>Pre-launch</b>
             </h1>
-            <p>Subscribe below to be notified of the kickstarter launch:</p>
+            <p>Join the mailing list below to be notified of the kickstarter launch:</p>
 
             <label style={{marginBottom: 0}}>
               First Name:

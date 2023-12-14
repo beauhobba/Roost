@@ -66,9 +66,9 @@ function ContactScreen() {
         <a href="https://twitter.com/RoostCardGame" target="_blank">
           <HoverTextBox text={"Twitter"} symbol={"twitter"} />
         </a>
-        <a href="https://www.instagram.com/roostgame/" target="_blank">
+        <a href="https://www.kickstarter.com/projects/roostgame/roost-0?ref=banner" target="_blank">
           <HoverTextBox
-            text={"Kickstarter (coming soon)"}
+            text={"Kickstarter Pre-Launch"}
             symbol={"shopping"}
           />
         </a>
