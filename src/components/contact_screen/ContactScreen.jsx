@@ -44,34 +44,38 @@ function ContactScreen() {
         <b>Stay Connected</b>
       </h1>
       <p>
-        <i>Links to our social media and the Kickstarter</i>
+        <i>Links to our social media</i>
       </p>
       </div>
 
-      <div style={{ display: "flex", flexDirection: "column", alignItems: 'flex-start', justifyContent: 'flex-start', width: "100%" }}>
-        <HoverTextBox text={"roostgame@gmail.com"} symbol={"email"} />
+      <div style={{ display: "flex", flexDirection: "row", alignItems: 'center', justifyContent: 'center', width: "100%" }}>
+        {/* <HoverTextBox text={"roostgame@gmail.com"} symbol={"email"} /> */}
 
         <a href="https://www.instagram.com/roostgame/" target="_blank">
-          <HoverTextBox text={"Instagram"} symbol={"instagram"} />
+          <HoverTextBox text={""} symbol={"instagram"} />
         </a>
         <a href="https://www.youtube.com/@Roostgame" target="_blank">
-          <HoverTextBox text={"Youtube"} symbol={"youtube"} />
+          <HoverTextBox text={""} symbol={"youtube"} />
         </a>
         <a
           href="https://www.tiktok.com/@roostgame?_t=8e8xO22xcvQ&_r=1"
           target="_blank"
         >
-          <HoverTextBox text={"Tiktok"} symbol={"tiktok"} />
+          <HoverTextBox text={""} symbol={"tiktok"} />
         </a>
         <a href="https://twitter.com/RoostCardGame" target="_blank">
-          <HoverTextBox text={"Twitter"} symbol={"twitter"} />
+          <HoverTextBox text={""} symbol={"twitter"} />
         </a>
-        <a href="https://www.kickstarter.com/projects/roostgame/roost-0?ref=banner" target="_blank">
+        <a href="https://www.facebook.com/RoostCardGame/" target="_blank">
+          <HoverTextBox text={""} symbol={"facebook"} />
+        </a>
+
+        {/* <a href="https://www.kickstarter.com/projects/roostgame/roost-0?ref=banner" target="_blank">
           <HoverTextBox
             text={"Kickstarter Pre-Launch"}
             symbol={"shopping"}
           />
-        </a>
+        </a> */}
       </div>
       </div>
   );
