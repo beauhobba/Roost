@@ -29,9 +29,16 @@ function Supporters() {
         />
       </Helmet>
 
-      <div style = {{fontFamily: font_families.roost,}}>
-        <div class="row align-items-center my-5">
-          <div
+      <div
+        style={{
+          paddingBottom: 100,
+          flexDirection: "row",
+          paddingTop: 20,
+          fontFamily: font_families.roost,
+        }}
+      >
+      <div style={{alignItems: 'center', display: 'flex', flexDirection: 'column'}}>
+          {/* <div
             style={{
               display: "flex",
               flexDirection: "column",
@@ -45,15 +52,15 @@ function Supporters() {
               alt=""
               style={{ alignSelf: "center", width: logoSize }}
             />
-          </div>
+          </div> */}
 
-          <div class="col-lg-5" style={{padding: 20}}>
+<div style={{alignItems: 'center', display: 'flex', flexDirection: 'column'}}>
             <h1 class="font-weight-light">
               <b>Patrons</b>
             </h1>
-            <p>
+            <p style={{padding: 10, textAlign: 'center'}}>
               <i>
-                It would be impossible to fully design a game without some help.
+                It would have been impossible to fully design Roost without some help.
                 I am forever grateful for the people who have supported me along
                 this journey.{" "}
               </i>
@@ -65,7 +72,7 @@ function Supporters() {
             </ul>
 
             <h2 class="font-weight-light">Early Helpers</h2>
-            <p>These people helped design the game</p>
+            <p  style={{padding: 10, textAlign: 'center'}}>These people helped with game and product design</p>
             <ul>
               <li>
                 <FaGamepad />
@@ -96,16 +103,14 @@ function Supporters() {
             </ul>
 
             <h2 class="font-weight-light">Initial Playtesters</h2>
-            <p>
+            <p  style={{padding: 10, textAlign: 'center'}}>
               These people helped test the rules and crease out any broken game
               mechanics <BiTestTube />
             </p>
 
             <ul>
-              <li>Steven Gonzalez</li>
               <li>Jarod Reynolds</li>
               <li>Alex Liang</li>
-              <li>Zac Hobba</li>
             </ul>
           </div>
 

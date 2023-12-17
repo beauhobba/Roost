@@ -1,11 +1,88 @@
 import React, { useState, useEffect } from "react";
 import box from "../images/box.gif";
 import rich_rooster from "../images/newbird.png";
-import { isMobile } from "react-device-detect";
+import { BrowserView, MobileView, isMobile } from "react-device-detect";
 import { API } from "aws-amplify";
 import { Helmet } from "react-helmet";
-import { font_families } from "./styles";
+import { colours, font_families } from "./styles";
+
+
 const myAPI = "mailchimp";
+
+
+
+const StickyNotificationBar = (props) => {
+  const [showNotification, setShowNotification] = useState(true);
+
+  const notificationStyle = {
+    display: showNotification ? "block" : "none",
+    position: "fixed",
+    top: "40%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: props.mobile ? "90%" : "30%",
+    backgroundColor: "#fff",
+    color: colours.roost_pink,
+    justify: "center",
+    zIndex: 999, // Ensure it's above other elements
+    padding: 20,
+    borderRadius: "10px", // Rounded corners
+    border: "2px solid " + colours.roost_pink, // White outline
+    animation: "jitter 1s ease infinite, bounce 1s ease infinite", // Apply the animations
+  };
+
+  const handleClose = () => {
+    setShowNotification(false);
+  };
+
+  return (
+    <div style={notificationStyle}>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: "row",
+        }}
+      >
+        <img
+          src={rich_rooster}
+          alt="Notification icon"
+          style={{ width: "100px", marginRight: "30px" }}
+        />
+        <a
+          className="e-widget no-button"
+          href="https://www.kickstarter.com/projects/roostgame/roost-0"
+          rel="nofollow"
+          style={{ color: "#000", textDecoration: "none", margin: 0 }}
+        >
+          <div>
+            <p style={{ margin: 0, fontWeight: "bold", fontSize: 20 }}>
+              {" "}
+              Rich Rooster{" "}
+            </p>
+            <p style={{ margin: 0 }}>
+              Sign up to the kickstarter pre-launch list and our mailing list below for a free Rich Rooster card*{" "}
+            </p>
+          </div>
+        </a>
+        <button
+          onClick={handleClose}
+          style={{
+            color: "#000",
+            background: "transparent",
+            border: "none",
+            cursor: "pointer",
+            paddingLeft: 10,
+          }}
+        >
+          &#x2715; {/* Close icon */}
+        </button>
+      </div>
+    </div>
+  );
+};
+
 
 function Purchase() {
   const [firstName, setFirstName] = React.useState("");
@@ -15,11 +92,14 @@ function Purchase() {
   const [logoSize, setLogoSize] = useState("40%");
   const [shapeSize, setShapeSize] = useState("50%");
   const [direction, setDirection] = useState("row");
+  const [mobileDevice, setMobileDevice] = useState(false);
+
   useEffect(() => {
     if (isMobile) {
       setLogoSize("70%");
       setShapeSize("100%");
       setDirection("column");
+      setMobileDevice(true);
     }
   }, []);
 
@@ -67,14 +147,27 @@ function Purchase() {
           content="Subscribe to the Kickstarter launch"
         />
       </Helmet>
+
+
+      {mobileDevice ? (
+          <>
+            <StickyNotificationBar mobile={mobileDevice} />
+          </>
+        ) : null}
+
+
+
       <div class="container">
         <div
           style={{
             display: "flex",
             flexDirection: direction,
             padding: 20,
+            
           }}
         >
+
+{mobileDevice ? null : (
           <div
             style={{
               display: "flex",
@@ -84,7 +177,7 @@ function Purchase() {
             }}
           >
             <p style={{paddingTop: 20}}>
-          Sign up pre-Kickstarter for an extra card in your physical package!
+            Sign up to the kickstarter pre-launch list and our mailing list below for a free Rich Rooster card*
             </p>
             <img
               class="img-fluid rounded mb-4 mb-lg-0"
@@ -94,11 +187,14 @@ function Purchase() {
             />
 
           </div>
+          )
+          }
+
           <div style={{alignItems: 'center', display: 'flex', flexDirection: 'column'}}>
             <h1 class="font-weight-light">
               <b>Pre-launch</b>
             </h1>
-            <p>Join the mailing list below to be notified of the kickstarter launch:</p>
+            <p>Join the mailing list below to be notified of any Roost related news</p>
 
             <label style={{marginBottom: 0}}>
               First Name:
@@ -152,6 +248,9 @@ function Purchase() {
 
           </div>
         </div>
+        <p style={{paddingTop: 20, fontSize: 10}}>
+            * You must purchase a copy of Roost to obtain the Rich Rooster card.  If the Kickstarter is not successful, applicants will not receive a Rich Rooster card
+            </p>        
       </div>
     </div>
   );

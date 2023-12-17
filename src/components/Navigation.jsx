@@ -142,7 +142,7 @@ function Navigation() {
                     }}
                   >
                     <FaMoneyBillWave style={{ width: 40 }} />
-                    Shop
+                    Kickstarter
                   </NavLink>
                 </li>
 

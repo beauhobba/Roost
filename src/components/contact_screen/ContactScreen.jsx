@@ -36,7 +36,7 @@ function ContactScreen() {
         alignItems: "center",
         width: "100%",
 
-        paddingTop: 40,
+        paddingTop: 20,
         fontFamily: font_families.roost,
       }}
     >
