@@ -2,9 +2,8 @@ import React, { useState, useEffect } from "react";
 import { API, graphqlOperation } from "aws-amplify";
 import BlogCard from "./blog_cards/BlogCard";
 
-import ScoreCardModule from "./modals/SS";
+import ScoreCardModule from "./modals/ScoreCardModule";
 import { Helmet } from "react-helmet";
-
 
 function Scorecard() {
   const [posts, setPosts] = useState([]);
@@ -19,12 +18,12 @@ function Scorecard() {
         />
       </Helmet>
       <div class="container">
-
         <div style={{ width: "100%", padding: 5, paddingTop: 20 }}>
           <ScoreCardModule></ScoreCardModule>
         </div>
-        <p style={{padding: 5, fontStyle: 'italic'}}>
-        Select a player by clicking on their name, then utilize the score buttons on the side to modify their points
+        <p style={{ padding: 5, fontStyle: "italic" }}>
+          Select a player by clicking on their name, then utilize the score
+          buttons on the side to modify their points
         </p>
       </div>
     </div>

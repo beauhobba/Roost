@@ -3,11 +3,15 @@ import { isMobile } from "react-device-detect";
 import birds_classification_1 from "../images/bird_classification_1.png";
 import birds_classification_2 from "../images/bird_classification_2.png";
 import { colours, font_families } from "./styles";
-import { PlayerTutorial, TwoPlayer, GameTutorial, RulesBooklet } from "./rulemodals";
+import {
+  PlayerTutorial,
+  TwoPlayer,
+  GameTutorial,
+  RulesBooklet,
+} from "./rulemodals";
 import { Helmet } from "react-helmet";
 import "./NotificationAnimation.css"; // Import the CSS file with animations
 import kickstarter from "../images/kickstarter.png";
-
 
 const myAPI = "mailchimp";
 
@@ -43,7 +47,6 @@ const NonStickyNotificationBar = (props) => {
           width: "100%",
         }}
       >
-
         <a
           className="e-widget no-button"
           href="/scorecard"
@@ -65,8 +68,6 @@ const NonStickyNotificationBar = (props) => {
   );
 };
 
-
-
 function Rules() {
   const [renderType, setRenderType] = useState("row");
   const [buttonSize, setButtonSize] = useState("30%");
@@ -75,7 +76,6 @@ function Rules() {
   const [buttonColour, setButtonColour] = useState("#9e607e");
   const [buttonRulesColour, setRulesButtonColour] = useState("#EC2383");
   const [mobileDevice, setMobileDevice] = useState(false);
-
 
   const button_style = {
     color: "white",
@@ -124,7 +124,6 @@ function Rules() {
     }
   };
 
-
   return (
     <div className="rules" style={{ paddingBottom: 100 }}>
       <Helmet>
@@ -135,9 +134,6 @@ function Rules() {
       <div
         style={{ padding: 10, display: "flex", justifyContent: "space-evenly" }}
       >
-
-
-
         <button style={button_style} onClick={handleClick}>
           The Birds
         </button>
@@ -155,12 +151,11 @@ function Rules() {
             justifyContent: "center",
           }}
         >
-
-{showRulesBooklet ?
-            (<RulesBooklet/>)
-            :(
-
-          <><div
+          {showRulesBooklet ? (
+            <RulesBooklet />
+          ) : (
+            <>
+              <div
                 style={{
                   display: "flex",
                   flexDirection: "column",
@@ -170,14 +165,18 @@ function Rules() {
                 }}
               >
                 {showImgs ? (
-                  <img style={{ width: "100%" }} src={birds_classification_1}></img>
+                  <img
+                    style={{ width: "100%" }}
+                    src={birds_classification_1}
+                  ></img>
                 ) : (
                   <>
                     {/* <PlayerTutorial />
                     <TwoPlayer /> */}
                   </>
                 )}
-              </div><div
+              </div>
+              <div
                 style={{
                   display: "flex",
                   flexDirection: "column",
@@ -186,28 +185,29 @@ function Rules() {
                   paddingTop: 20,
                 }}
               >
-                  {showImgs ? (
-                    <img style={{ width: "100%" }} src={birds_classification_2}></img>
-                  ) : (
-                    null
-                    // <GameTutorial></GameTutorial>
-                  )}
-                </div></>
-            )}
-            
+                {showImgs ? (
+                  <img
+                    style={{ width: "100%" }}
+                    src={birds_classification_2}
+                  ></img>
+                ) : null
+                // <GameTutorial></GameTutorial>
+                }
+              </div>
+            </>
+          )}
         </div>
         <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          width: "100%",
-          paddingTop: 20
-        }}
-      >
-        <NonStickyNotificationBar mobile={mobileDevice} />
-      </div>
-
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            width: "100%",
+            paddingTop: 20,
+          }}
+        >
+          <NonStickyNotificationBar mobile={mobileDevice} />
+        </div>
       </div>
     </div>
   );

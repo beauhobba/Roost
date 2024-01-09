@@ -13,7 +13,7 @@ function ScoreCardModule() {
     }
   };
   const handleReset = () => {
-    setScores([0, 0, 0, 0, 0, 0])
+    setScores([0, 0, 0, 0, 0, 0]);
   };
   const handlePlayerClick = (index) => {
     setSelectedPlayer(index === selectedPlayer ? null : index);
@@ -31,7 +31,8 @@ function ScoreCardModule() {
 
   const selectedPlayerStyles = {
     ...playerStyles,
-    boxShadow: "0 0 10px 0 #333",
+    boxShadow: "0 0 10px 0 "+colours.white,
+    backgroundColor: colours.roost_blue,
   };
 
   const buttonStyles = {
@@ -40,7 +41,7 @@ function ScoreCardModule() {
     cursor: "pointer",
     borderRadius: "4px",
     border: "1px solid #ccc",
-    height: "60px"
+    height: "60px",
   };
 
   return (
@@ -49,7 +50,7 @@ function ScoreCardModule() {
         backgroundColor: colours.roost_pink,
         display: "flex",
         flexDirection: "row",
-        borderRadius: '10px',
+        borderRadius: "10px",
       }}
     >
       <div style={{ display: "flex", flexDirection: "column" }}>
@@ -59,7 +60,7 @@ function ScoreCardModule() {
             fontSize: 40,
             padding: "8px",
             color: colours.white,
-            margin: 0
+            margin: 0,
           }}
         >
           Scorecard
@@ -78,7 +79,7 @@ function ScoreCardModule() {
           +5
         </button>
         <button style={buttonStyles} onClick={() => handleScoreUpdate(-10)}>
-          10
+          +10
         </button>
         <button style={buttonStyles} onClick={() => handleReset()}>
           Reset
@@ -94,21 +95,19 @@ function ScoreCardModule() {
           textAlign: "center",
         }}
       >
-
-          {scores.map((score, index) => (
-            <div
-              style={
-                index === selectedPlayer ? selectedPlayerStyles : playerStyles
-              }
-              onClick={() => handlePlayerClick(index)}>
-
-              <p key={index} style= {{margin: 0}}>
-                Player {index + 1}
-              </p>
-              <p style={{fontSize: 30, margin: 0}}>{score}</p>
-            </div>
-          ))}
-
+        {scores.map((score, index) => (
+          <div
+            style={
+              index === selectedPlayer ? selectedPlayerStyles : playerStyles
+            }
+            onClick={() => handlePlayerClick(index)}
+          >
+            <p key={index} style={{ margin: 0 }}>
+              Player {index + 1}
+            </p>
+            <p style={{ fontSize: 30, margin: 0 }}>{score}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
