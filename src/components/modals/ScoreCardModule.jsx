@@ -4,6 +4,14 @@ import { colours, font_families } from "../styles";
 function ScoreCardModule() {
   const [scores, setScores] = useState([0, 0, 0, 0, 0, 0]); // Scores for 6 players
   const [selectedPlayer, setSelectedPlayer] = useState(null);
+  const [playerNames, setPlayerNames] = useState([
+    "Player 1",
+    "Player 2",
+    "Player 3",
+    "Player 4",
+    "Player 5",
+    "Player 6",
+  ]);
 
   const handleScoreUpdate = (value) => {
     if (selectedPlayer !== null) {
@@ -12,6 +20,13 @@ function ScoreCardModule() {
       setScores(updatedScores);
     }
   };
+
+  const handleNameChange = (index, newName) => {
+    const updatedNames = [...playerNames];
+    updatedNames[index] = newName;
+    setPlayerNames(updatedNames);
+  };
+
   const handleReset = () => {
     setScores([0, 0, 0, 0, 0, 0]);
   };
@@ -31,7 +46,7 @@ function ScoreCardModule() {
 
   const selectedPlayerStyles = {
     ...playerStyles,
-    boxShadow: "0 0 10px 0 "+colours.white,
+    boxShadow: "0 0 10px 0 " + colours.white,
     backgroundColor: colours.roost_blue,
   };
 
@@ -102,9 +117,13 @@ function ScoreCardModule() {
             }
             onClick={() => handlePlayerClick(index)}
           >
-            <p key={index} style={{ margin: 0 }}>
-              Player {index + 1}
-            </p>
+            <input
+            style={{margin: 0, width: '70%', textAlign: 'center'}}
+              type="text"
+              value={playerNames[index]}
+              onChange={(e) => handleNameChange(index, e.target.value)}
+            />
+
             <p style={{ fontSize: 30, margin: 0 }}>{score}</p>
           </div>
         ))}
