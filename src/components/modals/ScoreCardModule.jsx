@@ -93,7 +93,7 @@ function ScoreCardModule() {
         <button style={buttonStyles} onClick={() => handleScoreUpdate(5)}>
           +5
         </button>
-        <button style={buttonStyles} onClick={() => handleScoreUpdate(-10)}>
+        <button style={buttonStyles} onClick={() => handleScoreUpdate(10)}>
           +10
         </button>
         <button style={buttonStyles} onClick={() => handleReset()}>
