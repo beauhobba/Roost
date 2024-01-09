@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import box from "../images/box.gif";
+import kickstarter from "../images/kickstarter.png";
 import rich_rooster from "../images/newbird.png";
 import { BrowserView, MobileView, isMobile } from "react-device-detect";
 import { API } from "aws-amplify";
@@ -7,17 +7,14 @@ import { Helmet } from "react-helmet";
 import { colours, font_families } from "./styles";
 import "./NotificationAnimation.css"; // Import the CSS file with animations
 
-
 const myAPI = "mailchimp";
-
 
 const NonStickyNotificationBar = (props) => {
   const [showNotification, setShowNotification] = useState(true);
 
   const notificationStyle = {
-    justify: 'flex',
+    justify: "flex",
     display: showNotification ? "block" : "none",
-
 
     width: props.mobile ? "90%" : "30%",
     backgroundColor: "#fff",
@@ -27,7 +24,6 @@ const NonStickyNotificationBar = (props) => {
     padding: 20,
     borderRadius: "10px", // Rounded corners
     border: "2px solid " + colours.roost_pink, // White outline
-
   };
 
   const handleClose = () => {
@@ -42,11 +38,11 @@ const NonStickyNotificationBar = (props) => {
           alignItems: "center",
           justifyContent: "center",
           flexDirection: "row",
-          width: "100%"
+          width: "100%",
         }}
       >
         <img
-          src={box}
+          src={kickstarter}
           alt="Notification icon"
           style={{ width: "30px", marginRight: "30px" }}
         />
@@ -66,12 +62,10 @@ const NonStickyNotificationBar = (props) => {
             </p>
           </div>
         </a>
-
       </div>
     </div>
   );
 };
-
 
 const StickyNotificationBar = (props) => {
   const [showNotification, setShowNotification] = useState(true);
@@ -124,7 +118,8 @@ const StickyNotificationBar = (props) => {
               Rich Rooster{" "}
             </p>
             <p style={{ margin: 0 }}>
-              Sign up to the kickstarter pre-launch list and our mailing list below for a free Rich Rooster card*{" "}
+              Sign up to the kickstarter pre-launch list and our mailing list
+              below for a free Rich Rooster card*{" "}
             </p>
           </div>
         </a>
@@ -144,7 +139,6 @@ const StickyNotificationBar = (props) => {
     </div>
   );
 };
-
 
 function Purchase() {
   const [firstName, setFirstName] = React.useState("");
@@ -199,7 +193,7 @@ function Purchase() {
       className="about"
       style={{
         paddingBottom: 100,
-        fontFamily: font_families.roost
+        fontFamily: font_families.roost,
       }}
     >
       <Helmet>
@@ -210,14 +204,11 @@ function Purchase() {
         />
       </Helmet>
 
-
       {mobileDevice ? (
-          <>
-            <StickyNotificationBar mobile={mobileDevice} />
-          </>
-        ) : null}
-
-
+        <>
+          <StickyNotificationBar mobile={mobileDevice} />
+        </>
+      ) : null}
 
       <div class="container">
         <div
@@ -225,40 +216,46 @@ function Purchase() {
             display: "flex",
             flexDirection: direction,
             padding: 20,
-            
           }}
         >
+          {mobileDevice ? null : (
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                width: shapeSize,
+                alignItems: "center",
+              }}
+            >
+              <p style={{ paddingTop: 20 }}>
+                Sign up to the kickstarter pre-launch list and our mailing list
+                below for a free Rich Rooster card*
+              </p>
+              <img
+                class="img-fluid rounded mb-4 mb-lg-0"
+                src={rich_rooster}
+                alt=""
+                style={{ alignSelf: "center", width: logoSize }}
+              />
+            </div>
+          )}
 
-{mobileDevice ? null : (
           <div
             style={{
+              alignItems: "center",
               display: "flex",
               flexDirection: "column",
-              width: shapeSize,
-              alignItems: "center",
             }}
           >
-            <p style={{paddingTop: 20}}>
-            Sign up to the kickstarter pre-launch list and our mailing list below for a free Rich Rooster card*
-            </p>
-            <img
-              class="img-fluid rounded mb-4 mb-lg-0"
-              src={rich_rooster}
-              alt=""
-              style={{ alignSelf: "center", width: logoSize}}
-            />
-
-          </div>
-          )
-          }
-
-          <div style={{alignItems: 'center', display: 'flex', flexDirection: 'column'}}>
             <h1 class="font-weight-light">
               <b>Pre-launch</b>
             </h1>
-            <p>Join the mailing list below to be notified of any Roost related news</p>
+            <p>
+              Join the mailing list below to be notified of any Roost related
+              news
+            </p>
 
-            <label style={{marginBottom: 0}}>
+            <label style={{ marginBottom: 0 }}>
               First Name:
               <br></br>
               <input
@@ -267,7 +264,7 @@ function Purchase() {
                 onChange={handleChangeFirstName}
               />
             </label>
-            <label style={{marginBottom: 0}}>
+            <label style={{ marginBottom: 0 }}>
               Last Name:
               <br></br>
               <input
@@ -306,22 +303,25 @@ function Purchase() {
             >
               Join Waiting List
             </button>
-
-
           </div>
         </div>
       </div>
-      <div style={{padding: 20}}>
-        <p style={{fontSize: 10}}>
-            * You must purchase a copy of Roost to obtain the Rich Rooster card.  If the Kickstarter is not successful, applicants will not receive a Rich Rooster card
-            </p>     
-
-
-                </div>  
-                <div style={{display: 'flex', alignItems: 'center',  justifyContent: 'center'}}>
-                <NonStickyNotificationBar mobile={mobileDevice} />
-                </div>
-
+      <div style={{ padding: 20 }}>
+        <p style={{ fontSize: 10 }}>
+          * You must purchase a copy of Roost to obtain the Rich Rooster card.
+          If the Kickstarter is not successful, applicants will not receive a
+          Rich Rooster card
+        </p>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <NonStickyNotificationBar mobile={mobileDevice} />
+      </div>
     </div>
   );
 }

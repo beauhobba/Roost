@@ -119,26 +119,23 @@ function Contact() {
             fontFamily: font_families.roost,
           }}
         >
-
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                width: sideImgSize,
-                alignItems: "center",
-
-              }}
-            >
-              {/* <div style={{ width: "100%" }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              width: sideImgSize,
+              alignItems: "center",
+            }}
+          >
+            {/* <div style={{ width: "100%" }}>
                 <img
                   class="img-fluid rounded mb-4 mb-lg-0"
                   src={promo_13}
                   alt=""
                 />
               </div> */}
-              <ContactScreen />
-            </div>
-
+            <ContactScreen />
+          </div>
 
           <div style={{ width: "100%" }}>
             <div
@@ -159,7 +156,9 @@ function Contact() {
               >
                 <h1>Contact Us</h1>
                 <p style={{ marginBottom: 0 }}>
-                  If you need to get in touch, use the following form! If you are a retailer, please express your company name and phone number in the description. 
+                  If you need to get in touch, use the following form! If you
+                  are a retailer, please express your company name and phone
+                  number in the description.
                 </p>
                 <label
                   style={{ marginBottom: 0, width: "60%", display: "block" }}

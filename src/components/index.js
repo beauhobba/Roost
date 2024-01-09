@@ -6,3 +6,4 @@ export { default as Contact } from "./Contact";
 export { default as Blog } from "./Blog";
 export { default as Supporters } from "./Supporters";
 export { default as Expansion } from "./Expansion";
+export { default as Scorecard } from "./Scorecard";

@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-
 import "react-image-gallery/styles/css/image-gallery.css";
 
-import { colours} from "../styles";
+import { colours } from "../styles";
 import { FaFeather } from "react-icons/fa"; // Import a bird icon from a popular icon library
 
 function RoostButton(props) {
@@ -25,7 +24,7 @@ function RoostButton(props) {
 
   return (
     <button
-      onClick= {props.action}
+      onClick={props.action}
       style={{
         color: "#ffffff", // White text for visibility
         backgroundColor: colours.roost_pink, // Blue background
@@ -65,7 +64,6 @@ function RoostButton(props) {
           transition: "transform 0.3s",
         }}
       />{" "}
-
       {props.text}
     </button>
   );

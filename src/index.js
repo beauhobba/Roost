@@ -11,7 +11,8 @@ import {
   Contact,
   Supporters,
   Blog,
-  Expansion
+  Expansion,
+  Scorecard
 } from "./components";
 import Purchase from "./components/Purchase";
 import {Amplify} from "aws-amplify";
@@ -34,6 +35,7 @@ ReactDOM.render(
       <Route path="/purchase" element={<Purchase />}/>
       <Route path="/expansion" element={<Expansion />}/>
       <Route path="/blog" element={<Blog />}/>
+      <Route path="/scorecard" element={<Scorecard />}/>
       <Route path="/supporters" element={<Supporters />}/>
 
     </Routes>

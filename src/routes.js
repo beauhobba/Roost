@@ -8,6 +8,7 @@ export default (
   <Route path="/contact" />
   <Route path="/purchase" />
   <Route path="/blog" />
+  <Route path="/scorecard" />
   <Route path="/expansion" />
   <Route path="/supports" />
 </Route>

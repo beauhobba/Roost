@@ -6,31 +6,25 @@ import box_3 from "../../images/exp_birds.png";
 
 const images = [];
 for (let i = 1; i <= 14; i++) {
-    images.push(require(`../../images/animation/${i}.png`));
+  images.push(require(`../../images/animation/${i}.png`));
 }
-
-
-
 
 const Loading = (props) => {
   const [activeModule, setActiveModule] = useState(0);
   const moduleRefs = useRef([]);
   const [activeModule2, setactiveModule2] = useState(0);
 
-
   useEffect(() => {
     const handleScroll = () => {
       // Calculate the index of the active module based on the scroll position
-      const scrollPosition = window.scrollY-800;
+      const scrollPosition = window.scrollY - 800;
       const moduleHeight = 170; // Adjust module height as needed
       var activeModuleIndex = Math.floor(scrollPosition / moduleHeight);
 
       // Update the active module
-      if(activeModuleIndex > 13){
+      if (activeModuleIndex > 13) {
         activeModuleIndex = 13;
       }
-
-
 
       setactiveModule2(activeModuleIndex);
     };
@@ -44,11 +38,10 @@ const Loading = (props) => {
     };
   }, []);
 
-
   useEffect(() => {
     const handleScroll = () => {
       // Calculate the index of the active module based on the scroll position
-      const scrollPosition = window.scrollY-300;
+      const scrollPosition = window.scrollY - 300;
       const moduleHeight = 900; // Adjust module height as needed
       const activeModuleIndex = Math.floor(scrollPosition / moduleHeight);
 
@@ -64,8 +57,6 @@ const Loading = (props) => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-
 
   const modules = [
     {
@@ -112,8 +103,17 @@ const Loading = (props) => {
             </div>
           ))}
         </div>
-        <div style={{ width: "50%", height: "450px", paddingLeft: 20, display: "flex", justifyContent: "center", alignItems: "center"}}>
-          <img src={images[activeModule2]}  style={{width: '40%'}}/>
+        <div
+          style={{
+            width: "50%",
+            height: "450px",
+            paddingLeft: 20,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <img src={images[activeModule2]} style={{ width: "40%" }} />
         </div>
       </div>
     </>

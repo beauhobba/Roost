@@ -1,20 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import CardTile from "../cards/CardTile";
 import "react-image-gallery/styles/css/image-gallery.css";
 import { TextBox } from ".";
 
 const LoadingSectionText = (props) => {
-    const [active, setActive] = React.useState(false);
+  const [active, setActive] = React.useState(false);
 
-    useEffect(() => {
-        if (props.active == true) {
-            setActive(true);
-        }else{
-            setActive(false);   
-        }
-    }, [props.active]);
-
-
+  useEffect(() => {
+    if (props.active == true) {
+      setActive(true);
+    } else {
+      setActive(false);
+    }
+  }, [props.active]);
 
   return (
     <>
@@ -27,15 +25,14 @@ const LoadingSectionText = (props) => {
           alignItems: "center",
         }}
       >
-            <TextBox
-              active={active}
-              text={props.text}
-              title={props.title}
-              symbol={props.symbol}
-              circleSize={"100px"}
-              iconSize={50}
-
-            />
+        <TextBox
+          active={active}
+          text={props.text}
+          title={props.title}
+          symbol={props.symbol}
+          circleSize={"100px"}
+          iconSize={50}
+        />
       </div>
     </>
   );

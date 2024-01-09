@@ -15,15 +15,14 @@ import { FaGamepad } from "react-icons/fa";
 function Navigation() {
   const mobile = {
     backgroundColor: "#EC2383",
-    flex: 'display',
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
+    flex: "display",
+    alignItems: "center",
+    justifyContent: "center",
+  };
   const web = {
     backgroundColor: "#EC2383",
-    flex: 'display',
-  }
-
+    flex: "display",
+  };
 
   const [navbar, setNavbar] = useState(web);
 
@@ -33,14 +32,9 @@ function Navigation() {
     }
   }, []);
 
-
-
   return (
     <div className="navigation">
-      <nav
-        className="navbar navbar-expand navbar-dark"
-        style={navbar}
-      >
+      <nav className="navbar navbar-expand navbar-dark" style={navbar}>
         <BrowserView>
           <div
             className="container"
