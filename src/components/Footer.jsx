@@ -40,7 +40,7 @@ function Footer() {
           }}
         >
           <p class="m-0 text-center text-white">
-            Copyright &copy; roostgame.com 2023
+            Copyright &copy; roostgame.com 2024
           </p>
           <SocialLink
             href="https://www.instagram.com/roostgame/"
