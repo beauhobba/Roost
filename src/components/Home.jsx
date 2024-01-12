@@ -163,6 +163,45 @@ const StickyNotificationGleam = (props) => {
   );
 };
 
+const OpaqueImage = () => {
+  const containerStyle = {
+    width: '100%',
+    position: 'relative',
+  };
+
+  const overlayStyle = {
+    content: '""',
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    background: 'linear-gradient(to right, rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0.3) 93%, rgba(255, 255, 255, 1))',
+    pointerEvents: 'none',
+  };
+
+  const imageStyle = {
+    width: '100%',
+    height: 'auto',
+    display: 'block',
+    borderRadius: '10px', // Adjust as needed
+  };
+
+  return (
+    <div style={containerStyle}>
+      <div style={overlayStyle}></div>
+      <img
+        className="img-fluid rounded mb-4 mb-lg-0"
+        src={promo_12}
+        alt=""
+        style={imageStyle}
+      />
+    </div>
+  );
+};
+
+
+
 function Home() {
   const [mobileDevice, setMobileDevice] = useState(false);
   const [buttonFontSize, setButtonFontSize] = useState(20);
@@ -227,13 +266,7 @@ function Home() {
                 alignItems: "center",
               }}
             >
-              <div style={{ width: "100%" }}>
-                <img
-                  class="img-fluid rounded mb-4 mb-lg-0"
-                  src={promo_12}
-                  alt=""
-                />
-              </div>
+              <OpaqueImage/>
             </div>
           )}
 

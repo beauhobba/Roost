@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import kickstarter from "../images/kickstarter.png";
 import rich_rooster from "../images/newbird.png";
+import post from "../images/post.gif";
 import { BrowserView, MobileView, isMobile } from "react-device-detect";
 import { API } from "aws-amplify";
 import { Helmet } from "react-helmet";
@@ -16,7 +17,7 @@ const NonStickyNotificationBar = (props) => {
     justify: "flex",
     display: showNotification ? "block" : "none",
 
-    width: props.mobile ? "90%" : "30%",
+    width: props.mobile ? "90%" : "100%",
     backgroundColor: "#fff",
     color: colours.roost_pink,
 
@@ -44,7 +45,7 @@ const NonStickyNotificationBar = (props) => {
         <img
           src={kickstarter}
           alt="Notification icon"
-          style={{ width: "30px", marginRight: "30px" }}
+          style={{ width: "70px", marginRight: "30px" }}
         />
         <a
           className="e-widget no-button"
@@ -67,6 +68,65 @@ const NonStickyNotificationBar = (props) => {
   );
 };
 
+const NonStickyNotificationBarCool = (props) => {
+  const [showNotification, setShowNotification] = useState(true);
+
+  const notificationStyle = {
+    justify: "flex",
+    display: showNotification ? "block" : "none",
+
+    width: props.mobile ? "90%" : "100%",
+    backgroundColor: "#fff",
+    color: colours.roost_pink,
+
+    zIndex: 999, // Ensure it's above other elements
+    padding: 20,
+    borderRadius: "10px", // Rounded corners
+    border: "2px solid " + colours.roost_pink, // White outline
+  };
+
+  const handleClose = () => {
+    setShowNotification(false);
+  };
+
+  return (
+    <div style={notificationStyle}>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: "row",
+          width: "100%",
+        }}
+      >
+        <img
+          src={rich_rooster}
+          alt="Notification icon"
+          style={{ width: "70px", marginRight: "30px" }}
+        />
+        <a
+          className="e-widget no-button"
+          href="https://www.kickstarter.com/projects/roostgame/roost-0"
+          rel="nofollow"
+          style={{ color: "#000", textDecoration: "none", margin: 0 }}
+        >
+          <div>
+            <p style={{ margin: 0, fontWeight: "bold", fontSize: 20 }}>
+              {" "}
+              Rich Rooster{" "}
+            </p>
+            <p style={{ margin: 0 }}>
+              Sign up to the kickstarter pre-launch list and our mailing list
+              below for a free Rich Rooster card*{" "}
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  );
+};
+
 const StickyNotificationBar = (props) => {
   const [showNotification, setShowNotification] = useState(true);
 
@@ -76,7 +136,7 @@ const StickyNotificationBar = (props) => {
     top: "40%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: props.mobile ? "90%" : "30%",
+    width: props.mobile ? "90%" : "100%",
     backgroundColor: "#fff",
     color: colours.roost_pink,
     justify: "center",
@@ -142,11 +202,12 @@ const StickyNotificationBar = (props) => {
 
 function Purchase() {
   const [firstName, setFirstName] = React.useState("");
+  const [refer, setRefer] = React.useState("");
   const [lastName, setLastName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [error, setError] = React.useState("");
   const [logoSize, setLogoSize] = useState("40%");
-  const [shapeSize, setShapeSize] = useState("50%");
+  const [shapeSize, setShapeSize] = useState("52%");
   const [direction, setDirection] = useState("row");
   const [mobileDevice, setMobileDevice] = useState(false);
 
@@ -165,7 +226,12 @@ function Purchase() {
       setError("Please enter an email address");
       return;
     }
-    let data = { firstName: firstName, lastName: lastName, email: email };
+    let data = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      refer: refer,
+    };
     API.post(myAPI, "/mailchimp", { body: data })
       .then((response) => {
         console.log(response);
@@ -187,7 +253,9 @@ function Purchase() {
   function handleChangeLastName(event) {
     setLastName(event.target.value);
   }
-
+  function handleChangeRefer(event) {
+    setRefer(event.target.value);
+  }
   return (
     <div
       className="about"
@@ -204,18 +272,11 @@ function Purchase() {
         />
       </Helmet>
 
-      {mobileDevice ? (
-        <>
-          <StickyNotificationBar mobile={mobileDevice} />
-        </>
-      ) : null}
-
       <div class="container">
         <div
           style={{
             display: "flex",
             flexDirection: direction,
-            padding: 20,
           }}
         >
           {mobileDevice ? null : (
@@ -227,15 +288,11 @@ function Purchase() {
                 alignItems: "center",
               }}
             >
-              <p style={{ paddingTop: 20 }}>
-                Sign up to the kickstarter pre-launch list and our mailing list
-                below for a free Rich Rooster card*
-              </p>
               <img
                 class="img-fluid rounded mb-4 mb-lg-0"
-                src={rich_rooster}
+                src={post}
                 alt=""
-                style={{ alignSelf: "center", width: logoSize }}
+                style={{ alignSelf: "center", width: "100%" }}
               />
             </div>
           )}
@@ -245,6 +302,7 @@ function Purchase() {
               alignItems: "center",
               display: "flex",
               flexDirection: "column",
+              paddingTop: 20
             }}
           >
             <h1 class="font-weight-light">
@@ -256,7 +314,7 @@ function Purchase() {
             </p>
 
             <label style={{ marginBottom: 0 }}>
-              First Name:
+              *First Name:
               <br></br>
               <input
                 type="text"
@@ -285,8 +343,20 @@ function Purchase() {
                 }}
               />
             </label>
-
-            <br></br>
+            <label>
+              Referral Email:
+              <br></br>
+              <input
+                type="text"
+                value={refer}
+                onChange={handleChangeRefer}
+                style={{
+                  width: "100%",
+                  margin: 0,
+                }}
+              />
+            </label>
+            <div style={{padding: 10, width: '100%'}}>
             <p>
               <i>{error}</i>
             </p>
@@ -299,28 +369,57 @@ function Purchase() {
                 height: 40,
                 width: "100%",
                 border: "none",
+                marginBottom: 30,
+
               }}
             >
               Join Waiting List
             </button>
-          </div>
-        </div>
-      </div>
-      <div style={{ padding: 20 }}>
-        <p style={{ fontSize: 10 }}>
-          * You must purchase a copy of Roost to obtain the Rich Rooster card.
-          If the Kickstarter is not successful, applicants will not receive a
-          Rich Rooster card
-        </p>
+            </div>
+
+
+            <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          paddingBottom: 10,
+          width: "100%",
+          padding: 10
+        }}
+      >
+        <NonStickyNotificationBarCool mobile={mobileDevice} />
       </div>
       <div
         style={{
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          width: "100%",
+          paddingLeft: 10,
+          paddingRight: 10
         }}
       >
         <NonStickyNotificationBar mobile={mobileDevice} />
+      </div>
+            
+          </div>
+
+          
+        </div>
+
+
+        
+      </div>
+
+
+
+      <div style={{ padding: 20, marginTop: 30 }}>
+        <p style={{ fontSize: 10 }}>
+          * You must purchase a copy of Roost to obtain the Rich Rooster card.
+          If the Kickstarter is not successful, applicants will not receive a
+          Rich Rooster card
+        </p>
       </div>
     </div>
   );
