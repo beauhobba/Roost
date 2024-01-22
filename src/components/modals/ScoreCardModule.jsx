@@ -1,17 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { colours, font_families } from "../styles";
 
 function ScoreCardModule() {
-  const [scores, setScores] = useState([0, 0, 0, 0, 0, 0]); // Scores for 6 players
+  const [scores, setScores] = useState(() => {
+    const storedScores = JSON.parse(localStorage.getItem("scores")) || [0, 0, 0, 0, 0, 0];
+    return storedScores;
+  });
+  const [playerNames, setPlayerNames] = useState(() => {
+    const storedPlayerNames = JSON.parse(localStorage.getItem("playerNames")) || [
+      "Player 1",
+      "Player 2",
+      "Player 3",
+      "Player 4",
+      "Player 5",
+      "Player 6",
+    ];
+    return storedPlayerNames;
+  });
   const [selectedPlayer, setSelectedPlayer] = useState(null);
-  const [playerNames, setPlayerNames] = useState([
-    "Player 1",
-    "Player 2",
-    "Player 3",
-    "Player 4",
-    "Player 5",
-    "Player 6",
-  ]);
+
+  useEffect(() => {
+    localStorage.setItem("scores", JSON.stringify(scores));
+  }, [scores]);
+
+  useEffect(() => {
+    localStorage.setItem("playerNames", JSON.stringify(playerNames));
+  }, [playerNames]);
 
   const handleScoreUpdate = (value) => {
     if (selectedPlayer !== null) {
@@ -30,6 +44,7 @@ function ScoreCardModule() {
   const handleReset = () => {
     setScores([0, 0, 0, 0, 0, 0]);
   };
+
   const handlePlayerClick = (index) => {
     setSelectedPlayer(index === selectedPlayer ? null : index);
   };
@@ -118,7 +133,7 @@ function ScoreCardModule() {
             onClick={() => handlePlayerClick(index)}
           >
             <input
-            style={{margin: 0, width: '70%', textAlign: 'center'}}
+              style={{ margin: 0, width: '70%', textAlign: 'center' }}
               type="text"
               value={playerNames[index]}
               onChange={(e) => handleNameChange(index, e.target.value)}

@@ -16,15 +16,29 @@ import { Loading } from "./modals";
 import { colours, font_families } from "./styles";
 import { FaFeather } from "react-icons/fa"; // Import a bird icon from a popular icon library
 import { RoostButton } from "./modals";
+import { PurchaseModule } from "./purchase_modules";
 import "./NotificationAnimation.css"; // Import the CSS file with animations
 
 const StickyNotificationBar = (props) => {
   const [showNotification, setShowNotification] = useState(true);
 
+
+  useEffect(() => {
+    // Retrieve showNotification value from localStorage or use true if not found
+    const storedShowNotification = JSON.parse(localStorage.getItem("showNotificationBar"));
+    setShowNotification(storedShowNotification !== null ? storedShowNotification : true);
+  }, []);
+
+  useEffect(() => {
+    // Save showNotification value to localStorage whenever it changes
+    localStorage.setItem("showNotificationBar", JSON.stringify(showNotification));
+  }, [showNotification]);
+
+
   const notificationStyle = {
     display: showNotification ? "block" : "none",
     position: "fixed",
-    top: "62%",
+    top: "65%",
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: props.mobile ? "90%" : "30%",
@@ -94,10 +108,23 @@ const StickyNotificationBar = (props) => {
 const StickyNotificationGleam = (props) => {
   const [showNotification, setShowNotification] = useState(true);
 
+  useEffect(() => {
+    // Retrieve showNotification value from localStorage or use true if not found
+    const storedShowNotification = JSON.parse(localStorage.getItem("showNotification"));
+    setShowNotification(storedShowNotification !== null ? storedShowNotification : true);
+  }, []);
+
+  useEffect(() => {
+    // Save showNotification value to localStorage whenever it changes
+    localStorage.setItem("showNotification", JSON.stringify(showNotification));
+  }, [showNotification]);
+
+
+
   const notificationStyle = {
     display: showNotification ? "block" : "none",
     position: "fixed",
-    top: "80%",
+    top: "83%",
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: props.mobile ? "90%" : "30%",
@@ -165,26 +192,27 @@ const StickyNotificationGleam = (props) => {
 
 const OpaqueImage = () => {
   const containerStyle = {
-    width: '100%',
-    position: 'relative',
+    width: "100%",
+    position: "relative",
   };
 
   const overlayStyle = {
     content: '""',
-    position: 'absolute',
+    position: "absolute",
     top: 0,
     right: 0,
     bottom: 0,
     left: 0,
-    background: 'linear-gradient(to right, rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0.3) 93%, rgba(255, 255, 255, 1))',
-    pointerEvents: 'none',
+    background:
+      "linear-gradient(to right, rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0.3) 93%, rgba(255, 255, 255, 1))",
+    pointerEvents: "none",
   };
 
   const imageStyle = {
-    width: '100%',
-    height: 'auto',
-    display: 'block',
-    borderRadius: '10px', // Adjust as needed
+    width: "100%",
+    height: "auto",
+    display: "block",
+    borderRadius: "10px", // Adjust as needed
   };
 
   return (
@@ -199,8 +227,6 @@ const OpaqueImage = () => {
     </div>
   );
 };
-
-
 
 function Home() {
   const [mobileDevice, setMobileDevice] = useState(false);
@@ -266,7 +292,7 @@ function Home() {
                 alignItems: "center",
               }}
             >
-              <OpaqueImage/>
+              <OpaqueImage />
             </div>
           )}
 
@@ -384,6 +410,37 @@ function Home() {
             >
               <CardDisplay type={true} />
             </div>
+            <div>
+              <Link to="/purchase">
+                <button
+                  style={{
+                    color: "white",
+                    backgroundColor: colours.roost_pink,
+
+                    fontSize: buttonFontSize,
+                    height: 80,
+                    width: "100%",
+                    paddingLeft: 20,
+                    paddingRight: 20,
+                    border: "none",
+                  }}
+                >
+Subscribe to our mailing list to stay updated on all Roost-related news and receive an exclusive card upon launch.
+                </button>
+              </Link>
+            </div>
+
+            <div
+              style={{
+                alignItems: "center",
+                display: "flex",
+                flexDirection: "column",
+                padding: 20
+              }}
+            >
+
+              <PurchaseModule />
+            </div>
           </MobileView>
         </div>
       </div>
@@ -402,7 +459,7 @@ function Home() {
               flexDirection: "column",
             }}
           >
-            <Loading />
+            {/* <Loading /> */}
           </div>
 
           <div

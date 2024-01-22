@@ -7,6 +7,9 @@ import { API } from "aws-amplify";
 import { Helmet } from "react-helmet";
 import { colours, font_families } from "./styles";
 import "./NotificationAnimation.css"; // Import the CSS file with animations
+import {PurchaseModule} from "./purchase_modules"
+
+
 
 const myAPI = "mailchimp";
 
@@ -313,69 +316,7 @@ function Purchase() {
               news
             </p>
 
-            <label style={{ marginBottom: 0 }}>
-              *First Name:
-              <br></br>
-              <input
-                type="text"
-                value={firstName}
-                onChange={handleChangeFirstName}
-              />
-            </label>
-            <label style={{ marginBottom: 0 }}>
-              Last Name:
-              <br></br>
-              <input
-                type="text"
-                value={lastName}
-                onChange={handleChangeLastName}
-              />
-            </label>
-            <label>
-              <b>*</b>Email:
-              <br></br>
-              <input
-                type="text"
-                value={email}
-                onChange={handleChangeEmail}
-                style={{
-                  width: "100%",
-                }}
-              />
-            </label>
-            <label>
-              Referral Email:
-              <br></br>
-              <input
-                type="text"
-                value={refer}
-                onChange={handleChangeRefer}
-                style={{
-                  width: "100%",
-                  margin: 0,
-                }}
-              />
-            </label>
-            <div style={{padding: 10, width: '100%'}}>
-            <p>
-              <i>{error}</i>
-            </p>
-            <button
-              onClick={addEmail}
-              style={{
-                color: "white",
-                backgroundColor: "#EC2383",
-                fontSize: 20,
-                height: 40,
-                width: "100%",
-                border: "none",
-                marginBottom: 30,
-
-              }}
-            >
-              Join Waiting List
-            </button>
-            </div>
+            <PurchaseModule/>
 
 
             <div
